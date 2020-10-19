@@ -1,0 +1,862 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/LingSiKi/images/img/favicon.png">
+  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/LingSiKi/images/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#F08080">
+  <meta name="description" content="">
+  <meta name="author" content="ReaJason">
+  <meta name="keywords" content="">
+  <title>✅完美校园自动打卡 - ReaJason</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ReaJason's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/LingSiKi/images/img/default.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-06-28 03:35" pubdate>
+        2020年6月28日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      985 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      11
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-post-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-post-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">✅完美校园自动打卡</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <blockquote>
+<p>基于GitHub Actions的完美校园每日早上六点健康打卡</p>
+<p>暂只支持无脑post，有能力逆向的可以逆向一下5.0.2版本的完美校园（无壳）</p>
+<p>完美校园5.0.2版本 —&gt; <a target="_blank" rel="noopener" href="https://lingsiki.lanzous.com/ijnvnhepbxa"> https://lingsiki.lanzous.com/ijnvnhepbxa</a></p>
+<a id="more"></a>
+</blockquote>
+<h2 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h2><p><a target="_blank" rel="noopener" href="https://github.com/ReaJason/17wanxiaoCheckin-Actions">https://github.com/ReaJason/17wanxiaoCheckin-Actions</a></p>
+<h2 id="项目功能"><a href="#项目功能" class="headerlink" title="项目功能"></a>项目功能</h2><ol>
+<li>每日早上六点完美校园健康打卡</li>
+<li>微信Server酱推送打卡结果</li>
+</ol>
+<h2 id="项目使用"><a href="#项目使用" class="headerlink" title="项目使用"></a>项目使用</h2><h3 id="一、模拟器抓包"><a href="#一、模拟器抓包" class="headerlink" title="一、模拟器抓包"></a>一、模拟器抓包</h3><blockquote>
+<p>如果你的手机已ROOT可以直接用手机哦</p>
+</blockquote>
+<h4 id="1、模拟器配置"><a href="#1、模拟器配置" class="headerlink" title="1、模拟器配置"></a>1、模拟器配置</h4><ul>
+<li>下载雷神模拟器、完美校园、httpcanary安装包</li>
+<li>天翼网盘：<a target="_blank" rel="noopener" href="https://cloud.189.cn/t/VRZryeb2aIBr">https://cloud.189.cn/t/VRZryeb2aIBr</a></li>
+<li>解压雷神模拟器压缩包并点击绿化（出现什么异常的话把杀毒软件关闭）</li>
+<li>绿化完成点击桌面图标启动</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/%E5%AE%89%E8%A3%85%E9%9B%B7%E7%A5%9E%E6%A8%A1%E6%8B%9F%E5%99%A8.png" srcset="/img/loading.gif"></p>
+<ul>
+<li>拖动apk文件到模拟器窗口完成app的安装</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/%E9%9B%B7%E7%A5%9E%E6%A8%A1%E6%8B%9F%E5%99%A8%E8%AE%BE%E7%BD%AE.png" srcset="/img/loading.gif"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/%E5%AE%89%E8%A3%85apk%E6%96%87%E4%BB%B6.png" srcset="/img/loading.gif"></p>
+<h4 id="2、httpcanary"><a href="#2、httpcanary" class="headerlink" title="2、httpcanary"></a>2、httpcanary</h4><ul>
+<li>打开刚刚安装在桌面的Httpcanary</li>
+<li>安装证书并移动到根目录</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/%E5%90%88%E6%88%901.png" srcset="/img/loading.gif"></p>
+<ul>
+<li>设置目标应用为完美校园APP（就不需要其余操作了，不要点右下角的小飞机）</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/%E5%90%88%E6%88%902.png" srcset="/img/loading.gif"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/%E5%90%88%E6%88%903.png" srcset="/img/loading.gif"></p>
+<h4 id="3、开始抓包"><a href="#3、开始抓包" class="headerlink" title="3、开始抓包"></a>3、开始抓包</h4><ul>
+<li>打开完美校园app（显示root忽略即可），进入健康打卡并设置相关信息（不提交）</li>
+<li>切换到httpcanary，开启抓包（点右下角的小飞机）</li>
+<li>切换完美校园提交信息，打卡成功</li>
+<li>切换httpcanary，停止抓包</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/%E5%90%88%E6%88%904.png" srcset="/img/loading.gif"></p>
+<h4 id="4、抓包分析"><a href="#4、抓包分析" class="headerlink" title="4、抓包分析"></a>4、抓包分析</h4><ul>
+<li>翻阅找到sass字样的链接，点击进去（如果有多个, 请点靠上面的）</li>
+<li>第一个框为请求连接，第二个框为此网络请求为post请求</li>
+<li>点击请求一栏，并在底部选择text，即可查看自己所填写的数据（记下来，或者复制出去）</li>
+<li>点击响应一栏，并在底部选择text，即可查看响应结果（成功则为打卡成功，打卡频繁则失败）</li>
+<li>至此我们就获得了我们绝大多数的数据了（下面项目使用的数据填写需要）</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/%E5%90%88%E6%88%905.png" srcset="/img/loading.gif"></p>
+<h3 id="二、申请Server酱"><a href="#二、申请Server酱" class="headerlink" title="二、申请Server酱"></a>二、申请Server酱</h3><h4 id="1、申请GitHub"><a href="#1、申请GitHub" class="headerlink" title="1、申请GitHub"></a>1、申请GitHub</h4><ul>
+<li>Github官网：<a target="_blank" rel="noopener" href="https://github.com/">https://github.com/</a> （使用邮箱注册并验证）</li>
+</ul>
+<h4 id="2、注册Server酱"><a href="#2、注册Server酱" class="headerlink" title="2、注册Server酱"></a>2、注册Server酱</h4><ul>
+<li>Server酱官网：<a target="_blank" rel="noopener" href="http://sc.ftqq.com/3.version">http://sc.ftqq.com/3.version</a> </li>
+<li>使用刚注册的Github账号登录</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/Server1.png" srcset="/img/loading.gif"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/Server2.png" srcset="/img/loading.gif"></p>
+<ul>
+<li>微信绑定，扫码关注即可绑定</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/Server3.png" srcset="/img/loading.gif"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/Server4.png" srcset="/img/loading.gif"></p>
+<ul>
+<li>测试一下是否能推送成功，并复制下自己的SCKEY（下面项目使用的数据填写需要）</li>
+<li>至此我们就获得了我们的最后一个数据，接下来就是了解如何使用此项目文件了</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/Server5.png" srcset="/img/loading.gif"></p>
+<h3 id="三、项目fork与部署"><a href="#三、项目fork与部署" class="headerlink" title="三、项目fork与部署"></a>三、项目fork与部署</h3><h4 id="1、进入仓库"><a href="#1、进入仓库" class="headerlink" title="1、进入仓库"></a>1、进入仓库</h4><ul>
+<li><p>此项目地址：<a target="_blank" rel="noopener" href="https://github.com/ReaJason/17wanxiaoCheckin-Actions">https://github.com/ReaJason/17wanxiaoCheckin-Actions</a></p>
+</li>
+<li><p>点击右上角的fork即可将项目文件拉到自己的库中</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/fork.png" srcset="/img/loading.gif"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/fork2.png" srcset="/img/loading.gif"></p>
+<h4 id="2、设置Secrets"><a href="#2、设置Secrets" class="headerlink" title="2、设置Secrets"></a>2、设置Secrets</h4><ul>
+<li><p>找到自己fork的库，点击Settings-&gt;Secrets-&gt;New sceret</p>
+</li>
+<li><p>字段名使用大写，下面的值则填写自己的值(不要回车,干净利落的填写就可)，总共12个，细心填写这关乎之后的成功与否</p>
+</li>
+<li><pre><code># 设置如下secret字段
+&quot;&quot;&quot;
+TEXT(学院专业班级信息)                例：林学院-林学(陶铸实验班)-2017林学(陶铸实验班)1班
+DEPTID(未知id字段)                   例：141670
+ADDRESS(详细地址)                    例：非常富贵
+ADDTEXT(省-市-县/区)                 例：江西省-南昌市-高新区
+CODE(盲猜邮编)                       例：360192
+STUNUM(学号)                        例：20170101
+USERNAME(姓名)                      例：小冯
+PHONENUM(电话)                      例：...自己电话...
+USERID(完美校园分配的用户id)          例：6274894
+EMERGENCY(紧急联系人)                例：紧急人
+EMERGENCYPHONE(紧急联系人电话)        例：23667712771
+SCKEY(Server酱微信推送)
+&quot;&quot;&quot;</code></pre>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/secrets.png" srcset="/img/loading.gif"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/secrets2.png" srcset="/img/loading.gif"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/secrets3.png" srcset="/img/loading.gif"></p>
+<h4 id="3、开启Actions"><a href="#3、开启Actions" class="headerlink" title="3、开启Actions"></a>3、开启Actions</h4><ul>
+<li><p>找到自己fork的库，点击Settings-&gt;Action-&gt;I understand…</p>
+</li>
+<li><p>回到项目主页，修改README.md触发Actions</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/action1.png" srcset="/img/loading.gif"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/actions2.png" srcset="/img/loading.gif"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/actions3.png" srcset="/img/loading.gif"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/actions4.png" srcset="/img/loading.gif"></p>
+<h4 id="4、结果查看"><a href="#4、结果查看" class="headerlink" title="4、结果查看"></a>4、结果查看</h4><ul>
+<li>通过Update README.md – &gt; build – &gt; HealthCheckin</li>
+<li>手机微信推送查看</li>
+<li>成功了一次之后则开启了自动化部署（每天早上六点自动打卡）</li>
+<li>如果失败，则在运行状况的HealthCheckin中查看报错情况，解决不了可以提issue</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/actions5.png" srcset="/img/loading.gif"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/sucess.png" srcset="/img/loading.gif"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/sucess1.jpg" srcset="/img/loading.gif"></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Python/">Python</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC/">自动化脚本</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/10/19/WeiBoSuperTopicsTool/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">🌈微博超话工具</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "HohGa0vcu0iQIbm7ELytbaKs-gzGzoHsz",
+          app_key: "9TiVNoKrg63RPL3ALyu72tt2",
+          placeholder: "说点什么",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "https://hohga0vc.lc-cn-n1-shared.com",
+        });
+      });
+    }
+    waitElementVisible('vcomments', loadValine);
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+    
+
+    
+  </div>
+  
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer>
+  (function () {
+    // 查询存储的记录
+    function getRecord(Counter, target) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({target})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {target, time: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    }
+
+    // 发起自增请求
+    function increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    }
+
+    // 构建自增请求体
+    function buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "time": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    }
+
+    // 校验是否为有效的 UV
+    function validUV() {
+      var key = 'LeanCloud_UV_Flag';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    }
+
+    function addCount(Counter) {
+      var enableIncr = 'true' === 'true' && window.location.hostname !== 'localhost';
+      var getterArr = [];
+      var incrArr = [];
+
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#leancloud-site-pv-container');
+      if (pvCtn || enableIncr) {
+        var pvGetter = getRecord(Counter, 'site-pv').then((record) => {
+          incrArr.push(buildIncrement(record.objectId))
+          var ele = document.querySelector('#leancloud-site-pv');
+          if (ele) {
+            ele.innerText = record.time + 1;
+            if (pvCtn) {
+              pvCtn.style.display = 'inline';
+            }
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#leancloud-site-uv-container');
+      if (uvCtn || enableIncr) {
+        var uvGetter = getRecord(Counter, 'site-uv').then((record) => {
+          var vuv = validUV();
+          vuv && incrArr.push(buildIncrement(record.objectId))
+          var ele = document.querySelector('#leancloud-site-uv');
+          if (ele) {
+            ele.innerText = record.time + (vuv ? 1 : 0);
+            if (uvCtn) {
+              uvCtn.style.display = 'inline';
+            }
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 如果是文章，请求文章的浏览数，并自增
+      if ('true' === 'true') {
+        var viewCtn = document.querySelector('#leancloud-post-views-container');
+        if (viewCtn || enableIncr) {
+          var target = decodeURI('/2020/06/28/17wanxiaoCheckin/');
+          var viewGetter = getRecord(Counter, target).then((record) => {
+            incrArr.push(buildIncrement(record.objectId))
+            if (viewCtn) {
+              var ele = document.querySelector('#leancloud-post-views');
+              if (ele) {
+                ele.innerText = (record.time || 0) + 1;
+                viewCtn.style.display = 'inline';
+              }
+            }
+          });
+          getterArr.push(viewGetter);
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && increment(Counter, incrArr);
+        })
+      }
+    }
+
+    var app_id = 'HohGa0vcu0iQIbm7ELytbaKs-gzGzoHsz'
+    var app_key = '9TiVNoKrg63RPL3ALyu72tt2'
+    var server_url = 'https://hohga0vc.lc-cn-n1-shared.com'
+
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': app_id,
+            'X-LC-Key': app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+
+      addCount(Counter);
+    }
+
+    var api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${ app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(resp => resp.json())
+        .then(({api_server}) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 6,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "✅完美校园自动打卡&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 80,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "§"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

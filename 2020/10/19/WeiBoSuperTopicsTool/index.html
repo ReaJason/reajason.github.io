@@ -1,0 +1,832 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/LingSiKi/images/img/favicon.png">
+  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/LingSiKi/images/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#F08080">
+  <meta name="description" content="">
+  <meta name="author" content="ReaJason">
+  <meta name="keywords" content="">
+  <title>🌈微博超话工具 - ReaJason</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ReaJason's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/LingSiKi/images/img/default.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-10-19 15:35" pubdate>
+        2020年10月19日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      823 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      9
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-post-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-post-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">🌈微博超话工具</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <blockquote>
+<p>我的第一个 PyQt5 的 GUI 程序，抓取微博 API  进行的封装集一键超话签到，获取每日积分，微博 APP 登录积分，帖子评论转发，超话打榜，积分查询于一体的微博超话工具</p>
+<p>本工具使用的微博 API 接口分享 —&gt; <a target="_blank" rel="noopener" href="https://github.com/ReaJason/WeiBo_SuperTopics">https://github.com/ReaJason/WeiBo_SuperTopics</a></p>
+<a id="more"></a>
+</blockquote>
+<div class="note note-danger">
+            <p>使用前请先务必查看注意事项</p>
+          </div>
+
+<h3 id="一、基本功能"><a href="#一、基本功能" class="headerlink" title="一、基本功能"></a>一、基本功能</h3><ol>
+<li>微博账号登录，验证码自动识别</li>
+<li>关注超话签到 +16 分 +6 点以后签到随机积分</li>
+<li>每日积分获取 +3/+5/+8</li>
+<li>微博超话 APP 登录积分 +10 分</li>
+<li>超话帖子评论转发点赞 +16 分</li>
+<li>任务中心查询积分</li>
+<li>超话打榜</li>
+<li>一言欣赏</li>
+</ol>
+<h3 id="二、界面截图"><a href="#二、界面截图" class="headerlink" title="二、界面截图"></a>二、界面截图</h3><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://img.shields.io/badge/python-3.7.4-brightgreen?style=social&logo=appveyor" srcset="/img/loading.gif"></div><div class="group-image-wrap"><img src="https://img.shields.io/badge/pyinstaller-4.0-brightgreen?style=social&logo=appveyor" srcset="/img/loading.gif"></div><div class="group-image-wrap"><img src="https://img.shields.io/badge/PyQt5-5.15.1-brightgreen?style=social&logo=appveyor" srcset="/img/loading.gif"></div><div class="group-image-wrap"><img src="https://img.shields.io/badge/requests-2.24.0-brightgreen?style=social&logo=appveyor" srcset="/img/loading.gif"></div><div class="group-image-wrap"><img src="https://img.shields.io/badge/torch-1.0.1-brightgreen?style=social&logo=appveyor" srcset="/img/loading.gif"></div></div></div>
+
+<p><img src="https://cdn.jsdelivr.net/gh/LingSiKi/images/img/%E6%97%A0PyTorch%E7%89%88%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2.png" srcset="/img/loading.gif" alt="无 PyTorch 版登录界面"></p>
+<center><p style="color:orange; font-size: 14px; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">1、无 PyTorch 版登录界面</p></center>
+
+<p><img src="https://cdn.jsdelivr.net/gh/LingSiKi/images/img/PyTorch%E7%89%88%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2.png" srcset="/img/loading.gif" alt="PyTorch 版登录界面"></p>
+<center><p style="color:orange; font-size: 14px; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">2、PyTorch 版登录界面</p></center>
+
+<p><img src="https://cdn.jsdelivr.net/gh/LingSiKi/images/img/%E8%BF%90%E8%A1%8C%E7%95%8C%E9%9D%A2.png" srcset="/img/loading.gif" alt="运行界面"></p>
+<center><p style="color:orange; font-size: 14px; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">3、运行界面</p></center>
+
+<h3 id="三、注意事项"><a href="#三、注意事项" class="headerlink" title="三、注意事项"></a>三、注意事项</h3><ol>
+<li><p>花了点时间做了两个版本，第一次打包分享，请在网络环境良好的情况下运行本程序：</p>
+<ul>
+<li>无 PyTorch 版：<ul>
+<li>基于 Win10 64 位打包，32 位的操作系统应该用不了</li>
+<li>手动输入验证码，由于没有集成 pytorch，程序体积小，启动快</li>
+<li>下载地址：<ul>
+<li><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1sBs48GbNM7tzgOiGjvhy1Q">https://pan.baidu.com/s/1sBs48GbNM7tzgOiGjvhy1Q</a> 提取码: 1111</li>
+<li><a target="_blank" rel="noopener" href="https://cloud.189.cn/t/r2YvqmEziqy2">https://cloud.189.cn/t/r2YvqmEziqy2</a> 提取码：sk1z</li>
+<li><a target="_blank" rel="noopener" href="https://lingsiki.lanzous.com/i08NFhka96h">https://lingsiki.lanzous.com/i08NFhka96h</a> 提取码:1111</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>PyTorch 版：<ul>
+<li>基于 Win7 32 位操作系统打包，除了 xp 应该都可以运行</li>
+<li>自动输入验证码，优点就是不需要手动输，缺点就体积大，启动略慢</li>
+<li>下载地址：<ul>
+<li><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1TNQdRz_4wVpdVGBXTa3bgA">https://pan.baidu.com/s/1TNQdRz_4wVpdVGBXTa3bgA</a> 提取码: 1111 </li>
+<li><a target="_blank" rel="noopener" href="https://cloud.189.cn/t/iAzQbaRzmaIj">https://cloud.189.cn/t/iAzQbaRzmaIj</a> 提取码：kr0g</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>PyTorch 版接入了 <a target="_blank" rel="noopener" href="https://github.com/skygongque/captcha-weibo">微博验证码识别</a> 的所用到的深度学习 Pytorch 包（90+ M，最新的版本达到了几百兆），因此打包的程序体积也无可避免的变大，考虑过服务器架设打码服务，不过本地更安全（我也没钱买服务器😛）。</p>
+</li>
+<li><p>超话打榜功能开始前请选择打榜超话和分数后再开始。</p>
+<ul>
+<li>select1 对应 1 分</li>
+<li>select10 对应 10 分</li>
+<li>select66 对应 66 分</li>
+<li>select256 对应全部积分</li>
+</ul>
+</li>
+<li><p>如果因未知原因造成软件闪退请及时反馈或重启程序再试：</p>
+<ul>
+<li>反馈格式：「操作系统」+「闪退前使用的功能选项」+「闪退前运行日志的截图」。</li>
+<li>有不错的建议也可以提出来（比如 UI ）</li>
+<li>反馈请发邮箱或在 GitHub 提 issue：<ul>
+<li>Email：<a href="mailto:&#x72;&#101;&#x61;&#x6a;&#97;&#x73;&#x6f;&#x6e;&#64;&#x31;&#54;&#x33;&#x2e;&#99;&#111;&#109;">&#x72;&#101;&#x61;&#x6a;&#97;&#x73;&#x6f;&#x6e;&#64;&#x31;&#54;&#x33;&#x2e;&#99;&#111;&#109;</a></li>
+<li>GitHub：<a target="_blank" rel="noopener" href="https://github.com/ReaJason/WeiBo_SuperTopics">https://github.com/ReaJason/WeiBo_SuperTopics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>关于登录之后保存按钮，只是为了下次启动自动输入（也可以自己修改），会在程序运行的路径下保存账号和密码的明文（介意勿用）。</p>
+</li>
+<li><p>由于微博的一些沙雕检测，请不要一台设备登录太多账号，可能会出现异常的情况，比如无法签到，无法发微博，甚至冻结的情况</p>
+</li>
+</ol>
+<h3 id="四、免责声明"><a href="#四、免责声明" class="headerlink" title="四、免责声明"></a>四、免责声明</h3><ol>
+<li>本程序只供参考学习，请勿用于违法用途</li>
+<li>使用本程序导致微博账号异常或冻结甚至封禁都与作者无关</li>
+<li>凡以任何方式下载使用本程序者，视为自愿接受本声明约束。</li>
+</ol>
+<h3 id="五、参考项目"><a href="#五、参考项目" class="headerlink" title="五、参考项目"></a>五、参考项目</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/skygongque/captcha-weibo">https://github.com/skygongque/captcha-weibo</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/wxy1343/weibo_points">https://github.com/wxy1343/weibo_points</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/sparanoid/chinese-copywriting-guidelines/blob/master/README.zh-CN.md">中文文案指北</a></li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Python/">Python</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/PyQt5/">PyQt5</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/06/28/17wanxiaoCheckin/">
+                        <span class="hidden-mobile">✅完美校园自动打卡</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "HohGa0vcu0iQIbm7ELytbaKs-gzGzoHsz",
+          app_key: "9TiVNoKrg63RPL3ALyu72tt2",
+          placeholder: "说点什么",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "https://hohga0vc.lc-cn-n1-shared.com",
+        });
+      });
+    }
+    waitElementVisible('vcomments', loadValine);
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+    
+
+    
+  </div>
+  
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer>
+  (function () {
+    // 查询存储的记录
+    function getRecord(Counter, target) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({target})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {target, time: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    }
+
+    // 发起自增请求
+    function increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    }
+
+    // 构建自增请求体
+    function buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "time": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    }
+
+    // 校验是否为有效的 UV
+    function validUV() {
+      var key = 'LeanCloud_UV_Flag';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    }
+
+    function addCount(Counter) {
+      var enableIncr = 'true' === 'true' && window.location.hostname !== 'localhost';
+      var getterArr = [];
+      var incrArr = [];
+
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#leancloud-site-pv-container');
+      if (pvCtn || enableIncr) {
+        var pvGetter = getRecord(Counter, 'site-pv').then((record) => {
+          incrArr.push(buildIncrement(record.objectId))
+          var ele = document.querySelector('#leancloud-site-pv');
+          if (ele) {
+            ele.innerText = record.time + 1;
+            if (pvCtn) {
+              pvCtn.style.display = 'inline';
+            }
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#leancloud-site-uv-container');
+      if (uvCtn || enableIncr) {
+        var uvGetter = getRecord(Counter, 'site-uv').then((record) => {
+          var vuv = validUV();
+          vuv && incrArr.push(buildIncrement(record.objectId))
+          var ele = document.querySelector('#leancloud-site-uv');
+          if (ele) {
+            ele.innerText = record.time + (vuv ? 1 : 0);
+            if (uvCtn) {
+              uvCtn.style.display = 'inline';
+            }
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 如果是文章，请求文章的浏览数，并自增
+      if ('true' === 'true') {
+        var viewCtn = document.querySelector('#leancloud-post-views-container');
+        if (viewCtn || enableIncr) {
+          var target = decodeURI('/2020/10/19/WeiBoSuperTopicsTool/');
+          var viewGetter = getRecord(Counter, target).then((record) => {
+            incrArr.push(buildIncrement(record.objectId))
+            if (viewCtn) {
+              var ele = document.querySelector('#leancloud-post-views');
+              if (ele) {
+                ele.innerText = (record.time || 0) + 1;
+                viewCtn.style.display = 'inline';
+              }
+            }
+          });
+          getterArr.push(viewGetter);
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && increment(Counter, incrArr);
+        })
+      }
+    }
+
+    var app_id = 'HohGa0vcu0iQIbm7ELytbaKs-gzGzoHsz'
+    var app_key = '9TiVNoKrg63RPL3ALyu72tt2'
+    var server_url = 'https://hohga0vc.lc-cn-n1-shared.com'
+
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': app_id,
+            'X-LC-Key': app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+
+      addCount(Counter);
+    }
+
+    var api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${ app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(resp => resp.json())
+        .then(({api_server}) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 6,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "🌈微博超话工具&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 80,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "§"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>
