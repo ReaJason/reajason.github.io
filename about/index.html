@@ -264,12 +264,11 @@
 
 </div>
 <div>
-  <span id="timeDate">载入天数...</span>
-  <span id="times">载入时分秒...</span>
+  <span id="timeDate"></span>
   <script>
   var now = new Date();
   function createtime(){
-      var grt= new Date("03/14/2019 00:20:00");//此处修改你的建站时间或者网站上线时间
+      var grt= new Date("03/14/2019 20:00:00");//此处修改你的建站时间或者网站上线时间
       now.setTime(now.getTime()+250);
       days = (now - grt ) / 1000 / 60 / 60 / 24;
       dnum = Math.floor(days);
@@ -288,9 +287,8 @@
       if(String(snum).length ==1 ){
                 snum = "0" + snum;
       }
-      document.getElementById("timeDate").innerHTML = "<center>我和我的宝贝在一起已经&nbsp"+dnum+"&nbsp天<\center>";
-      document.getElementById("times").innerHTML = "<center>" + hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒<\center>";
-  }
+      document.getElementById("timeDate").innerHTML = "<center>我和我的宝贝在一起已经&nbsp"+dnum+"&nbsp天了<\center>";
+ }
   setInterval("createtime()",250);
   </script>
 </div>
@@ -366,6 +364,13 @@
 
 
   
+  <!-- 备案信息 -->
+  <div class="beian">
+    <a href="http://beian.miit.gov.cn/" target="_blank"
+       rel="nofollow noopener">湘ICP备2020020353号</a>
+    
+  </div>
+
 
   
 </footer>
