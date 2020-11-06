@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="ReaJason">
   <meta name="keywords" content="">
-  <title>标签 - 自动化脚本 - ReaJason</title>
+  <title>归档 - ReaJason</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -43,7 +43,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 60vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -167,16 +167,16 @@
                 
 
 <div class="list-group">
-  <p class="h4">共计 1 篇文章</p>
+  <p class="h4">共计 3 篇文章</p>
   <hr>
   
     
       
       <p class="h5">2020</p>
     
-    <a href="/2020/06/28/17wanxiaoCheckin/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">✅完美校园自动打卡</span>
-      <time style="float: right;">06-28</time>
+    <a href="/2020/11/07/AlipayAutoSync/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">⏰支付宝多账号同步</span>
+      <time style="float: right;">11-07</time>
     </a>
   
 </div>
@@ -412,7 +412,7 @@
       if ('false' === 'true') {
         var viewCtn = document.querySelector('#leancloud-post-views-container');
         if (viewCtn || enableIncr) {
-          var target = decodeURI('/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC/index.html');
+          var target = decodeURI('/archives/2020/11/index.html');
           var viewGetter = getRecord(Counter, target).then((record) => {
             incrArr.push(buildIncrement(record.objectId))
             if (viewCtn) {
@@ -481,7 +481,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "标签 - 自动化脚本&nbsp;",
+        "归档&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 80,
