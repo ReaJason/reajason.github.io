@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="ReaJason">
   <meta name="keywords" content="">
-  <title>✅完美校园自动打卡 - ReaJason</title>
+  <title>✅完美校园抓包打卡 - ReaJason</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -177,7 +177,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      984 字
+      779 字
     </span>
   
 
@@ -187,7 +187,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      11
+      10
        分钟
     </span>
   
@@ -225,129 +225,114 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">✅完美校园自动打卡</h1>
+            <h1 style="display: none">✅完美校园抓包打卡</h1>
+            
+              <p class="note note-info">
+                
+                  最后一次更新于：2020年11月26日 晚上
+                
+              </p>
             
             <div class="markdown-body" id="post-body">
               <blockquote>
-<p>基于GitHub Actions的完美校园每日早上六点健康打卡<br>暂只支持无脑post，有能力逆向的可以逆向一下5.0.2版本的完美校园（无壳）<br>完美校园5.0.2版本 —&gt; <a target="_blank" rel="noopener" href="https://lingsiki.lanzous.com/ijnvnhepbxa"> https://lingsiki.lanzous.com/ijnvnhepbxa</a></p>
+<p>基于GitHub Actions的完美校园打卡，支持多人打卡，支持打卡字段信息展示，支持微信推送，每天早上六点自动打卡，理论上所有学校通用！！</p>
 <a id="more"></a>
 </blockquote>
-<h2 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h2><p><a target="_blank" rel="noopener" href="https://github.com/ReaJason/17wanxiaoCheckin-Actions">https://github.com/ReaJason/17wanxiaoCheckin-Actions</a></p>
-<h2 id="项目功能"><a href="#项目功能" class="headerlink" title="项目功能"></a>项目功能</h2><ol>
-<li>每日早上六点完美校园健康打卡</li>
-<li>微信Server酱推送打卡结果</li>
+<div class="note note-success">
+            <p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/ReaJason/17wanxiaoCheckin-Actions">https://github.com/ReaJason/17wanxiaoCheckin-Actions</a></p>
+          </div>
+
+<div class="note note-success">
+            <p>之前的抓包部署教程请前往：<a target="_blank" rel="noopener" href="https://github.com/ReaJason/17wanxiaoCheckin-Actions/blob/master/README_LAST.md">完美校园抓包打卡</a>，你可以在这里学习模拟器抓包APP签到请求哦。</p>
+          </div>
+
+<h3 id="一、功能介绍"><a href="#一、功能介绍" class="headerlink" title="一、功能介绍"></a>一、功能介绍</h3><ol>
+<li>完美校园模拟登录获取token</li>
+<li>自动获取上次提交的打卡数据</li>
+<li>每天早上六点自动打卡（有 10+ 分钟延迟）</li>
+<li>微信推送打卡消息</li>
 </ol>
-<h2 id="项目使用"><a href="#项目使用" class="headerlink" title="项目使用"></a>项目使用</h2><h3 id="一、模拟器抓包"><a href="#一、模拟器抓包" class="headerlink" title="一、模拟器抓包"></a>一、模拟器抓包</h3><blockquote>
-<p>如果你的手机已ROOT可以直接用手机哦</p>
-</blockquote>
-<h4 id="1、模拟器配置"><a href="#1、模拟器配置" class="headerlink" title="1、模拟器配置"></a>1、模拟器配置</h4><ul>
-<li>下载雷神模拟器、完美校园、httpcanary安装包</li>
-<li>天翼网盘：<a target="_blank" rel="noopener" href="https://cloud.189.cn/t/VRZryeb2aIBr">https://cloud.189.cn/t/VRZryeb2aIBr</a></li>
-<li>解压雷神模拟器压缩包并点击绿化（出现什么异常的话把杀毒软件关闭）</li>
-<li>绿化完成点击桌面图标启动</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/%E5%AE%89%E8%A3%85%E9%9B%B7%E7%A5%9E%E6%A8%A1%E6%8B%9F%E5%99%A8.png" srcset="/img/loading.gif"></p>
+<h3 id="二、打卡数据"><a href="#二、打卡数据" class="headerlink" title="二、打卡数据"></a>二、打卡数据</h3><p>细心的你应该会发现，自从第一次打卡之后，每次进去信息基本自动填写好了，我抓取的就是这个接口，</p>
+<p>这样子也相当于大家不用抓包了，如果你进入完美校园健康打卡界面，它没有自动填写信息，可能</p>
+<p>本项目也就不起作用了，可以试试打一次卡然后再进入看有无自动填充信息。</p>
+<pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_post_json</span>(<span class="hljs-params">token</span>):</span>
+    retry = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">while</span> retry &lt; <span class="hljs-number">3</span>:
+        jsons = &#123;<span class="hljs-string">&quot;businessType&quot;</span>: <span class="hljs-string">&quot;epmpics&quot;</span>,
+                 <span class="hljs-string">&quot;jsonData&quot;</span>: &#123;<span class="hljs-string">&quot;templateid&quot;</span>: <span class="hljs-string">&quot;pneumonia&quot;</span>, <span class="hljs-string">&quot;token&quot;</span>: token&#125;,
+                 <span class="hljs-string">&quot;method&quot;</span>: <span class="hljs-string">&quot;userComeApp&quot;</span>&#125;
+        <span class="hljs-keyword">try</span>:
+            <span class="hljs-comment"># 如果不请求一下这个地址，token就会失效</span>
+            requests.post(<span class="hljs-string">&quot;https://reportedh5.17wanxiao.com/api/clock/school/getUserInfo&quot;</span>, data=&#123;<span class="hljs-string">&#x27;token&#x27;</span>: token&#125;)
+            res = requests.post(url=<span class="hljs-string">&quot;https://reportedh5.17wanxiao.com/sass/api/epmpics&quot;</span>, json=jsons, timeout=<span class="hljs-number">10</span>).json()
+        <span class="hljs-keyword">except</span>:
+            retry += <span class="hljs-number">1</span>
+            logging.warning(<span class="hljs-string">&#x27;获取完美校园打卡post参数失败，正在重试...&#x27;</span>)
+            time.sleep(<span class="hljs-number">1</span>)
+            <span class="hljs-keyword">continue</span>
+        <span class="hljs-keyword">if</span> res[<span class="hljs-string">&#x27;code&#x27;</span>] != <span class="hljs-string">&#x27;10000&#x27;</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+        data = json.loads(res[<span class="hljs-string">&#x27;data&#x27;</span>])
+        post_dict = &#123;
+            <span class="hljs-string">&quot;areaStr&quot;</span>: data[<span class="hljs-string">&#x27;areaStr&#x27;</span>],
+            <span class="hljs-string">&quot;deptStr&quot;</span>: data[<span class="hljs-string">&#x27;deptStr&#x27;</span>],
+            <span class="hljs-string">&quot;deptid&quot;</span>: data[<span class="hljs-string">&#x27;deptStr&#x27;</span>][<span class="hljs-string">&#x27;deptid&#x27;</span>],
+            <span class="hljs-string">&quot;customerid&quot;</span>: data[<span class="hljs-string">&#x27;customerid&#x27;</span>],
+            <span class="hljs-string">&quot;userid&quot;</span>: data[<span class="hljs-string">&#x27;userid&#x27;</span>],
+            <span class="hljs-string">&quot;username&quot;</span>: data[<span class="hljs-string">&#x27;username&#x27;</span>],
+            <span class="hljs-string">&quot;stuNo&quot;</span>: data[<span class="hljs-string">&#x27;stuNo&#x27;</span>],
+            <span class="hljs-string">&quot;phonenum&quot;</span>: data[<span class="hljs-string">&#x27;phonenum&#x27;</span>],
+            <span class="hljs-string">&quot;templateid&quot;</span>: data[<span class="hljs-string">&#x27;templateid&#x27;</span>],
+            <span class="hljs-string">&quot;updatainfo&quot;</span>: [&#123;<span class="hljs-string">&quot;propertyname&quot;</span>: i[<span class="hljs-string">&quot;propertyname&quot;</span>], <span class="hljs-string">&quot;value&quot;</span>: i[<span class="hljs-string">&quot;value&quot;</span>]&#125; <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span>
+                           data[<span class="hljs-string">&#x27;cusTemplateRelations&#x27;</span>]],
+            <span class="hljs-string">&quot;checkbox&quot;</span>: [&#123;<span class="hljs-string">&quot;description&quot;</span>: i[<span class="hljs-string">&quot;decription&quot;</span>], <span class="hljs-string">&quot;value&quot;</span>: i[<span class="hljs-string">&quot;value&quot;</span>]&#125; <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span>
+                         data[<span class="hljs-string">&#x27;cusTemplateRelations&#x27;</span>]],
+        &#125;
+        <span class="hljs-comment"># print(json.dumps(post_dict, sort_keys=True, indent=4, ensure_ascii=False))</span>
+        <span class="hljs-comment"># 在这里修改没有填写的数据，遍历post_dict[&#x27;updatainfo&#x27;]修改就行</span>
+        logging.info(<span class="hljs-string">&#x27;获取完美校园打卡post参数成功&#x27;</span>)
+        <span class="hljs-keyword">return</span> post_dict
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span></code></pre>
+
+
+
+<h3 id="三、使用方法"><a href="#三、使用方法" class="headerlink" title="三、使用方法"></a>三、使用方法</h3><ol>
+<li><p>请先确保进入健康打卡界面，信息能够 **正确 **的自动填写（没有自动填写的项，可以自行修改代码）</p>
+</li>
+<li><p>点击右上角的 <code>fork</code>，<code>fork</code> 本项目到自己仓库中</p>
+</li>
+</ol>
+<p>   <img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/click_fork.png" srcset="/img/loading.gif"></p>
+<ol start="3">
+<li>开启 <code>Actions</code></li>
+</ol>
+<p>   <img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/start_action.png" srcset="/img/loading.gif"></p>
+<p>   <img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/end_actions.png" srcset="/img/loading.gif"></p>
+<ol start="4">
+<li><p>设置三个 <code>secrets</code>  字段：<code>USERNAME</code>、<code>PASSWORD</code>、<code>SCKEY</code>（对应就是账号，密码以及 Server 酱）</p>
 <ul>
-<li>拖动apk文件到模拟器窗口完成app的安装</li>
+<li>如果是多人打卡的话：<ul>
+<li>USERNAME字段：手机号1,手机号2,……（与下面密码对应），例如：<code>1737782***,13602***</code></li>
+<li>PASSWORD字段：密码1,密码2,……  （与上面账号对应），例如：<code>123456,456789</code></li>
+<li>SCKEY字段：填写一个即可（注册请前往：<a target="_blank" rel="noopener" href="https://sc.ftqq.com/3.version">Server酱官网</a>），例如：<code>SCU90543*******</code></li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/%E9%9B%B7%E7%A5%9E%E6%A8%A1%E6%8B%9F%E5%99%A8%E8%AE%BE%E7%BD%AE.png" srcset="/img/loading.gif"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/%E5%AE%89%E8%A3%85apk%E6%96%87%E4%BB%B6.png" srcset="/img/loading.gif"></p>
-<h4 id="2、httpcanary"><a href="#2、httpcanary" class="headerlink" title="2、httpcanary"></a>2、httpcanary</h4><ul>
-<li>打开刚刚安装在桌面的Httpcanary</li>
-<li>安装证书并移动到根目录</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/%E5%90%88%E6%88%901.png" srcset="/img/loading.gif"></p>
-<ul>
-<li>设置目标应用为完美校园APP（就不需要其余操作了，不要点右下角的小飞机）</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/%E5%90%88%E6%88%902.png" srcset="/img/loading.gif"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/%E5%90%88%E6%88%903.png" srcset="/img/loading.gif"></p>
-<h4 id="3、开始抓包"><a href="#3、开始抓包" class="headerlink" title="3、开始抓包"></a>3、开始抓包</h4><ul>
-<li>打开完美校园app（显示root忽略即可），进入健康打卡并设置相关信息（不提交）</li>
-<li>切换到httpcanary，开启抓包（点右下角的小飞机）</li>
-<li>切换完美校园提交信息，打卡成功</li>
-<li>切换httpcanary，停止抓包</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/%E5%90%88%E6%88%904.png" srcset="/img/loading.gif"></p>
-<h4 id="4、抓包分析"><a href="#4、抓包分析" class="headerlink" title="4、抓包分析"></a>4、抓包分析</h4><ul>
-<li>翻阅找到sass字样的链接，点击进去（如果有多个, 请点靠上面的）</li>
-<li>第一个框为请求连接，第二个框为此网络请求为post请求</li>
-<li>点击请求一栏，并在底部选择text，即可查看自己所填写的数据（记下来，或者复制出去）</li>
-<li>点击响应一栏，并在底部选择text，即可查看响应结果（成功则为打卡成功，打卡频繁则失败）</li>
-<li>至此我们就获得了我们绝大多数的数据了（下面项目使用的数据填写需要）</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/%E5%90%88%E6%88%905.png" srcset="/img/loading.gif"></p>
-<h3 id="二、申请Server酱"><a href="#二、申请Server酱" class="headerlink" title="二、申请Server酱"></a>二、申请Server酱</h3><h4 id="1、申请GitHub"><a href="#1、申请GitHub" class="headerlink" title="1、申请GitHub"></a>1、申请GitHub</h4><ul>
-<li>Github官网：<a target="_blank" rel="noopener" href="https://github.com/">https://github.com/</a> （使用邮箱注册并验证）</li>
-</ul>
-<h4 id="2、注册Server酱"><a href="#2、注册Server酱" class="headerlink" title="2、注册Server酱"></a>2、注册Server酱</h4><ul>
-<li>Server酱官网：<a target="_blank" rel="noopener" href="http://sc.ftqq.com/3.version">http://sc.ftqq.com/3.version</a> </li>
-<li>使用刚注册的Github账号登录</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/Server1.png" srcset="/img/loading.gif"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/Server2.png" srcset="/img/loading.gif"></p>
-<ul>
-<li>微信绑定，扫码关注即可绑定</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/Server3.png" srcset="/img/loading.gif"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/Server4.png" srcset="/img/loading.gif"></p>
-<ul>
-<li>测试一下是否能推送成功，并复制下自己的SCKEY（下面项目使用的数据填写需要）</li>
-<li>至此我们就获得了我们的最后一个数据，接下来就是了解如何使用此项目文件了</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/Server5.png" srcset="/img/loading.gif"></p>
-<h3 id="三、项目fork与部署"><a href="#三、项目fork与部署" class="headerlink" title="三、项目fork与部署"></a>三、项目fork与部署</h3><h4 id="1、进入仓库"><a href="#1、进入仓库" class="headerlink" title="1、进入仓库"></a>1、进入仓库</h4><ul>
-<li><p>此项目地址：<a target="_blank" rel="noopener" href="https://github.com/ReaJason/17wanxiaoCheckin-Actions">https://github.com/ReaJason/17wanxiaoCheckin-Actions</a></p>
-</li>
-<li><p>点击右上角的fork即可将项目文件拉到自己的库中</p>
 </li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/fork.png" srcset="/img/loading.gif"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/fork2.png" srcset="/img/loading.gif"></p>
-<h4 id="2、设置Secrets"><a href="#2、设置Secrets" class="headerlink" title="2、设置Secrets"></a>2、设置Secrets</h4><ul>
-<li><p>找到自己fork的库，点击Settings-&gt;Secrets-&gt;New sceret</p>
 </li>
-<li><p>字段名使用大写，下面的值则填写自己的值(不要回车,干净利落的填写就可)，总共12个，细心填写这关乎之后的成功与否</p>
-</li>
-<li><pre><code># 设置如下secret字段
-&quot;&quot;&quot;
-TEXT(学院专业班级信息)                例：林学院-林学(陶铸实验班)-2017林学(陶铸实验班)1班
-DEPTID(未知id字段)                   例：141670
-ADDRESS(详细地址)                    例：非常富贵
-ADDTEXT(省-市-县/区)                 例：江西省-南昌市-高新区
-CODE(盲猜邮编)                       例：360192
-STUNUM(学号)                        例：20170101
-USERNAME(姓名)                      例：小冯
-PHONENUM(电话)                      例：...自己电话...
-USERID(完美校园分配的用户id)          例：6274894
-EMERGENCY(紧急联系人)                例：紧急人
-EMERGENCYPHONE(紧急联系人电话)        例：23667712771
-SCKEY(Server酱微信推送)
-&quot;&quot;&quot;</code></pre>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/secrets.png" srcset="/img/loading.gif"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/secrets2.png" srcset="/img/loading.gif"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/secrets3.png" srcset="/img/loading.gif"></p>
-<h4 id="3、开启Actions"><a href="#3、开启Actions" class="headerlink" title="3、开启Actions"></a>3、开启Actions</h4><ul>
-<li><p>找到自己fork的库，点击Settings-&gt;Action-&gt;I understand…</p>
-</li>
-<li><p>回到项目主页，修改README.md触发Actions</p>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/action1.png" srcset="/img/loading.gif"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/actions2.png" srcset="/img/loading.gif"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/actions3.png" srcset="/img/loading.gif"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/actions4.png" srcset="/img/loading.gif"></p>
-<h4 id="4、结果查看"><a href="#4、结果查看" class="headerlink" title="4、结果查看"></a>4、结果查看</h4><ul>
-<li>通过Update README.md – &gt; build – &gt; HealthCheckin</li>
-<li>手机微信推送查看</li>
-<li>成功了一次之后则开启了自动化部署（每天早上六点自动打卡）</li>
-<li>如果失败，则在运行状况的HealthCheckin中查看报错情况，解决不了可以提issue</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/actions5.png" srcset="/img/loading.gif"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/sucess.png" srcset="/img/loading.gif"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/sucess1.jpg" srcset="/img/loading.gif"></p>
+</ol>
+<p>   <img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/new_secrets.png" srcset="/img/loading.gif"></p>
+<p>   <img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/secrets_details.png" srcset="/img/loading.gif"></p>
+<p>   <img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/end_secrets.png" srcset="/img/loading.gif"></p>
+<ol start="5">
+<li>修改 <code>README.md</code> 测试一次</li>
+</ol>
+<p>   <img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/modify_readme.png" srcset="/img/loading.gif"></p>
+<p>   <img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/end_modify.png" srcset="/img/loading.gif"></p>
+<ol start="6">
+<li>查看 <code>Actions</code> 运行情况，以及微信推送情况，至此每日六点多将会自行打卡</li>
+</ol>
+<p>   <img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/check_status.png" srcset="/img/loading.gif"></p>
+<p>   <img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/end_check.png" srcset="/img/loading.gif"></p>
 
             </div>
             <hr>
@@ -731,7 +716,7 @@ SCKEY(Server酱微信推送)
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "✅完美校园自动打卡&nbsp;",
+        "✅完美校园抓包打卡&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 80,
