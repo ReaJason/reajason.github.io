@@ -13,27 +13,30 @@
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <meta name="theme-color" content="#F08080">
+  <meta name="theme-color" content="#2f4154">
   <meta name="description" content="">
   <meta name="author" content="ReaJason">
   <meta name="keywords" content="">
-  <title>⏰支付宝多账号同步 - ReaJason</title>
+  <title>支付宝多账号同步 - ReaJason</title>
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
   <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
 
   
     
     
       
-      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
     
   
 
   
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -50,6 +53,10 @@
 <!-- 自定义样式保持在最底部 -->
 
 
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.6","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"HohGa0vcu0iQIbm7ELytbaKs-gzGzoHsz","app_key":"9TiVNoKrg63RPL3ALyu72tt2","server_url":"https://hohga0vc.lc-cn-n1-shared.com"}}};
+  </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
 <meta name="generator" content="Hexo 5.2.0"></head>
@@ -154,8 +161,8 @@
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="container page-header text-center fade-in-up">
-            <span class="h2" id="subtitle">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="支付宝多账号同步">
               
             </span>
 
@@ -196,9 +203,9 @@
   
     
       <!-- LeanCloud 统计文章PV -->
-      <span id="leancloud-post-views-container" class="post-meta" style="display: none">
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
         <i class="iconfont icon-eye" aria-hidden="true"></i>
-        <span id="leancloud-post-views"></span> 次
+        <span id="leancloud-page-views"></span> 次
       </span>
     
   
@@ -223,17 +230,17 @@
     <div class="col-lg-8 nopadding-md">
       <div class="container nopadding-md" id="board-ctn">
         <div class="py-5" id="board">
-          <article class="post-content mx-auto" id="post">
+          <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">⏰支付宝多账号同步</h1>
+            <h1 style="display: none">支付宝多账号同步</h1>
             
               <p class="note note-info">
                 
-                  最后一次更新于：2020年11月26日 晚上
+                  本文最后更新于：9 分钟前
                 
               </p>
             
-            <div class="markdown-body" id="post-body">
+            <div class="markdown-body">
               <blockquote>
 <p>万恶的蚂蚁森林种树，什么水商，各种辅助外挂满天飞，当然最终受益的还是支付宝，最近蚂蚁集团上市暂缓也是真强，不多说，为了自己能量蹭蹭往上涨，特意注册了五六个小号刷能量，为大号浇水，一天1kg能量不用愁<br>主要实现功能为支付宝多账号切换+进入运动进行步数同步<br>本脚本所使用的autojs版本为 —&gt; <a target="_blank" rel="noopener" href="https://lingsiki.lanzous.com/in80Mi4ve3a">Auto.js_4.1.1 Alpha2</a></p>
 <a id="more"></a>
@@ -247,140 +254,15 @@
 <li>支付宝账号切换</li>
 <li>运动同步以及捐步</li>
 </ol>
-<h3 id="二、代码实现"><a href="#二、代码实现" class="headerlink" title="二、代码实现"></a>二、代码实现</h3><h4 id="1、关闭支付宝"><a href="#1、关闭支付宝" class="headerlink" title="1、关闭支付宝"></a>1、关闭支付宝</h4><pre><code class="hljs javascript"><span class="hljs-comment">/**</span>
-<span class="hljs-comment"> * 关闭支付宝函数</span>
-<span class="hljs-comment"> */</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">closeAlipay</span>(<span class="hljs-params"></span>)</span>&#123;
-    appName = app.getPackageName(<span class="hljs-string">&#x27;支付宝&#x27;</span>)
-    app.openAppSetting(appName)
-    sleep(<span class="hljs-number">1000</span>)
-    <span class="hljs-keyword">var</span> obj = text(<span class="hljs-string">&#x27;结束运行&#x27;</span>).findOne(<span class="hljs-number">5000</span>)
-    clickCenter(obj)
-    <span class="hljs-keyword">var</span> btn = idContains(<span class="hljs-string">&#x27;button1&#x27;</span>).findOne(<span class="hljs-number">1000</span>)
-    <span class="hljs-keyword">if</span> (btn)&#123;
-        btn.click()
-    &#125;
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;支付宝关闭成功！\n开启任务&quot;</span>)
-&#125;</code></pre>
+<h3 id="二、代码实现"><a href="#二、代码实现" class="headerlink" title="二、代码实现"></a>二、代码实现</h3><h4 id="1、关闭支付宝"><a href="#1、关闭支付宝" class="headerlink" title="1、关闭支付宝"></a>1、关闭支付宝</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 关闭支付宝函数</span><br><span class="hljs-comment"> */</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">closeAlipay</span>(<span class="hljs-params"></span>)</span>&#123;<br>    appName = app.getPackageName(<span class="hljs-string">&#x27;支付宝&#x27;</span>)<br>    app.openAppSetting(appName)<br>    sleep(<span class="hljs-number">1000</span>)<br>    <span class="hljs-keyword">var</span> obj = text(<span class="hljs-string">&#x27;结束运行&#x27;</span>).findOne(<span class="hljs-number">5000</span>)<br>    clickCenter(obj)<br>    <span class="hljs-keyword">var</span> btn = idContains(<span class="hljs-string">&#x27;button1&#x27;</span>).findOne(<span class="hljs-number">1000</span>)<br>    <span class="hljs-keyword">if</span> (btn)&#123;<br>        btn.click()<br>    &#125;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;支付宝关闭成功！\n开启任务&quot;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h4 id="2、支付宝刷步数"><a href="#2、支付宝刷步数" class="headerlink" title="2、支付宝刷步数"></a>2、支付宝刷步数</h4><pre><code class="hljs javascript"><span class="hljs-comment">/**</span>
-<span class="hljs-comment"> * 利用三星健康 + 三星健康管理实现支付宝刷步数</span>
-<span class="hljs-comment"> * 环境搭建（Root手机）：</span>
-<span class="hljs-comment"> * 1、下载刷步数三件套（https://lingsiki.lanzous.com/b0ejfe25a）。</span>
-<span class="hljs-comment"> * 2、edxp激活应用变量模块，并且设置三星健康、支付宝和三星健康管理模拟机型为三星型号手机。</span>
-<span class="hljs-comment"> * 3、进入三星健康设置-关于三星健康点击版本号十次开启开发者模式-然后进入数据权限开启支付宝和三星健康管理的所有权限。</span>
-<span class="hljs-comment"> * 4、进入支付宝的支付宝运动-右上角三点进入设置，开启记录运动数据。</span>
-<span class="hljs-comment"> * 5、保持三星健康在后台，打开三星健康管理增加步数，进入三星健康等一会儿即可同步步数，最后关闭重启支付宝，进入运动查看同步情况</span>
-<span class="hljs-comment"> * 6、若失败可能是机型伪装的问题，也有可能是第一天刷步数可能延迟会有点大，第二天以后一般都是秒同步的</span>
-<span class="hljs-comment"> * <span class="hljs-doctag">@param <span class="hljs-type">&#123;步数=count * 12000&#125;</span> </span>count </span>
-<span class="hljs-comment"> */</span>
+<h4 id="2、支付宝刷步数"><a href="#2、支付宝刷步数" class="headerlink" title="2、支付宝刷步数"></a>2、支付宝刷步数</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 利用三星健康 + 三星健康管理实现支付宝刷步数</span><br><span class="hljs-comment"> * 环境搭建（Root手机）：</span><br><span class="hljs-comment"> * 1、下载刷步数三件套（https://lingsiki.lanzous.com/b0ejfe25a）。</span><br><span class="hljs-comment"> * 2、edxp激活应用变量模块，并且设置三星健康、支付宝和三星健康管理模拟机型为三星型号手机。</span><br><span class="hljs-comment"> * 3、进入三星健康设置-关于三星健康点击版本号十次开启开发者模式-然后进入数据权限开启支付宝和三星健康管理的所有权限。</span><br><span class="hljs-comment"> * 4、进入支付宝的支付宝运动-右上角三点进入设置，开启记录运动数据。</span><br><span class="hljs-comment"> * 5、保持三星健康在后台，打开三星健康管理增加步数，进入三星健康等一会儿即可同步步数，最后关闭重启支付宝，进入运动查看同步情况</span><br><span class="hljs-comment"> * 6、若失败可能是机型伪装的问题，也有可能是第一天刷步数可能延迟会有点大，第二天以后一般都是秒同步的</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param <span class="hljs-type">&#123;步数=count * 12000&#125;</span> </span>count </span><br><span class="hljs-comment"> */</span><br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">steps</span>(<span class="hljs-params">count</span>) </span>&#123;<br>    launchApp(<span class="hljs-string">&#x27;三星健康&#x27;</span>);<br>    sleep(<span class="hljs-number">1000</span>);<br>    launchApp(<span class="hljs-string">&#x27;三星健康步数管理&#x27;</span>);<br>    idContains(<span class="hljs-string">&quot;floatingActionButton&quot;</span>).waitFor()<br>    sleep(<span class="hljs-number">1000</span>)<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> index = <span class="hljs-number">0</span>; index &lt; count; index++) &#123;<br>        idContains(<span class="hljs-string">&quot;floatingActionButton&quot;</span>).findOne().click()<br>        sleep(<span class="hljs-number">500</span>)<br>        click(<span class="hljs-number">800</span>, <span class="hljs-number">1750</span>)<br>        sleep(<span class="hljs-number">500</span>)<br>    &#125;<br>    launchApp(<span class="hljs-string">&#x27;三星健康&#x27;</span>);<br>    text(<span class="hljs-string">&#x27;主页&#x27;</span>).waitFor();<br>    <span class="hljs-keyword">var</span> obj = idContains(<span class="hljs-string">&#x27;goal&#x27;</span>).findOne()<br>    clickCenter(obj);<br>    sleep(<span class="hljs-number">5000</span>)<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>)&#123;<br>        step = idContains(<span class="hljs-string">&#x27;current_steps&#x27;</span>).findOne().text()<br>        <span class="hljs-keyword">if</span> (step != <span class="hljs-string">&#x27;0&#x27;</span>)&#123;<br>            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;当前刷步数为：&quot;</span> + step)<br>            <span class="hljs-keyword">return</span> step;<br>        &#125;<br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">steps</span>(<span class="hljs-params">count</span>) </span>&#123;
-    launchApp(<span class="hljs-string">&#x27;三星健康&#x27;</span>);
-    sleep(<span class="hljs-number">1000</span>);
-    launchApp(<span class="hljs-string">&#x27;三星健康步数管理&#x27;</span>);
-    idContains(<span class="hljs-string">&quot;floatingActionButton&quot;</span>).waitFor()
-    sleep(<span class="hljs-number">1000</span>)
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> index = <span class="hljs-number">0</span>; index &lt; count; index++) &#123;
-        idContains(<span class="hljs-string">&quot;floatingActionButton&quot;</span>).findOne().click()
-        sleep(<span class="hljs-number">500</span>)
-        click(<span class="hljs-number">800</span>, <span class="hljs-number">1750</span>)
-        sleep(<span class="hljs-number">500</span>)
-    &#125;
-    launchApp(<span class="hljs-string">&#x27;三星健康&#x27;</span>);
-    text(<span class="hljs-string">&#x27;主页&#x27;</span>).waitFor();
-    <span class="hljs-keyword">var</span> obj = idContains(<span class="hljs-string">&#x27;goal&#x27;</span>).findOne()
-    clickCenter(obj);
-    sleep(<span class="hljs-number">5000</span>)
-    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>)&#123;
-        step = idContains(<span class="hljs-string">&#x27;current_steps&#x27;</span>).findOne().text()
-        <span class="hljs-keyword">if</span> (step != <span class="hljs-string">&#x27;0&#x27;</span>)&#123;
-            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;当前刷步数为：&quot;</span> + step)
-            <span class="hljs-keyword">return</span> step;
-        &#125;
-    &#125;
+<h4 id="3、支付宝登录"><a href="#3、支付宝登录" class="headerlink" title="3、支付宝登录"></a>3、支付宝登录</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 支付宝登录函数</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param <span class="hljs-type">&#123;账号&#125;</span> </span>accont </span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param <span class="hljs-type">&#123;密码&#125;</span> </span>key </span><br><span class="hljs-comment"> */</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">login</span>(<span class="hljs-params">accont, key</span>) </span>&#123;<br>    <span class="hljs-comment">// 进入支付宝密码登录界面</span><br>    app.startActivity(app.intent(&#123;<br>        action: <span class="hljs-string">&quot;VIEW&quot;</span>,<br>        data: <span class="hljs-string">&quot;alipayqr://platformapi/startapp?appId=20000008&quot;</span>,<br>    &#125;));<br>    textMatches(<span class="hljs-string">&quot;换个账号登录&quot;</span>).findOne(<span class="hljs-number">5000</span>)<br>    click(<span class="hljs-string">&quot;换个账号登录&quot;</span>)<br>    sleep(<span class="hljs-number">400</span>)<br>    setText(<span class="hljs-number">0</span>, accont);<br>    textMatches(<span class="hljs-string">&quot;下一步&quot;</span>).findOne(<span class="hljs-number">5000</span>)<br>    click(<span class="hljs-string">&quot;下一步&quot;</span>)<br>    idContains(<span class="hljs-string">&quot;loginButton&quot;</span>).waitFor()<br>    <span class="hljs-keyword">var</span> obj = textMatches(<span class="hljs-regexp">/短信验证码登录|忘记密码?|换个方式登录/</span>).findOne().text()<br>    <span class="hljs-keyword">if</span> (obj == <span class="hljs-string">&quot;短信验证码登录&quot;</span>) &#123;<br>        sleep(<span class="hljs-number">200</span>)<br>        textMatches(<span class="hljs-regexp">/换个验证方式|换个方式登录/</span>).findOne()<br>        click(<span class="hljs-string">&quot;换个验证方式&quot;</span>)<br>        click(<span class="hljs-string">&quot;换个方式登录&quot;</span>)<br>        text(<span class="hljs-string">&quot;密码登录&quot;</span>).findOne()<br>        sleep(<span class="hljs-number">200</span>)<br>        <span class="hljs-keyword">while</span> (!click(<span class="hljs-string">&quot;密码登录&quot;</span>)) &#123; &#125;<br>        sleep(<span class="hljs-number">400</span>)<br>        setText(<span class="hljs-number">0</span>, accont);<br>        sleep(<span class="hljs-number">200</span>);<br>        setText(<span class="hljs-number">1</span>, key);<br>        sleep(<span class="hljs-number">200</span>)<br>        idContains(<span class="hljs-string">&quot;loginButton&quot;</span>).findOne().click()<br>        <span class="hljs-built_in">console</span>.log(accont, <span class="hljs-string">&quot;登录成功&quot;</span>)<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        sleep(<span class="hljs-number">400</span>)<br>        setText(<span class="hljs-number">1</span>, key);<br>        sleep(<span class="hljs-number">400</span>)<br>        idContains(<span class="hljs-string">&quot;loginButton&quot;</span>).findOne().click()<br>        <span class="hljs-built_in">console</span>.log(accont, <span class="hljs-string">&quot;登录成功&quot;</span>)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-&#125;</code></pre>
+<h4 id="4、步数同步"><a href="#4、步数同步" class="headerlink" title="4、步数同步"></a>4、步数同步</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 进入支付宝运动步数同步以及捐步</span><br><span class="hljs-comment"> */</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">go_sports</span>(<span class="hljs-params"></span>) </span>&#123;<br>    sleep(<span class="hljs-number">2000</span>)<br>    app.startActivity(&#123;<br>        data: <span class="hljs-string">&quot;alipayqr://platformapi/startapp?saId=20000869&quot;</span><br>    &#125;)<br>    textContains(<span class="hljs-string">&quot;走路线&quot;</span>).waitFor();<br>    swipe(device.width / <span class="hljs-number">9</span> * <span class="hljs-number">8</span>, device.height / <span class="hljs-number">3</span>, device.width / <span class="hljs-number">9</span> * <span class="hljs-number">8</span>, device.height / <span class="hljs-number">3</span> * <span class="hljs-number">2</span>, <span class="hljs-number">500</span>)<br>    sleep(<span class="hljs-number">5000</span>)<br>    <span class="hljs-keyword">var</span> obj1 = text(<span class="hljs-string">&#x27;去捐步&#x27;</span>).findOne(<span class="hljs-number">1000</span>)<br>    <span class="hljs-keyword">if</span> (obj1 != <span class="hljs-literal">null</span>)&#123;<br>        clickCenter(text(<span class="hljs-string">&#x27;去捐步&#x27;</span>).findOne())<br>        sleep(<span class="hljs-number">3000</span>)<br>        text(<span class="hljs-string">&#x27;立即捐步&#x27;</span>).findOne()<br>        sleep(<span class="hljs-number">200</span>)<br>        <span class="hljs-keyword">while</span> (!click(<span class="hljs-string">&quot;立即捐步&quot;</span>)) &#123;&#125;<br>        sleep(<span class="hljs-number">500</span>)<br>        clickCenter(text(<span class="hljs-string">&quot;知道了&quot;</span>).findOne(<span class="hljs-number">1000</span>))<br>        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;捐步成功&#x27;</span>)<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;已经捐完步数了&#x27;</span>)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h4 id="3、支付宝登录"><a href="#3、支付宝登录" class="headerlink" title="3、支付宝登录"></a>3、支付宝登录</h4><pre><code class="hljs javascript"><span class="hljs-comment">/**</span>
-<span class="hljs-comment"> * 支付宝登录函数</span>
-<span class="hljs-comment"> * <span class="hljs-doctag">@param <span class="hljs-type">&#123;账号&#125;</span> </span>accont </span>
-<span class="hljs-comment"> * <span class="hljs-doctag">@param <span class="hljs-type">&#123;密码&#125;</span> </span>key </span>
-<span class="hljs-comment"> */</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">login</span>(<span class="hljs-params">accont, key</span>) </span>&#123;
-    <span class="hljs-comment">// 进入支付宝密码登录界面</span>
-    app.startActivity(app.intent(&#123;
-        action: <span class="hljs-string">&quot;VIEW&quot;</span>,
-        data: <span class="hljs-string">&quot;alipayqr://platformapi/startapp?appId=20000008&quot;</span>,
-    &#125;));
-    textMatches(<span class="hljs-string">&quot;换个账号登录&quot;</span>).findOne(<span class="hljs-number">5000</span>)
-    click(<span class="hljs-string">&quot;换个账号登录&quot;</span>)
-    sleep(<span class="hljs-number">400</span>)
-    setText(<span class="hljs-number">0</span>, accont);
-    textMatches(<span class="hljs-string">&quot;下一步&quot;</span>).findOne(<span class="hljs-number">5000</span>)
-    click(<span class="hljs-string">&quot;下一步&quot;</span>)
-    idContains(<span class="hljs-string">&quot;loginButton&quot;</span>).waitFor()
-    <span class="hljs-keyword">var</span> obj = textMatches(<span class="hljs-regexp">/短信验证码登录|忘记密码?|换个方式登录/</span>).findOne().text()
-    <span class="hljs-keyword">if</span> (obj == <span class="hljs-string">&quot;短信验证码登录&quot;</span>) &#123;
-        sleep(<span class="hljs-number">200</span>)
-        textMatches(<span class="hljs-regexp">/换个验证方式|换个方式登录/</span>).findOne()
-        click(<span class="hljs-string">&quot;换个验证方式&quot;</span>)
-        click(<span class="hljs-string">&quot;换个方式登录&quot;</span>)
-        text(<span class="hljs-string">&quot;密码登录&quot;</span>).findOne()
-        sleep(<span class="hljs-number">200</span>)
-        <span class="hljs-keyword">while</span> (!click(<span class="hljs-string">&quot;密码登录&quot;</span>)) &#123; &#125;
-        sleep(<span class="hljs-number">400</span>)
-        setText(<span class="hljs-number">0</span>, accont);
-        sleep(<span class="hljs-number">200</span>);
-        setText(<span class="hljs-number">1</span>, key);
-        sleep(<span class="hljs-number">200</span>)
-        idContains(<span class="hljs-string">&quot;loginButton&quot;</span>).findOne().click()
-        <span class="hljs-built_in">console</span>.log(accont, <span class="hljs-string">&quot;登录成功&quot;</span>)
-    &#125; <span class="hljs-keyword">else</span> &#123;
-        sleep(<span class="hljs-number">400</span>)
-        setText(<span class="hljs-number">1</span>, key);
-        sleep(<span class="hljs-number">400</span>)
-        idContains(<span class="hljs-string">&quot;loginButton&quot;</span>).findOne().click()
-        <span class="hljs-built_in">console</span>.log(accont, <span class="hljs-string">&quot;登录成功&quot;</span>)
-    &#125;
-&#125;</code></pre>
-
-<h4 id="4、步数同步"><a href="#4、步数同步" class="headerlink" title="4、步数同步"></a>4、步数同步</h4><pre><code class="hljs javascript"><span class="hljs-comment">/**</span>
-<span class="hljs-comment"> * 进入支付宝运动步数同步以及捐步</span>
-<span class="hljs-comment"> */</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">go_sports</span>(<span class="hljs-params"></span>) </span>&#123;
-    sleep(<span class="hljs-number">2000</span>)
-    app.startActivity(&#123;
-        data: <span class="hljs-string">&quot;alipayqr://platformapi/startapp?saId=20000869&quot;</span>
-    &#125;)
-    textContains(<span class="hljs-string">&quot;走路线&quot;</span>).waitFor();
-    swipe(device.width / <span class="hljs-number">9</span> * <span class="hljs-number">8</span>, device.height / <span class="hljs-number">3</span>, device.width / <span class="hljs-number">9</span> * <span class="hljs-number">8</span>, device.height / <span class="hljs-number">3</span> * <span class="hljs-number">2</span>, <span class="hljs-number">500</span>)
-    sleep(<span class="hljs-number">5000</span>)
-    <span class="hljs-keyword">var</span> obj1 = text(<span class="hljs-string">&#x27;去捐步&#x27;</span>).findOne(<span class="hljs-number">1000</span>)
-    <span class="hljs-keyword">if</span> (obj1 != <span class="hljs-literal">null</span>)&#123;
-        clickCenter(text(<span class="hljs-string">&#x27;去捐步&#x27;</span>).findOne())
-        sleep(<span class="hljs-number">3000</span>)
-        text(<span class="hljs-string">&#x27;立即捐步&#x27;</span>).findOne()
-        sleep(<span class="hljs-number">200</span>)
-        <span class="hljs-keyword">while</span> (!click(<span class="hljs-string">&quot;立即捐步&quot;</span>)) &#123;&#125;
-        sleep(<span class="hljs-number">500</span>)
-        clickCenter(text(<span class="hljs-string">&quot;知道了&quot;</span>).findOne(<span class="hljs-number">1000</span>))
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;捐步成功&#x27;</span>)
-    &#125;<span class="hljs-keyword">else</span>&#123;
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;已经捐完步数了&#x27;</span>)
-    &#125;
-&#125;</code></pre>
-
-<h4 id="5、进入蚂蚁森林"><a href="#5、进入蚂蚁森林" class="headerlink" title="5、进入蚂蚁森林"></a>5、进入蚂蚁森林</h4><pre><code class="hljs javascript"><span class="hljs-comment">/**</span>
-<span class="hljs-comment"> * 进入蚂蚁森林</span>
-<span class="hljs-comment"> */</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">enterForest</span>(<span class="hljs-params"></span>)</span>&#123;
-    sleep(<span class="hljs-number">2000</span>)
-    app.startActivity(&#123;
-        data: <span class="hljs-string">&quot;alipayqr://platformapi/startapp?saId=60000002&quot;</span>
-    &#125;)
-    sleep(<span class="hljs-number">2000</span>)
-&#125;</code></pre>
+<h4 id="5、进入蚂蚁森林"><a href="#5、进入蚂蚁森林" class="headerlink" title="5、进入蚂蚁森林"></a>5、进入蚂蚁森林</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 进入蚂蚁森林</span><br><span class="hljs-comment"> */</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">enterForest</span>(<span class="hljs-params"></span>)</span>&#123;<br>    sleep(<span class="hljs-number">2000</span>)<br>    app.startActivity(&#123;<br>        data: <span class="hljs-string">&quot;alipayqr://platformapi/startapp?saId=60000002&quot;</span><br>    &#125;)<br>    sleep(<span class="hljs-number">2000</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h3 id="三、完整代码"><a href="#三、完整代码" class="headerlink" title="三、完整代码"></a>三、完整代码</h3><p>下载链接：<a target="_blank" rel="noopener" href="https://github.com/ReaJason/AutoJsScripts/blob/master/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%A4%9A%E8%B4%A6%E5%8F%B7%E5%88%87%E6%8D%A2%E6%AD%A5%E6%95%B0%E5%90%8C%E6%AD%A5%E8%84%9A%E6%9C%AC.js">GitHub地址链接</a></p>
 <h3 id="四、运行效果"><a href="#四、运行效果" class="headerlink" title="四、运行效果"></a>四、运行效果</h3><iframe height="400" width="500" src="//player.bilibili.com/player.html?aid=670137563&bvid=BV17a4y1s7nP&cid=253887490&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
@@ -426,7 +308,7 @@
                     
                     
                       <a href="/2020/10/19/WeiBoSuperTopicsTool/">
-                        <span class="hidden-mobile">🌈微博超话工具</span>
+                        <span class="hidden-mobile">微博超话工具</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -437,6 +319,38 @@
             </div>
 
             
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    Fluid.utils.waitElementVisible('vcomments', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "HohGa0vcu0iQIbm7ELytbaKs-gzGzoHsz",
+          app_key: "9TiVNoKrg63RPL3ALyu72tt2",
+          placeholder: "说点什么",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "https://hohga0vc.lc-cn-n1-shared.com",
+        });
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments powered by Valine.</a>
+  </noscript>
+
+
+              </article>
+            
           </article>
         </div>
       </div>
@@ -445,7 +359,7 @@
       <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
         <div id="toc">
   <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
-  <div id="tocbot"></div>
+  <div class="toc-body" id="toc-body"></div>
 </div>
 
       </div>
@@ -457,16 +371,15 @@
 
 
     
-  </main>
 
-  
-    <a id="scroll-top-button" href="#" role="button">
-      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-    </a>
-  
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-  
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
      aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
@@ -487,13 +400,14 @@
     </div>
   </div>
 </div>
-  
+    
 
-  
+    
+  </main>
 
   <footer class="text-center mt-5 py-3">
   <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate" style="font-size:0.85em;">载入天数...</span> <span id="times" style="font-size:0.85em;">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
   </div>
   
   <div class="statistics">
@@ -523,22 +437,32 @@
 
 
   
-  <!-- 备案信息 -->
-  <div class="beian">
-    <a href="http://beian.miit.gov.cn/" target="_blank"
-       rel="nofollow noopener">湘ICP备2020020353号</a>
-    
-  </div>
-
 
   
 </footer>
 
 <!-- SCRIPTS -->
-<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
-<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
 <script  src="/js/debouncer.js" ></script>
-<script  src="/js/main.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
 <!-- Plugins -->
 
@@ -553,285 +477,50 @@
 
 
 
-  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
-  <script  src="/js/clipboard-use.js" ></script>
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
 
 
 
-  <script defer>
-  (function () {
-    // 查询存储的记录
-    function getRecord(Counter, target) {
-      return new Promise(function (resolve, reject) {
-        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({target})))
-          .then(resp => resp.json())
-          .then(({results, code, error}) => {
-            if (code === 401) {
-              throw error;
-            }
-            if (results && results.length > 0) {
-              var record = results[0];
-              resolve(record);
-            } else {
-              Counter('post', '/classes/Counter', {target, time: 0})
-                .then(resp => resp.json())
-                .then((record, error) => {
-                  if (error) {
-                    throw error;
-                  }
-                  resolve(record);
-                }).catch(error => {
-                console.error('Failed to create', error);
-                reject(error);
-              });
-            }
-          }).catch((error) => {
-          console.error('LeanCloud Counter Error:', error);
-          reject(error);
-        });
-      })
-    }
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
 
-    // 发起自增请求
-    function increment(Counter, incrArr) {
-      return new Promise(function (resolve, reject) {
-        Counter('post', '/batch', {
-          "requests": incrArr
-        }).then((res) => {
-          res = res.json();
-          if (res.error) {
-            throw res.error;
-          }
-          resolve(res);
-        }).catch((error) => {
-          console.error('Failed to save visitor count', error);
-          reject(error);
-        });
-      });
-    }
 
-    // 构建自增请求体
-    function buildIncrement(objectId) {
-      return {
-        "method": "PUT",
-        "path": `/1.1/classes/Counter/${ objectId }`,
-        "body": {
-          "time": {
-            '__op': 'Increment',
-            'amount': 1
-          }
-        }
-      }
-    }
 
-    // 校验是否为有效的 UV
-    function validUV() {
-      var key = 'LeanCloud_UV_Flag';
-      var flag = localStorage.getItem(key);
-      if (flag) {
-        // 距离标记小于 24 小时则不计为 UV
-        if (new Date().getTime() - parseInt(flag) <= 86400000) {
-          return false;
-        }
-      }
-      localStorage.setItem(key, new Date().getTime().toString());
-      return true;
-    }
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
 
-    function addCount(Counter) {
-      var enableIncr = 'true' === 'true' && window.location.hostname !== 'localhost';
-      var getterArr = [];
-      var incrArr = [];
 
-      // 请求 PV 并自增
-      var pvCtn = document.querySelector('#leancloud-site-pv-container');
-      if (pvCtn || enableIncr) {
-        var pvGetter = getRecord(Counter, 'site-pv').then((record) => {
-          incrArr.push(buildIncrement(record.objectId))
-          var ele = document.querySelector('#leancloud-site-pv');
-          if (ele) {
-            ele.innerText = record.time + 1;
-            if (pvCtn) {
-              pvCtn.style.display = 'inline';
-            }
-          }
-        });
-        getterArr.push(pvGetter);
-      }
 
-      // 请求 UV 并自增
-      var uvCtn = document.querySelector('#leancloud-site-uv-container');
-      if (uvCtn || enableIncr) {
-        var uvGetter = getRecord(Counter, 'site-uv').then((record) => {
-          var vuv = validUV();
-          vuv && incrArr.push(buildIncrement(record.objectId))
-          var ele = document.querySelector('#leancloud-site-uv');
-          if (ele) {
-            ele.innerText = record.time + (vuv ? 1 : 0);
-            if (uvCtn) {
-              uvCtn.style.display = 'inline';
-            }
-          }
-        });
-        getterArr.push(uvGetter);
-      }
-
-      // 如果是文章，请求文章的浏览数，并自增
-      if ('true' === 'true') {
-        var viewCtn = document.querySelector('#leancloud-post-views-container');
-        if (viewCtn || enableIncr) {
-          var target = decodeURI('/2020/11/07/AlipayAutoSync/');
-          var viewGetter = getRecord(Counter, target).then((record) => {
-            incrArr.push(buildIncrement(record.objectId))
-            if (viewCtn) {
-              var ele = document.querySelector('#leancloud-post-views');
-              if (ele) {
-                ele.innerText = (record.time || 0) + 1;
-                viewCtn.style.display = 'inline';
-              }
-            }
-          });
-          getterArr.push(viewGetter);
-        }
-      }
-
-      // 如果启动计数自增，批量发起自增请求
-      if (enableIncr) {
-        Promise.all(getterArr).then(() => {
-          incrArr.length > 0 && increment(Counter, incrArr);
-        })
-      }
-    }
-
-    var app_id = 'HohGa0vcu0iQIbm7ELytbaKs-gzGzoHsz'
-    var app_key = '9TiVNoKrg63RPL3ALyu72tt2'
-    var server_url = 'https://hohga0vc.lc-cn-n1-shared.com'
-
-    function fetchData(api_server) {
-      var Counter = (method, url, data) => {
-        return fetch(`${ api_server }/1.1${ url }`, {
-          method,
-          headers: {
-            'X-LC-Id': app_id,
-            'X-LC-Key': app_key,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        });
-      };
-
-      addCount(Counter);
-    }
-
-    var api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${ app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
-
-    if (api_server) {
-      fetchData(api_server);
-    } else {
-      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
-        .then(resp => resp.json())
-        .then(({api_server}) => {
-          fetchData('https://' + api_server);
-        });
-    }
-  })();
-</script>
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
 
 
 
 
+  <script defer src="/js/leancloud.js" ></script>
 
 
-  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
   <script>
-    $(document).ready(function () {
-      var boardCtn = $('#board-ctn');
-      var boardTop = boardCtn.offset().top;
-
-      tocbot.init({
-        tocSelector: '#tocbot',
-        contentSelector: '#post-body',
-        headingSelector: 'h1,h2,h3,h4,h5,h6',
-        linkClass: 'tocbot-link',
-        activeLinkClass: 'tocbot-active-link',
-        listClass: 'tocbot-list',
-        isCollapsedClass: 'tocbot-is-collapsed',
-        collapsibleClass: 'tocbot-is-collapsible',
-        collapseDepth: 6,
-        scrollSmooth: true,
-        headingsOffset: -boardTop
-      });
-      if ($('.toc-list-item').length > 0) {
-        $('#toc').css('visibility', 'visible');
-      }
-    });
-  </script>
-
-
-
-  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
-  <script>
-    var typed = new Typed('#subtitle', {
-      strings: [
-        '  ',
-        "⏰支付宝多账号同步&nbsp;",
-      ],
-      cursorChar: "_",
-      typeSpeed: 80,
-      loop: false,
-    });
-    typed.stop();
-    $(document).ready(function () {
-      $(".typed-cursor").addClass("h2");
-      typed.start();
-    });
-  </script>
-
-
-
-  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
-  <script>
-    anchors.options = {
-      placement: "right",
-      visible: "hover",
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
       
-      icon: "§"
+      typing(title)
       
-    };
-    var el = "h1,h2,h3,h4,h5,h6".split(",");
-    var res = [];
-    for (item of el) {
-      res.push(".markdown-body > " + item)
-    }
-    anchors.add(res.join(", "))
+    })(window, document);
   </script>
 
 
 
   <script  src="/js/local-search.js" ></script>
   <script>
-    var path = "/local-search.xml";
-    var inputArea = document.querySelector("#local-search-input");
-    inputArea.onclick = function () {
-      searchFunc(path, 'local-search-input', 'local-search-result');
-      this.onclick = null
-    }
-  </script>
-
-
-
-  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
-
-  <script>
-    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
-      function () {
-        var element = document.createElement('a');
-        $(element).attr('data-fancybox', 'images');
-        $(element).attr('href', $(this).attr('src'));
-        $(this).wrap(element);
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
       }
-    );
+    })()
   </script>
 
 
@@ -858,6 +547,11 @@
   
 
 
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
 
 
 
