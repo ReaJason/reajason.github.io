@@ -315,7 +315,7 @@ img[srcset] {
   text-align: right;
 }
 ::-webkit-scrollbar {
-  background-color: $scrollbar-color;
+  background-color: #fec9c9;
   width: 10px;
   height: 10px;
   background-clip: padding-box;
@@ -324,12 +324,12 @@ img[srcset] {
   display: none;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: $scrollbar-thumb-color;
+  background-color: #fe4365;
   border-radius: 5px;
   background-image: -webkit-linear-gradient(45deg, rgba(255,255,255,0.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.2) 75%, transparent 75%, transparent);
 }
 ::-webkit-scrollbar-corner {
-  background-color: $scrollbar-thumb-color;
+  background-color: #fe4365;
 }
 :root {
   --color-mode: 'light';
@@ -342,7 +342,7 @@ img[srcset] {
   --post-link-color: #0366d6;
   --link-hover-color: #30a9de;
   --link-hover-bg-color: #f8f9fa;
-  --navbar-bg-color: #2f4154;
+  --navbar-bg-color: #fc9d9a;
   --navbar-text-color: #fff;
 }
 @media (prefers-color-scheme: dark) {
