@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.4k 字
+      2.3k 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      37
+      36
        分钟
     </span>
   
@@ -319,16 +319,13 @@
 </ol>
 <p>   <img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/check_status.png" srcset="/img/loading.gif"></p>
 <p>   <img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/Pictures/end_check.png" srcset="/img/loading.gif"></p>
-<h2 id="四、Q-amp-A"><a href="#四、Q-amp-A" class="headerlink" title="四、Q&amp;A"></a>四、Q&amp;A</h2><h3 id="1、怎么图片都无法加载出来，看了个寂寞？"><a href="#1、怎么图片都无法加载出来，看了个寂寞？" class="headerlink" title="1、怎么图片都无法加载出来，看了个寂寞？"></a>1、怎么图片都无法加载出来，看了个寂寞？</h3><p>可以前往我的博客查看 <a target="_blank" rel="noopener" href="https://reajason.top/2020/06/28/17wanxiaoCheckin/#%E4%B8%89%E3%80%81%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95">使用方法</a></p>
-<p>查看此页面请尝试下载到本地 <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/README.html">README.html</a>，并使用浏览器打开</p>
-<p>查看抓包教程页面请尝试下载到本地 <a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin-Actions/README_LAST.html">README_LAST.html</a>，并使用浏览器打开</p>
-<h3 id="2、fork之后，修改README-md并没有触发actions？"><a href="#2、fork之后，修改README-md并没有触发actions？" class="headerlink" title="2、fork之后，修改README.md并没有触发actions？"></a>2、fork之后，修改README.md并没有触发actions？</h3><p>请进入 Actions，Enable workflow</p>
+<h2 id="四、Q-amp-A"><a href="#四、Q-amp-A" class="headerlink" title="四、Q&amp;A"></a>四、Q&amp;A</h2><h3 id="1、fork之后，修改README-md并没有触发actions？"><a href="#1、fork之后，修改README-md并没有触发actions？" class="headerlink" title="1、fork之后，修改README.md并没有触发actions？"></a>1、fork之后，修改README.md并没有触发actions？</h3><p>请进入 Actions，Enable workflow</p>
 <p><img src="https://cdn.jsdelivr.net/gh/LingSiKi/images/img/enable.png" srcset="/img/loading.gif" alt="enable"></p>
-<h3 id="3、我们学校要求打卡的时间不一样，这个自动运行的时间该怎么修改？"><a href="#3、我们学校要求打卡的时间不一样，这个自动运行的时间该怎么修改？" class="headerlink" title="3、我们学校要求打卡的时间不一样，这个自动运行的时间该怎么修改？"></a>3、我们学校要求打卡的时间不一样，这个自动运行的时间该怎么修改？</h3><p>进入 <code>.github/workflows/run.yml </code>修改时间，请不要搁那掐着秒算程序运行，你设置好了，明天就一定能好好运行，Giuhub Actions大概会有10~20分钟的延迟</p>
+<h3 id="2、我们学校要求打卡的时间不一样，这个自动运行的时间该怎么修改？"><a href="#2、我们学校要求打卡的时间不一样，这个自动运行的时间该怎么修改？" class="headerlink" title="2、我们学校要求打卡的时间不一样，这个自动运行的时间该怎么修改？"></a>2、我们学校要求打卡的时间不一样，这个自动运行的时间该怎么修改？</h3><p>进入 <code>.github/workflows/run.yml </code>修改时间，请不要搁那掐着秒算程序运行，你设置好了，明天就一定能好好运行，Giuhub Actions大概会有10~20分钟的延迟</p>
 <figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">这里的cron就是脚本运行时间，22,4,9对应的时间是UTC时，对应北京时间早上六点，中午十二点，下午五点</span><br><span class="hljs-string">详细对应关系请查看：http://timebie.com/cn/universalbeijing.php</span><br><span class="hljs-string"></span><br><span class="hljs-string">只有健康打卡的小伙伴可以只留着22就可以了，这样其余两个时间就不会打卡</span><br><span class="hljs-string">如果害怕程序报错导致上午健康打卡没打，可设置6点和7点各运行一次即：0 22,23 * * *</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br>on:<br>  push:<br>    branches: [ master ]<br>  pull_request:<br>    branches: [ master ]<br>  schedule:<br>    - cron: <span class="hljs-number">0</span> <span class="hljs-number">22</span>,<span class="hljs-number">4</span>,<span class="hljs-number">9</span> * * *<br></code></pre></div></td></tr></table></figure>
 
-<h3 id="4、程序报错显示密码错误，还有-次机会？"><a href="#4、程序报错显示密码错误，还有-次机会？" class="headerlink" title="4、程序报错显示密码错误，还有 * 次机会？"></a>4、程序报错显示密码错误，还有 * 次机会？</h3><p>请立马修改 secrets 的密码再尝试运行</p>
-<h3 id="5、健康打卡问题汇总请前往-wiki"><a href="#5、健康打卡问题汇总请前往-wiki" class="headerlink" title="5、健康打卡问题汇总请前往 wiki"></a>5、健康打卡问题汇总请前往 <a target="_blank" rel="noopener" href="https://github.com/ReaJason/17wanxiaoCheckin-Actions/wiki#%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB">wiki</a></h3><h3 id="6、校内打卡问题汇总请前往-wiki"><a href="#6、校内打卡问题汇总请前往-wiki" class="headerlink" title="6、校内打卡问题汇总请前往 wiki"></a>6、校内打卡问题汇总请前往 <a target="_blank" rel="noopener" href="https://github.com/ReaJason/17wanxiaoCheckin-Actions/wiki#%E6%A0%A1%E5%86%85%E6%89%93%E5%8D%A1%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB">wiki</a></h3>
+<h3 id="3、程序报错显示密码错误，还有-次机会？"><a href="#3、程序报错显示密码错误，还有-次机会？" class="headerlink" title="3、程序报错显示密码错误，还有 * 次机会？"></a>3、程序报错显示密码错误，还有 * 次机会？</h3><p>请立马修改 secrets 的密码再尝试运行</p>
+<h3 id="4、健康打卡问题汇总请前往-wiki"><a href="#4、健康打卡问题汇总请前往-wiki" class="headerlink" title="4、健康打卡问题汇总请前往 wiki"></a>4、健康打卡问题汇总请前往 <a target="_blank" rel="noopener" href="https://github.com/ReaJason/17wanxiaoCheckin-Actions/wiki#%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB">wiki</a></h3><h3 id="5、校内打卡问题汇总请前往-wiki"><a href="#5、校内打卡问题汇总请前往-wiki" class="headerlink" title="5、校内打卡问题汇总请前往 wiki"></a>5、校内打卡问题汇总请前往 <a target="_blank" rel="noopener" href="https://github.com/ReaJason/17wanxiaoCheckin-Actions/wiki#%E6%A0%A1%E5%86%85%E6%89%93%E5%8D%A1%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB">wiki</a></h3>
             </div>
             <hr>
             <div>
