@@ -196,7 +196,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      781 字
+      916 字
     </span>
   
 
@@ -206,7 +206,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      9
+      10
        分钟
     </span>
   
@@ -302,7 +302,14 @@
 
 <h4 id="OPTIONS"><a href="#OPTIONS" class="headerlink" title="OPTIONS"></a>OPTIONS</h4><p>用来指定命令的运行特性，选项分为短选项和长选项两种，短选项如<code>-l</code> 、<code>-d</code>，有些命令选项没有<code>-</code> ，多数可合并，<code>-l -d</code>可合并为<code>-ld</code> ，长选项如<code>--help</code>，长选项不能合并，有些选项可以带参数称为选项参数。</p>
 <h4 id="ARGUMENTS"><a href="#ARGUMENTS" class="headerlink" title="ARGUMENTS"></a>ARGUMENTS</h4><p>表示命令的作用对象，即命令对什么生效，多个命令参数之间以空白字符分隔，如<code>ls -ld /var /etc</code>。</p>
-<h3 id="获取命令帮助"><a href="#获取命令帮助" class="headerlink" title="获取命令帮助"></a>获取命令帮助</h3>
+<h3 id="获取命令帮助"><a href="#获取命令帮助" class="headerlink" title="获取命令帮助"></a>获取命令帮助</h3><h4 id="1、内部命令"><a href="#1、内部命令" class="headerlink" title="1、内部命令"></a>1、内部命令</h4><p><code>help COMMAND</code></p>
+<h4 id="2、外部命令"><a href="#2、外部命令" class="headerlink" title="2、外部命令"></a>2、外部命令</h4><ul>
+<li>命令自带简要格式的使用帮助，<code>COMMAND --help</code></li>
+<li>使用手册获取帮助，<code>man COMMAND</code>，使用手册位置：<code>/usr/share/man</code></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 使用各章节的命令不同</span><br>man1：用户命令；<br>man2：系统调用；<br>man3：C库调用；<br>man4：设备文件及特殊文件；<br>man5：文件格式；（配置文件格式）<br>man6：游戏使用帮助；<br>man7：杂项；<br>man8：管理工具及守护进行；<br><br><span class="hljs-comment"># 查看COMMAND在哪些手册出现过</span><br>whatis COMMAND<br><br><span class="hljs-comment"># 手动更新查询数据库</span><br>makewhatis<br></code></pre></div></td></tr></table></figure>
+
+
             </div>
             <hr>
             <div>
