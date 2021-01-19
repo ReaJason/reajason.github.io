@@ -196,7 +196,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      761 字
+      781 字
     </span>
   
 
@@ -206,7 +206,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      8
+      9
        分钟
     </span>
   
@@ -248,7 +248,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年1月18日 晚上
+                  本文最后更新于：2021年1月19日 下午
                 
               </p>
             
@@ -262,14 +262,11 @@
           </div>
 
 <h2 id="学习环境"><a href="#学习环境" class="headerlink" title="学习环境"></a>学习环境</h2><ol>
-<li><p><a target="_blank" rel="noopener" href="https://download3.vmware.com/software/wkst/file/VMware-workstation-full-16.0.0-16894299.exe">VMware-workstation-full-16.0.0-16894299.exe</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/centos/7/isos/x86_64/CentOS-7-x86_64-Everything-2009.iso">CentOS-7-x86_64-Everything-2009.iso</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://cloud.189.cn/t/U7vURjZfmiMr">Xftp-7.0.0054p.exe</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://cloud.189.cn/t/bqIfei3eeyui">Xshell-7.0.0054p.exe</a></p>
-</li>
+<li><a target="_blank" rel="noopener" href="https://download3.vmware.com/software/wkst/file/VMware-workstation-full-16.0.0-16894299.exe">VMware-workstation-full-16.0.0-16894299.exe</a></li>
+<li><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/centos/7/isos/x86_64/CentOS-7-x86_64-Everything-2009.iso">CentOS-7-x86_64-Everything-2009.iso</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloud.189.cn/t/U7vURjZfmiMr">Xftp-7.0.0054p.exe</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloud.189.cn/t/bqIfei3eeyui">Xshell-7.0.0054p.exe</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV12E411K79p">马哥Linux高端运维顶级云计算就业课程网络班37期</a></li>
 </ol>
 <h3 id="Xshell-连接-Centos7"><a href="#Xshell-连接-Centos7" class="headerlink" title="Xshell 连接 Centos7"></a>Xshell 连接 Centos7</h3><p>首先在 Linux 虚拟机打开终端，查看 ip 以及将防火墙关闭</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 1、查看系统是否监听于tcp协议的22号端口</span><br>ss -tnl<br><br><span class="hljs-comment"># 2、查看ip地址</span><br>ifconfig<br><span class="hljs-comment"># ifconfig command not found，则安装net-tools</span><br>yum install net-tools<br><span class="hljs-comment"># ip addr list同样可以查看ip地址</span><br>ip addr list<br><br><span class="hljs-comment"># 3、确保防火墙处于关闭状态</span><br>iptables -L -n<br>systemctl <span class="hljs-built_in">disable</span> firewalld.service<br>systemctl stop firewalld.service<br></code></pre></div></td></tr></table></figure>
@@ -334,6 +331,12 @@
                 <div class="post-prevnext row">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/01/19/PythonLearning/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Python学习笔记（复习中...）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
