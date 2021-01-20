@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="ReaJason">
   <meta name="keywords" content="">
-  <title>Python学习笔记（复习中...） - ReaJason</title>
+  <title>Python学习笔记（学习中...） - ReaJason</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -174,7 +174,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Python学习笔记（复习中...）">
+            <span class="h2" id="subtitle" title="Python学习笔记（学习中...）">
               
             </span>
 
@@ -196,7 +196,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      187 字
+      566 字
     </span>
   
 
@@ -206,7 +206,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      7
        分钟
     </span>
   
@@ -244,11 +244,11 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Python学习笔记（复习中...）</h1>
+            <h1 style="display: none">Python学习笔记（学习中...）</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年1月20日 凌晨
+                  本文最后更新于：2021年1月20日 下午
                 
               </p>
             
@@ -267,9 +267,36 @@
 <li><a target="_blank" rel="noopener" href="https://www.ghpym.com/ideapatch.html">JetBrains 2020.3 通杀补丁（学习用，有能力请支持正版）</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kV411h7fD">老男孩2020年Python32期</a></li>
 </ol>
-<h2 id="Python-基础入门"><a href="#Python-基础入门" class="headerlink" title="Python 基础入门"></a>Python 基础入门</h2><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 单行注释</span><br><br><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">多行注释1</span><br><span class="hljs-string">多行注释2</span><br><span class="hljs-string">多行注释3</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br></code></pre></div></td></tr></table></figure>
+<h2 id="Python-基础入门"><a href="#Python-基础入门" class="headerlink" title="Python 基础入门"></a>Python 基础入门</h2><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 单行注释</span><br><br><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">多行注释1</span><br><span class="hljs-string">多行注释2</span><br><span class="hljs-string">多行注释3</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">多行注释1</span><br><span class="hljs-string">多行注释2</span><br><span class="hljs-string">多行注释3</span><br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br></code></pre></div></td></tr></table></figure>
 
-<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
+<li>可改变的量为变量，指向内存的一块空间，当不使用时即会被回收</li>
+<li>变量名只能由数字、字母和下划线组成，不能用关键字，不能数字开头，建议不要用中文</li>
+<li>变量名尽量见名知意</li>
+<li>Python中常量，一般通过全部大写字母来约定俗成</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># 查询关键字</span><br><span class="hljs-keyword">import</span> keyword<br>print(keyword.kwlist)<br><br><span class="hljs-comment"># 变量的交换</span><br>a = <span class="hljs-number">10</span><br>b = <span class="hljs-number">19</span><br>a, b = b, a<br>print(a)  <span class="hljs-comment"># 19</span><br>print(b)  <span class="hljs-comment"># 10</span><br></code></pre></div></td></tr></table></figure>
+
+<h3 id="布尔"><a href="#布尔" class="headerlink" title="布尔"></a>布尔</h3><ul>
+<li>True：</li>
+<li>False：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><br></code></pre></div></td></tr></table></figure>
+
+
+
+<h3 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h3><ul>
+<li>int 整型，二进制，八进制，十进制，十六进制</li>
+<li>float 浮点型，小数</li>
+<li>conplex 复数，实部+虚部</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># type()，获取变量的类型</span><br><span class="hljs-comment"># id()，获取变量内存地址</span><br><br>a = <span class="hljs-number">0b11</span><br>print(a, type(a))  <span class="hljs-comment"># 3 &lt;class &#x27;int&#x27;&gt;</span><br>b = <span class="hljs-number">0o11</span><br>print(b, type(b))  <span class="hljs-comment"># 9 &lt;class &#x27;int&#x27;&gt;</span><br>c = <span class="hljs-number">0x11</span><br>print(c, type(c))  <span class="hljs-comment"># 17 &lt;class &#x27;int&#x27;&gt;</span><br>d = <span class="hljs-number">1.1</span><br>print(d, type(d))  <span class="hljs-comment"># 1.1 &lt;class &#x27;float&#x27;&gt;</span><br>e = <span class="hljs-number">2e2</span><br>print(e, type(e))  <span class="hljs-comment"># 200.0 &lt;class &#x27;float&#x27;&gt;</span><br>f = <span class="hljs-number">1</span> + <span class="hljs-number">2j</span><br>print(f, type(f))  <span class="hljs-comment"># (1+2j) &lt;class &#x27;complex&#x27;&gt;</span><br>g = complex(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)<br>print(g, type(g))  <span class="hljs-comment"># (2+3j) &lt;class &#x27;complex&#x27;&gt;</span><br>h = <span class="hljs-literal">True</span><br>print(h, type(h))  <span class="hljs-comment"># True &lt;class &#x27;bool&#x27;&gt;</span><br>i = <span class="hljs-literal">False</span><br>print(i, type(i))  <span class="hljs-comment"># False &lt;class &#x27;bool&#x27;&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<h4 id="数学运算"><a href="#数学运算" class="headerlink" title="数学运算"></a>数学运算</h4><h4 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h4><h4 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h4><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><ul>
+<li>可用 <code>&quot;....&quot;</code>、<code>&#39;...&#39;</code> 以及 <code>&quot;&quot;&quot;...&quot;&quot;&quot;</code> 来表示字符串</li>
+<li>字符串可用 <code>/</code>来转义特殊字符，字符串前加 <code>r</code>，即表示原始字符串</li>
+</ul>
+<h4 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h4><h4 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h4><h4 id="格式化输出"><a href="#格式化输出" class="headerlink" title="格式化输出"></a>格式化输出</h4><h4 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h4>
             </div>
             <hr>
             <div>
