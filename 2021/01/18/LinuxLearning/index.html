@@ -196,7 +196,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      4.3k 字
+      5k 字
     </span>
   
 
@@ -206,7 +206,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      63
+      72
        分钟
     </span>
   
@@ -248,7 +248,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年1月24日 上午
+                  本文最后更新于：2021年1月24日 晚上
                 
               </p>
             
@@ -434,7 +434,18 @@
 <h3 id="bash"><a href="#bash" class="headerlink" title="bash"></a>bash</h3><h4 id="命令历史"><a href="#命令历史" class="headerlink" title="命令历史"></a>命令历史</h4><p>shell 进程会将其会话中保存此前用户提交执行过的命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># history</span><br>[root@localhost ~]<span class="hljs-comment"># history</span><br>    1  ll /dev<br>    2  ech <span class="hljs-variable">$SHELL</span><br>    3  <span class="hljs-built_in">echo</span> <span class="hljs-variable">$SHELL</span><br>    4  <span class="hljs-built_in">pwd</span><br>    5  <span class="hljs-built_in">history</span><br><br><span class="hljs-comment"># $HISTSIZE，shell 进程可保留的命令历史的条数</span><br>[root@localhost ~]<span class="hljs-comment"># echo $HISTSIZE</span><br>1000<br><br><span class="hljs-comment"># $HISTFILE，持久保存命令历史的文件</span><br>[root@localhost ~]<span class="hljs-comment"># echo $HISTFILE</span><br>/root/.bash_history<br><br><span class="hljs-comment"># -c，删除所有条目从而清空历史列表</span><br>[root@localhost ~]<span class="hljs-comment"># history -c</span><br>[root@localhost ~]<span class="hljs-comment"># history</span><br>    1  <span class="hljs-built_in">history</span><br><br><span class="hljs-comment"># -d offset，删除指定命令历史</span><br><span class="hljs-comment"># -r，从文件读取命令历史到历史列表中</span><br><span class="hljs-comment"># -w，把历史列表中的命令追加到历史文件中</span><br><span class="hljs-comment"># history n，显示最近 n 条命令</span><br><span class="hljs-comment"># !n，再一次执行历史列表中的第 n 条命令</span><br><span class="hljs-comment"># !!，再一次执行上一条命令</span><br><span class="hljs-comment"># !x，再一次执行命令历史列表中最近一个以 x 开头的命令</span><br><span class="hljs-comment"># esc + . ，调用上一条命令的最后一个参数</span><br><span class="hljs-comment"># !$，表示上一条命令的最后一个参数</span><br><span class="hljs-comment"># $HISTCONTROL，ignoredups：忽略重复性，ignorespace：忽略以空白字符开头的命令，ignoreboth：两者</span><br>[root@localhost ~]<span class="hljs-comment"># echo $HISTCONTROL</span><br>ignoredups<br></code></pre></div></td></tr></table></figure>
 
-<h4 id="命令补全"><a href="#命令补全" class="headerlink" title="命令补全"></a>命令补全</h4>
+<h4 id="命令补全"><a href="#命令补全" class="headerlink" title="命令补全"></a>命令补全</h4><p>shell 程序在接收到命令用户执行命令的请求，分析完成之后，最左侧的字符串会被当成命令</p>
+<p>命令查找机制：查找内部命令，根据 PATH 环境变量中设定的命令，自左而右逐个搜索目录下的文件名</p>
+<p>输入给定的打头字符串，如果唯一标识命令按 <code>Tab</code>则自动补全，如果不唯一，则按两次 <code>Tab</code> 键能显示所有打头列表</p>
+<h4 id="路径补全"><a href="#路径补全" class="headerlink" title="路径补全"></a>路径补全</h4><p> 根据给定的起始路径下，以对应路径下的打头字符串来逐一匹配起始路径下的每个文件，如果唯一标识按 <code>Tab</code>则自动补全，如果不唯一，则按两次 <code>Tab</code> 键能显示所有打头列表</p>
+<h4 id="命令行展开"><a href="#命令行展开" class="headerlink" title="命令行展开"></a>命令行展开</h4><p><code>~</code>，自动展开位用户的家目录，或指定的用户的家目录，<code>&#123;&#125;</code>，可承载一个逗号分隔的路径列表，并能够将其展开位多个路径，如：<code>/tmp/&#123;a,b&#125;</code> 相当于 <code>/tmp/a /tmp/b</code></p>
+<h3 id="目录管理命令"><a href="#目录管理命令" class="headerlink" title="目录管理命令"></a>目录管理命令</h3><h4 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 创建目录，mkdir [OPTION]... DIRECTORY...</span><br><span class="hljs-comment"># -p，自动按需创建父目录</span><br><span class="hljs-comment"># -v，verbose，显示详细过程</span><br><span class="hljs-comment"># -m MODE，创建目录时直接给定权限</span><br><br><span class="hljs-comment"># 创建/tmp/x/y/z，并显示创建详情</span><br>[root@localhost ~]<span class="hljs-comment"># mkdir -p -v /tmp/x/y/z</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;/tmp/x&quot;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;/tmp/x/y&quot;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;/tmp/x/y/z&quot;</span><br><br><span class="hljs-comment"># 利用bash命令行展开特性，一条语句创建/tmp/x/y1, /tmp/x/y2, /tmp/x/y1/a, /tmp/x/y1/b</span><br>[root@localhost ~]<span class="hljs-comment"># mkdir -p -v /tmp/x/&#123;y1/&#123;a,b&#125;,y2&#125;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;/tmp/x/y1&quot;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;/tmp/x/y1/a&quot;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;/tmp/x/y1/b&quot;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;/tmp/x/y2&quot;</span><br><br><span class="hljs-comment"># 利用bash命令行展开特性，一条语句创建a_c, a_d, b_c, b_d</span><br>[root@localhost ~]<span class="hljs-comment"># mkdir -pv &#123;a,b&#125;_&#123;c,d&#125;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;a_c&quot;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;a_d&quot;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;b_c&quot;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;b_d&quot;</span><br></code></pre></div></td></tr></table></figure>
+
+<h4 id="rmdir"><a href="#rmdir" class="headerlink" title="rmdir"></a>rmdir</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 只删除空文件目录，不常用，rmdir [OPTION]... DIRECTORY...</span><br><span class="hljs-comment"># -p，删除某目录之后，如果其父目录为空，则一并删除</span><br><span class="hljs-comment"># -v，显示详细过程</span><br><br><span class="hljs-comment"># 一并删除所有空目录 /tmp/x/y/z</span><br>[root@localhost ~]<span class="hljs-comment"># rmdir -pv /tmp/x/y/z</span><br>rmdir: 正在删除目录 <span class="hljs-string">&quot;/tmp/x/y/z&quot;</span><br>rmdir: 正在删除目录 <span class="hljs-string">&quot;/tmp/x/y&quot;</span><br>rmdir: 正在删除目录 <span class="hljs-string">&quot;/tmp/x&quot;</span><br></code></pre></div></td></tr></table></figure>
+
+<h4 id="tree"><a href="#tree" class="headerlink" title="tree"></a>tree</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 安装 tree命令，yum install tree</span><br><span class="hljs-comment"># 显示目录层级结构，tree [options] [directory]</span><br><span class="hljs-comment"># -l，</span><br></code></pre></div></td></tr></table></figure>
+
+
             </div>
             <hr>
             <div>
