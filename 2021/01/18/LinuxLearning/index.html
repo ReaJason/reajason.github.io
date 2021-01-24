@@ -248,7 +248,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年1月23日 下午
+                  本文最后更新于：2021年1月24日 上午
                 
               </p>
             
@@ -434,7 +434,7 @@
 <h3 id="bash"><a href="#bash" class="headerlink" title="bash"></a>bash</h3><h4 id="命令历史"><a href="#命令历史" class="headerlink" title="命令历史"></a>命令历史</h4><p>shell 进程会将其会话中保存此前用户提交执行过的命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># history</span><br>[root@localhost ~]<span class="hljs-comment"># history</span><br>    1  ll /dev<br>    2  ech <span class="hljs-variable">$SHELL</span><br>    3  <span class="hljs-built_in">echo</span> <span class="hljs-variable">$SHELL</span><br>    4  <span class="hljs-built_in">pwd</span><br>    5  <span class="hljs-built_in">history</span><br><br><span class="hljs-comment"># $HISTSIZE，shell 进程可保留的命令历史的条数</span><br>[root@localhost ~]<span class="hljs-comment"># echo $HISTSIZE</span><br>1000<br><br><span class="hljs-comment"># $HISTFILE，持久保存命令历史的文件</span><br>[root@localhost ~]<span class="hljs-comment"># echo $HISTFILE</span><br>/root/.bash_history<br><br><span class="hljs-comment"># -c，删除所有条目从而清空历史列表</span><br>[root@localhost ~]<span class="hljs-comment"># history -c</span><br>[root@localhost ~]<span class="hljs-comment"># history</span><br>    1  <span class="hljs-built_in">history</span><br><br><span class="hljs-comment"># -d offset，删除指定命令历史</span><br><span class="hljs-comment"># -r，从文件读取命令历史到历史列表中</span><br><span class="hljs-comment"># -w，把历史列表中的命令追加到历史文件中</span><br><span class="hljs-comment"># history n，显示最近 n 条命令</span><br><span class="hljs-comment"># !n，再一次执行历史列表中的第 n 条命令</span><br><span class="hljs-comment"># !!，再一次执行上一条命令</span><br><span class="hljs-comment"># !x，再一次执行命令历史列表中最近一个以 x 开头的命令</span><br><span class="hljs-comment"># esc + . ，调用上一条命令的最后一个参数</span><br><span class="hljs-comment"># !$，表示上一条命令的最后一个参数</span><br><span class="hljs-comment"># $HISTCONTROL，ignoredups：忽略重复性，ignorespace：忽略以空白字符开头的命令，ignoreboth：两者</span><br>[root@localhost ~]<span class="hljs-comment"># echo $HISTCONTROL</span><br>ignoredups<br></code></pre></div></td></tr></table></figure>
 
-
+<h4 id="命令补全"><a href="#命令补全" class="headerlink" title="命令补全"></a>命令补全</h4>
             </div>
             <hr>
             <div>
