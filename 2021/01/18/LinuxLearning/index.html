@@ -132,6 +132,18 @@
           
           
             <li class="nav-item">
+              <a class="nav-link" href="/share/">
+                <i class="iconfont icon-notebook"></i>
+                分享
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 关于
@@ -196,7 +208,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      5.5k 字
+      5.7k 字
     </span>
   
 
@@ -206,7 +218,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      79
+      82
        分钟
     </span>
   
@@ -248,7 +260,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年1月27日 下午
+                  本文最后更新于：2021年2月18日 下午
                 
               </p>
             
@@ -446,6 +458,10 @@
 <p><code>Ctrl+u</code>：删除行首至光标所在处之间的所有字符</p>
 <p><code>Ctrl+k</code>：删除光标所在处至行尾的所有字符</p>
 <p><code>Ctrl+l</code>：清屏，相当于 <code>clear</code></p>
+<h4 id="文件名通配"><a href="#文件名通配" class="headerlink" title="文件名通配"></a>文件名通配</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><br></code></pre></div></td></tr></table></figure>
+
+
+
 <h3 id="目录管理命令"><a href="#目录管理命令" class="headerlink" title="目录管理命令"></a>目录管理命令</h3><h4 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 创建目录，mkdir [OPTION]... DIRECTORY...</span><br><span class="hljs-comment"># -p，自动按需创建父目录</span><br><span class="hljs-comment"># -v，verbose，显示详细过程</span><br><span class="hljs-comment"># -m MODE，创建目录时直接给定权限</span><br><br><span class="hljs-comment"># 创建/tmp/x/y/z，并显示创建详情</span><br>[root@localhost ~]<span class="hljs-comment"># mkdir -p -v /tmp/x/y/z</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;/tmp/x&quot;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;/tmp/x/y&quot;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;/tmp/x/y/z&quot;</span><br><br><span class="hljs-comment"># 利用bash命令行展开特性，一条语句创建/tmp/x/y1, /tmp/x/y2, /tmp/x/y1/a, /tmp/x/y1/b</span><br>[root@localhost ~]<span class="hljs-comment"># mkdir -p -v /tmp/x/&#123;y1/&#123;a,b&#125;,y2&#125;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;/tmp/x/y1&quot;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;/tmp/x/y1/a&quot;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;/tmp/x/y1/b&quot;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;/tmp/x/y2&quot;</span><br><br><span class="hljs-comment"># 利用bash命令行展开特性，一条语句创建a_c, a_d, b_c, b_d</span><br>[root@localhost ~]<span class="hljs-comment"># mkdir -pv &#123;a,b&#125;_&#123;c,d&#125;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;a_c&quot;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;a_d&quot;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;b_c&quot;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;b_d&quot;</span><br></code></pre></div></td></tr></table></figure>
 
 <h4 id="rmdir"><a href="#rmdir" class="headerlink" title="rmdir"></a>rmdir</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 只删除空文件目录，不常用，rmdir [OPTION]... DIRECTORY...</span><br><span class="hljs-comment"># -p，删除某目录之后，如果其父目录为空，则一并删除</span><br><span class="hljs-comment"># -v，显示详细过程</span><br><br><span class="hljs-comment"># 一并删除所有空目录 /tmp/x/y/z</span><br>[root@localhost ~]<span class="hljs-comment"># rmdir -pv /tmp/x/y/z</span><br>rmdir: 正在删除目录 <span class="hljs-string">&quot;/tmp/x/y/z&quot;</span><br>rmdir: 正在删除目录 <span class="hljs-string">&quot;/tmp/x/y&quot;</span><br>rmdir: 正在删除目录 <span class="hljs-string">&quot;/tmp/x&quot;</span><br></code></pre></div></td></tr></table></figure>
@@ -468,7 +484,11 @@
 
 <h4 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># change file timestamps,touch [OPTION]... FILE...</span><br><span class="hljs-comment"># -c，指定的文件路径不存在时不予创建</span><br><span class="hljs-comment"># -a：仅修改access time</span><br><span class="hljs-comment"># -m：仅修改吗，modify time</span><br><span class="hljs-comment"># -t STAMP：指定时间戳，[[CC]YY]MMDDhhmm[.ss]</span><br></code></pre></div></td></tr></table></figure>
 
-<h3 id="文件管理命令"><a href="#文件管理命令" class="headerlink" title="文件管理命令"></a>文件管理命令</h3><h4 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># copy files and directories，</span><br><span class="hljs-comment"># 单源复制：cp [OPTION]... [-T] SOURCE DEST</span><br> <br><br><span class="hljs-comment"># 多源复制：cp [OPTION]... SOURCE... DIRECTORY，cp [OPTION]... -t DIRECTORY SOURCE...</span><br><br></code></pre></div></td></tr></table></figure>
+<h3 id="文件管理命令"><a href="#文件管理命令" class="headerlink" title="文件管理命令"></a>文件管理命令</h3><h4 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># copy files and directories，</span><br><span class="hljs-comment"># 单源复制：cp [OPTION]... [-T] SOURCE DEST</span><br><span class="hljs-comment"># 多源复制：cp [OPTION]... SOURCE... DIRECTORY，cp [OPTION]... -t DIRECTORY SOURCE...</span><br><span class="hljs-comment"># -i：交互式复制，即覆盖之前提醒用户确认</span><br><span class="hljs-comment"># -f：强制覆盖目标文件</span><br><span class="hljs-comment"># -r：递归目录</span><br><span class="hljs-comment"># -d：复制符号链接本身，而非其指向的源文件</span><br><span class="hljs-comment"># -a：等价于 -dR --preserve=all，用于归档</span><br><span class="hljs-comment"># --perserve=...：指定保留对应属性，默认：mode,ownership,timestamps，额外：context, links, xattr, all</span><br></code></pre></div></td></tr></table></figure>
+
+<h4 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># move (rename) files</span><br><span class="hljs-comment"># mv [OPTION]... [-T] SOURCE DEST</span><br><span class="hljs-comment"># mv [OPTION]... SOURCE... DIRECTORY</span><br><span class="hljs-comment"># mv [OPTION]... -t DIRECTORY SOURCE...</span><br><span class="hljs-comment"># -i：交互式复制，即覆盖之前提醒用户确认</span><br><span class="hljs-comment"># -f：强制覆盖目标文件</span><br></code></pre></div></td></tr></table></figure>
+
+<h4 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># remove files or directories</span><br><span class="hljs-comment"># rm [OPTION]... FILE...</span><br><span class="hljs-comment"># -i：交互式复制，即覆盖之前提醒用户确认</span><br><span class="hljs-comment"># -f：强制覆盖目标文件</span><br><span class="hljs-comment"># -r：递归目录</span><br><span class="hljs-comment"># 所有不用文件建议不用删除，而是移动到固定目录</span><br></code></pre></div></td></tr></table></figure>
 
 
             </div>
