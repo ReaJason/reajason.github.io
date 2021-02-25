@@ -1,0 +1,572 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/LingSiKi/images/img/favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/LingSiKi/images/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#fc9d9a">
+  
+    <meta name="description" content="
+万恶的蚂蚁森林种树，什么水商，各种辅助外挂满天飞，当然最终受益的还是支付宝，最近蚂蚁集团上市暂缓也是真强，不多说，为了自己能量蹭蹭往上涨，特意注册了五六个小号刷能量，为大号浇水，一天1kg能量不用愁主要实现功能为支付宝多账号切换+进入运动进行步数同步本脚本所使用的autojs版本为 —&amp;gt; Auto.js_4.1.1 Alpha2">
+  
+  <meta name="author" content="ReaJason">
+  <meta name="keywords" content="">
+  
+  <title>支付宝多账号同步 - ReaJason</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"❤️","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":200}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"HohGa0vcu0iQIbm7ELytbaKs-gzGzoHsz","app_key":"9TiVNoKrg63RPL3ALyu72tt2","server_url":"https://hohga0vc.lc-cn-n1-shared.com"}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ReaJason's Space</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/share/">
+                <i class="iconfont icon-notebook"></i>
+                分享
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/LingSiKi/images/img/default.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="支付宝多账号同步">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-11-07 09:35" pubdate>
+        2020年11月7日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      16
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">支付宝多账号同步</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年2月25日 下午
+                
+              </p>
+            
+            <div class="markdown-body">
+              <blockquote>
+<p>万恶的蚂蚁森林种树，什么水商，各种辅助外挂满天飞，当然最终受益的还是支付宝，最近蚂蚁集团上市暂缓也是真强，不多说，为了自己能量蹭蹭往上涨，特意注册了五六个小号刷能量，为大号浇水，一天1kg能量不用愁<br>主要实现功能为支付宝多账号切换+进入运动进行步数同步<br>本脚本所使用的autojs版本为 —&gt; <a target="_blank" rel="noopener" href="https://lingsiki.lanzous.com/in80Mi4ve3a">Auto.js_4.1.1 Alpha2</a></p>
+<a id="more"></a>
+</blockquote>
+<div class="note note-success">
+            <p>实现原理：利用三星健康管理刷三星健康的步数，然后把三星健康的步数同步到每一个小号上</p>
+          </div>
+
+<h3 id="一、基本功能"><a href="#一、基本功能" class="headerlink" title="一、基本功能"></a>一、基本功能</h3><ol>
+<li>支付宝刷步数</li>
+<li>支付宝账号切换</li>
+<li>运动同步以及捐步</li>
+</ol>
+<h3 id="二、代码实现"><a href="#二、代码实现" class="headerlink" title="二、代码实现"></a>二、代码实现</h3><h4 id="1、关闭支付宝"><a href="#1、关闭支付宝" class="headerlink" title="1、关闭支付宝"></a>1、关闭支付宝</h4><figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 关闭支付宝函数</span><br><span class="hljs-comment"> */</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">closeAlipay</span>(<span class="hljs-params"></span>)</span>&#123;<br>    appName = app.getPackageName(<span class="hljs-string">&#x27;支付宝&#x27;</span>)<br>    app.openAppSetting(appName)<br>    sleep(<span class="hljs-number">1000</span>)<br>    <span class="hljs-keyword">var</span> obj = text(<span class="hljs-string">&#x27;结束运行&#x27;</span>).findOne(<span class="hljs-number">5000</span>)<br>    clickCenter(obj)<br>    <span class="hljs-keyword">var</span> btn = idContains(<span class="hljs-string">&#x27;button1&#x27;</span>).findOne(<span class="hljs-number">1000</span>)<br>    <span class="hljs-keyword">if</span> (btn)&#123;<br>        btn.click()<br>    &#125;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;支付宝关闭成功！\n开启任务&quot;</span>)<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<h4 id="2、支付宝刷步数"><a href="#2、支付宝刷步数" class="headerlink" title="2、支付宝刷步数"></a>2、支付宝刷步数</h4><figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 利用三星健康 + 三星健康管理实现支付宝刷步数</span><br><span class="hljs-comment"> * 环境搭建（Root手机）：</span><br><span class="hljs-comment"> * 1、下载刷步数三件套（https://lingsiki.lanzous.com/b0ejfe25a）。</span><br><span class="hljs-comment"> * 2、edxp激活应用变量模块，并且设置三星健康、支付宝和三星健康管理模拟机型为三星型号手机。</span><br><span class="hljs-comment"> * 3、进入三星健康设置-关于三星健康点击版本号十次开启开发者模式-然后进入数据权限开启支付宝和三星健康管理的所有权限。</span><br><span class="hljs-comment"> * 4、进入支付宝的支付宝运动-右上角三点进入设置，开启记录运动数据。</span><br><span class="hljs-comment"> * 5、保持三星健康在后台，打开三星健康管理增加步数，进入三星健康等一会儿即可同步步数，最后关闭重启支付宝，进入运动查看同步情况</span><br><span class="hljs-comment"> * 6、若失败可能是机型伪装的问题，也有可能是第一天刷步数可能延迟会有点大，第二天以后一般都是秒同步的</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param <span class="hljs-type">&#123;步数=count * 12000&#125;</span> </span>count </span><br><span class="hljs-comment"> */</span><br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">steps</span>(<span class="hljs-params">count</span>) </span>&#123;<br>    launchApp(<span class="hljs-string">&#x27;三星健康&#x27;</span>);<br>    sleep(<span class="hljs-number">1000</span>);<br>    sleep(<span class="hljs-number">1000</span>);<br>    app.launch(<span class="hljs-string">&quot;com.samsung.android.app.health.dataviewer&quot;</span>);<br>    idContains(<span class="hljs-string">&quot;floatingActionButton&quot;</span>).waitFor()<br>    sleep(<span class="hljs-number">1000</span>)<br>    sleep(<span class="hljs-number">1000</span>)<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> index = <span class="hljs-number">0</span>; index &lt; count; index++) &#123;<br>        idContains(<span class="hljs-string">&quot;floatingActionButton&quot;</span>).findOne().click()<br>        sleep(<span class="hljs-number">500</span>)<br>        click(<span class="hljs-number">800</span>, <span class="hljs-number">1750</span>)<br>        sleep(<span class="hljs-number">500</span>)<br>    &#125;<br>    launchApp(<span class="hljs-string">&#x27;三星健康&#x27;</span>);<br>    text(<span class="hljs-string">&#x27;主页&#x27;</span>).waitFor();<br>    <span class="hljs-keyword">var</span> obj = idContains(<span class="hljs-string">&#x27;goal&#x27;</span>).findOne()<br>    clickCenter(obj);<br>    sleep(<span class="hljs-number">5000</span>)<br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>)&#123;<br>        step = idContains(<span class="hljs-string">&#x27;current_steps&#x27;</span>).findOne().text()<br>        <span class="hljs-keyword">if</span> (step != <span class="hljs-string">&#x27;0&#x27;</span>)&#123;<br>            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;当前刷步数为：&quot;</span> + step)<br>            <span class="hljs-keyword">return</span> step;<br>        &#125;<br>    &#125;<br><br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<h4 id="3、支付宝登录"><a href="#3、支付宝登录" class="headerlink" title="3、支付宝登录"></a>3、支付宝登录</h4><figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 支付宝登录函数</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param <span class="hljs-type">&#123;账号&#125;</span> </span>accont </span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param <span class="hljs-type">&#123;密码&#125;</span> </span>key </span><br><span class="hljs-comment"> */</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">login</span>(<span class="hljs-params">accont, key</span>) </span>&#123;<br>    <span class="hljs-comment">// 进入支付宝密码登录界面</span><br>    app.startActivity(app.intent(&#123;<br>        action: <span class="hljs-string">&quot;VIEW&quot;</span>,<br>        data: <span class="hljs-string">&quot;alipayqr://platformapi/startapp?appId=20000008&quot;</span>,<br>    &#125;));<br>    textMatches(<span class="hljs-string">&quot;换个账号登录&quot;</span>).findOne(<span class="hljs-number">5000</span>)<br>    click(<span class="hljs-string">&quot;换个账号登录&quot;</span>)<br>    sleep(<span class="hljs-number">400</span>)<br>    setText(<span class="hljs-number">0</span>, accont);<br>    textMatches(<span class="hljs-string">&quot;下一步&quot;</span>).findOne(<span class="hljs-number">5000</span>)<br>    click(<span class="hljs-string">&quot;下一步&quot;</span>)<br>    textContains(<span class="hljs-string">&quot;换个方式登录&quot;</span>).waitFor()<br>    <span class="hljs-keyword">var</span> obj = textMatches(<span class="hljs-regexp">/短信验证码登录|指纹登录|换个方式登录/</span>).findOne().text()<br>    <span class="hljs-keyword">if</span> (obj == <span class="hljs-string">&quot;短信验证码登录&quot;</span> || obj == <span class="hljs-string">&quot;指纹登录&quot;</span>) &#123;<br>        sleep(<span class="hljs-number">500</span>)<br>        textMatches(<span class="hljs-regexp">/换个验证方式|换个方式登录/</span>).findOne()<br>        clickCenter(text(<span class="hljs-string">&quot;换个方式登录&quot;</span>).findOne(<span class="hljs-number">2000</span>))<br>        clickCenter(text(<span class="hljs-string">&quot;换个验证方式&quot;</span>).findOne(<span class="hljs-number">2000</span>))<br>        text(<span class="hljs-string">&quot;密码登录&quot;</span>).findOne()<br>        sleep(<span class="hljs-number">400</span>)<br>        <span class="hljs-keyword">while</span> (!click(<span class="hljs-string">&quot;密码登录&quot;</span>)) &#123; &#125;<br>        sleep(<span class="hljs-number">200</span>)<br>        setText(<span class="hljs-number">0</span>, accont);<br>        sleep(<span class="hljs-number">200</span>);<br>        setText(<span class="hljs-number">1</span>, key);<br>        sleep(<span class="hljs-number">200</span>)<br>        idContains(<span class="hljs-string">&quot;loginButton&quot;</span>).findOne().click()<br>        <span class="hljs-built_in">console</span>.log(accont, <span class="hljs-string">&quot;登录成功&quot;</span>)<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        sleep(<span class="hljs-number">400</span>)<br>        setText(<span class="hljs-number">1</span>, key);<br>        sleep(<span class="hljs-number">400</span>)<br>        idContains(<span class="hljs-string">&quot;loginButton&quot;</span>).findOne().click()<br>        <span class="hljs-built_in">console</span>.log(accont, <span class="hljs-string">&quot;登录成功&quot;</span>)<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<h4 id="4、步数同步"><a href="#4、步数同步" class="headerlink" title="4、步数同步"></a>4、步数同步</h4><figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 进入支付宝运动步数同步以及捐步</span><br><span class="hljs-comment"> */</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">go_sports</span>(<span class="hljs-params"></span>) </span>&#123;<br>    sleep(<span class="hljs-number">2000</span>)<br>    app.startActivity(&#123;<br>        data: <span class="hljs-string">&quot;alipayqr://platformapi/startapp?saId=20000869&quot;</span><br>    &#125;)<br>    textContains(<span class="hljs-string">&quot;走路线&quot;</span>).waitFor();<br>    swipe(device.width / <span class="hljs-number">9</span> * <span class="hljs-number">8</span>, device.height / <span class="hljs-number">3</span>, device.width / <span class="hljs-number">9</span> * <span class="hljs-number">8</span>, device.height / <span class="hljs-number">3</span> * <span class="hljs-number">2</span>, <span class="hljs-number">500</span>)<br>    sleep(<span class="hljs-number">5000</span>)<br>    <span class="hljs-keyword">var</span> obj1 = text(<span class="hljs-string">&#x27;去捐步&#x27;</span>).findOne(<span class="hljs-number">1000</span>)<br>    <span class="hljs-keyword">if</span> (obj1 != <span class="hljs-literal">null</span>)&#123;<br>        clickCenter(text(<span class="hljs-string">&#x27;去捐步&#x27;</span>).findOne())<br>        sleep(<span class="hljs-number">3000</span>)<br>        text(<span class="hljs-string">&#x27;立即捐步&#x27;</span>).findOne()<br>        sleep(<span class="hljs-number">200</span>)<br>        <span class="hljs-keyword">while</span> (!click(<span class="hljs-string">&quot;立即捐步&quot;</span>)) &#123;&#125;<br>        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;捐步成功&#x27;</span>)<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;已经捐完步数了&#x27;</span>)<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<h4 id="5、进入蚂蚁森林"><a href="#5、进入蚂蚁森林" class="headerlink" title="5、进入蚂蚁森林"></a>5、进入蚂蚁森林</h4><figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 进入蚂蚁森林</span><br><span class="hljs-comment"> */</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">enterForest</span>(<span class="hljs-params"></span>)</span>&#123;<br>    sleep(<span class="hljs-number">2000</span>)<br>    app.startActivity(&#123;<br>        data: <span class="hljs-string">&quot;alipayqr://platformapi/startapp?saId=60000002&quot;</span><br>    &#125;)<br>    sleep(<span class="hljs-number">8000</span>)<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<h3 id="三、完整代码"><a href="#三、完整代码" class="headerlink" title="三、完整代码"></a>三、完整代码</h3><p>下载链接：<a target="_blank" rel="noopener" href="https://github.com/ReaJason/AutoJsScripts/blob/master/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%A4%9A%E8%B4%A6%E5%8F%B7%E5%88%87%E6%8D%A2%E6%AD%A5%E6%95%B0%E5%90%8C%E6%AD%A5%E8%84%9A%E6%9C%AC.js">GitHub地址链接</a></p>
+<h3 id="四、运行效果"><a href="#四、运行效果" class="headerlink" title="四、运行效果"></a>四、运行效果</h3><iframe height="400" width="500" src="//player.bilibili.com/player.html?aid=670137563&bvid=BV17a4y1s7nP&cid=253887490&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<h3 id="五、注意事项"><a href="#五、注意事项" class="headerlink" title="五、注意事项"></a>五、注意事项</h3><ol>
+<li>安装autojs之后，点击右小角新建文件，将完整代码粘贴进去，开启无障碍模式即可运行</li>
+<li>使用时修改小号账号和密码，以及大号账号和密码即可</li>
+<li>每一部手机的脚本运行效果可能会不一样，因为软件的局限性</li>
+<li>可以根据autojs的文档自己编写脚本 —&gt; <a target="_blank" rel="noopener" href="https://hyb1996.github.io/AutoJs-Docs/#/">AutoJs-Docs</a></li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/AutoJs/">AutoJs</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Script/">Script</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/01/14/WhatIWant/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">我脑子里面到底在想什么</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/10/19/WeiBoSuperTopicsTool/">
+                        <span class="hidden-mobile">微博超话工具</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                  
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    Fluid.utils.waitElementVisible('vcomments', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "HohGa0vcu0iQIbm7ELytbaKs-gzGzoHsz",
+          app_key: "9TiVNoKrg63RPL3ALyu72tt2",
+          placeholder: "说点什么",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "https://hohga0vc.lc-cn-n1-shared.com",
+        });
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments powered by Valine.</a>
+  </noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <i class="iconfont icon-copyright"></i> 2019-2020 <a target="_blank" rel="noopener" href="https://reajason.top">ReaJason</a> </br>Powered by  <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> ❤️ <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> ❄我们在一起玩耍了❄ </br> <span id="timeDate"></span> <span id="times"></span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
