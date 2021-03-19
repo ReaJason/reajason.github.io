@@ -14,10 +14,8 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#fc9d9a">
-  
-    <meta name="description" content="
+  <meta name="description" content="
 再也不玩辣鸡微博了，爬虫爬得恶心人，热搜也恶心人，本工具接口全来自微博网页版，仅作封装和打包实现">
-  
   <meta name="author" content="ReaJason">
   <meta name="keywords" content="">
   
@@ -59,7 +57,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"❤️","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":200}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"HohGa0vcu0iQIbm7ELytbaKs-gzGzoHsz","app_key":"9TiVNoKrg63RPL3ALyu72tt2","server_url":"https://hohga0vc.lc-cn-n1-shared.com"}}};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"❤️","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"HohGa0vcu0iQIbm7ELytbaKs-gzGzoHsz","app_key":"9TiVNoKrg63RPL3ALyu72tt2","server_url":"https://hohga0vc.lc-cn-n1-shared.com"}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -283,10 +281,10 @@
 <li>Python 3.7.9</li>
 <li>requests==2.25.1，PyQt5==5.15.1</li>
 </ol>
-<h2 id="界面截图"><a href="#界面截图" class="headerlink" title="界面截图"></a>界面截图</h2><p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/WBTopicCheckTool_img/home.png" srcset="/img/loading.gif" alt="home"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/WBTopicCheckTool_img/scan_login.png" srcset="/img/loading.gif" alt="scan_login"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/WBTopicCheckTool_img/login_success.png" srcset="/img/loading.gif" alt="login_success"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/WBTopicCheckTool_img/check_in.png" srcset="/img/loading.gif" alt="check_in.png"></p>
+<h2 id="界面截图"><a href="#界面截图" class="headerlink" title="界面截图"></a>界面截图</h2><p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/WBTopicCheckTool_img/home.png" srcset="/img/loading.gif" lazyload alt="home"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/WBTopicCheckTool_img/scan_login.png" srcset="/img/loading.gif" lazyload alt="scan_login"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/WBTopicCheckTool_img/login_success.png" srcset="/img/loading.gif" lazyload alt="login_success"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/WBTopicCheckTool_img/check_in.png" srcset="/img/loading.gif" lazyload alt="check_in.png"></p>
 <h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
 <li>下载源码之后，先安装第三方库<code>pip install -r requirements.txt</code>，再使用 <code>python start.py</code>启动程序</li>
 <li>程序打包命令，<code>pyinstaller -F -w -i ./res/favicon.ico start.py</code>，然后将<code>res</code>目录复制到 <code>dist</code>目录</li>
@@ -355,17 +353,17 @@
 
             
               <!-- Comments -->
-              <article class="comments" id="comments">
+              <article class="comments" id="comments" lazyload>
                 
                   
                 
                 
-  <div id="vcomments"></div>
+  <div id="valine"></div>
   <script type="text/javascript">
-    Fluid.utils.waitElementVisible('vcomments', function() {
+    Fluid.utils.lazyComments('valine', function() {
       Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function () {
         new Valine({
-          el: "#vcomments",
+          el: "#valine",
           app_id: "HohGa0vcu0iQIbm7ELytbaKs-gzGzoHsz",
           app_key: "9TiVNoKrg63RPL3ALyu72tt2",
           placeholder: "说点什么",
@@ -453,13 +451,14 @@
   
 </footer>
 
-<!-- SCRIPTS -->
 
+  <!-- SCRIPTS -->
+  
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
 
   <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
     NProgress.start()
     window.addEventListener('load', function() {
       NProgress.done();
@@ -477,7 +476,7 @@
 
 
   
-    <script  src="/js/lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -562,7 +561,6 @@
 
 <!-- 主题的启动项 保持在最底部 -->
 <script  src="/js/boot.js" ></script>
-
 
 
 </body>
