@@ -15,14 +15,31 @@
   
   <meta name="theme-color" content="#fc9d9a">
   
-    <meta name="description" content="">
+    <meta name="description" content="
+今天你打卡了吗？">
   
   <meta name="author" content="ReaJason">
   <meta name="keywords" content="">
   
-  <title>归档 - ReaJason</title>
+  <title>完美校园自动打卡 - ReaJason</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -50,7 +67,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -173,9 +190,54 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="归档">
+            <span class="h2" id="subtitle" title="完美校园自动打卡">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-03-19 23:00" pubdate>
+        2021年3月19日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      342 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      4
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
 
             
           </div>
@@ -188,46 +250,162 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 5 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2021</p>
-    
-    <a href="/2021/01/19/PythonLearning/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Python语法学习</span>
-      <time style="float: right;">01-19</time>
-    </a>
-  
-    
-    <a href="/2021/01/18/LinuxLearning/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Linux学习笔记（学习中...）</span>
-      <time style="float: right;">01-18</time>
-    </a>
-  
-</div>
 
-
-
-
-
-              </div>
-            </div>
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">完美校园自动打卡</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年3月19日 晚上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <blockquote>
+<p>今天你打卡了吗？</p>
+<a id="more"></a>
+</blockquote>
+<div class="note note-success">
+            <p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/ReaJason/17wanxiaoCheckin">https://github.com/ReaJason/17wanxiaoCheckin</a></p>
           </div>
+
+
+
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><ul>
+<li>云函数 — 函数服务 — 新建云函数</li>
+</ul>
+<ul>
+<li>自定义创建 — 本地上传 zip 包（17wanxiaoCheckin-SCF v2.0.zip：<a target="_blank" rel="noopener" href="https://lingsiki.lanzous.com/b0ekhmcxe">蓝奏云</a>，密码：2333）</li>
+</ul>
+<ul>
+<li>上传之后往下滑 — 触发器配置 — 自定义创建 — 触发周期：自定义触发 — Cron 表达式：0 0 6,14 * * * * — 完成 — 立即跳转</li>
+</ul>
+<ul>
+<li>函数管理 — 函数配置 — 编辑 — 执行超时时间：900 — 保存</li>
+</ul>
+<ul>
+<li>函数代码 — <code>src/conf/user.json</code> — 根据上方的用户配置文件介绍以及里面的注释进行设置【第一次使用推荐 QQ 邮箱推送，数据推送全面】</li>
+</ul>
+<ul>
+<li>测试 — 若弹框【检测到您的函数未部署……】选是 — 查看执行日志以及推送信息（执行失败请带上执行日志完整截图反馈）</li>
+</ul>
+<ul>
+<li>第一类健康打卡成功结果：<code>&#123;&#39;msg&#39;: &#39;成功&#39;, &#39;code&#39;: &#39;10000&#39;, &#39;data&#39;: 1&#125;</code>，显示打卡频繁也算</li>
+<li>第二类健康打卡成功结果：<code>&#123;&#39;code&#39;: 0, &#39;msg&#39;: &#39;成功&#39;&#125;</code></li>
+<li>校内打卡成功结果：<code>&#123;&#39;msg&#39;: &#39;成功&#39;, &#39;code&#39;: &#39;10000&#39;, &#39;data&#39;: 1&#125;</code></li>
+<li>由于前面使用软件获取了 device_id，所以请使用支付宝小程序查看打卡结果是否记录上去，以免手机登录 device_id 失效</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Python/">Python</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Script/">Script</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/02/04/WBTopicCheckTool/">
+                        <span class="hidden-mobile">微博超话签到工具</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                  
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    Fluid.utils.waitElementVisible('vcomments', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "HohGa0vcu0iQIbm7ELytbaKs-gzGzoHsz",
+          app_key: "9TiVNoKrg63RPL3ALyu72tt2",
+          placeholder: "说点什么",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "https://hohga0vc.lc-cn-n1-shared.com",
+        });
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments powered by Valine.</a>
+  </noscript>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -307,9 +485,15 @@
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
 
 
 
