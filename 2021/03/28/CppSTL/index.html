@@ -15,11 +15,12 @@
   
   <meta name="theme-color" content="#fc9d9a">
   <meta name="description" content="
-今天你打卡了吗？">
+为了更好得使用C++刷算法题，简单学习一下STL
+">
   <meta name="author" content="ReaJason">
   <meta name="keywords" content="">
   
-  <title>完美校园自动打卡 - ReaJason</title>
+  <title>STL - ReaJason</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -188,7 +189,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="完美校园自动打卡">
+            <span class="h2" id="subtitle" title="STL">
               
             </span>
 
@@ -198,8 +199,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-03-19 23:00" pubdate>
-        2021年3月19日 晚上
+      <time datetime="2021-03-28 15:23" pubdate>
+        2021年3月28日 下午
       </time>
     </span>
   
@@ -210,7 +211,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      559 字
+      236 字
     </span>
   
 
@@ -220,7 +221,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      6
+      4
        分钟
     </span>
   
@@ -258,58 +259,27 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">完美校园自动打卡</h1>
+            <h1 style="display: none">STL</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年3月19日 晚上
+                  本文最后更新于：2021年3月28日 晚上
                 
               </p>
             
             <div class="markdown-body">
               <blockquote>
-<p>今天你打卡了吗？</p>
-<a id="more"></a>
+<p>为了更好得使用C++刷算法题，简单学习一下STL</p>
 </blockquote>
+<a id="more"></a>
+
 <div class="note note-success">
-            <p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/ReaJason/17wanxiaoCheckin">https://github.com/ReaJason/17wanxiaoCheckin</a></p>
+            <p>要求不高，一天一个</p>
           </div>
 
+<h2 id="string"><a href="#string" class="headerlink" title="string"></a>string</h2><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-comment">// string 构造方法</span><br><span class="hljs-built_in">string</span> s1;<br><span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">s2</span><span class="hljs-params">(s1)</span></span>;<br><span class="hljs-built_in">string</span> s3 = <span class="hljs-string">&quot;abc&quot;</span>;<br><span class="hljs-built_in">string</span> s4 = (<span class="hljs-number">2</span>, <span class="hljs-string">&#x27;a&#x27;</span>); <span class="hljs-comment">// aa</span><br><br><span class="hljs-comment">// string 赋值</span><br>s1 = <span class="hljs-string">&quot;hello&quot;</span>;<br>s1.assign(<span class="hljs-string">&quot;abcdef&quot;</span>, <span class="hljs-number">4</span>); <span class="hljs-comment">// abcd</span><br>s2.assigh(s1, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>); <span class="hljs-comment">// abc</span><br><br><span class="hljs-comment">// string 取值，[]越界直接报错，at越界抛出异常</span><br>s1[<span class="hljs-number">0</span>];<br>s1.at(<span class="hljs-number">0</span>);<br><br><span class="hljs-comment">// string 拼接</span><br><span class="hljs-built_in">string</span> s1 = <span class="hljs-string">&quot;我&quot;</span>;<br><span class="hljs-built_in">string</span> s2 = <span class="hljs-string">&quot;你&quot;</span>;<br>s1 += s2; <span class="hljs-comment">// &quot;我你&quot;</span><br>s1.append(<span class="hljs-string">&quot;ta&quot;</span>);<br><br><span class="hljs-comment">// string 查找</span><br><span class="hljs-built_in">string</span> s1 = <span class="hljs-string">&quot;abcdef&quot;</span>;<br>s1.find(<span class="hljs-string">&quot;ab&quot;</span>); <span class="hljs-comment">// 0</span><br>s1.find(<span class="hljs-string">&quot;ac&quot;</span>); <span class="hljs-comment">// -1</span><br>s1.rfind(<span class="hljs-string">&quot;ab&quot;</span>); <span class="hljs-comment">// 0</span><br><br><span class="hljs-comment">// string 替换</span><br><span class="hljs-built_in">string</span> s3 = <span class="hljs-string">&quot;hello&quot;</span>;<br>s3.replace(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-string">&quot;1111&quot;</span>); <span class="hljs-comment">// h1111o</span><br><br><span class="hljs-comment">// string 比较</span><br><span class="hljs-built_in">string</span> s1 = <span class="hljs-string">&quot;abc&quot;</span>;<br><span class="hljs-built_in">string</span> s2 = <span class="hljs-string">&quot;abc&quot;</span>;<br><span class="hljs-built_in">string</span> s3 = <span class="hljs-string">&quot;bbc&quot;</span>;<br>s1.compare(s2); <span class="hljs-comment">// 0</span><br>s1.compare(s3); <span class="hljs-comment">// -1</span><br>s3.compare(s1); <span class="hljs-comment">// 1</span><br><br><span class="hljs-comment">// string 子串</span><br><span class="hljs-built_in">string</span> s1 = <span class="hljs-string">&quot;abcdef&quot;</span>;<br>s1.substr(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>); <span class="hljs-comment">// bc</span><br><br><span class="hljs-comment">// string 插入</span><br><span class="hljs-built_in">string</span> s1 = <span class="hljs-string">&quot;hello&quot;</span>;<br>s1.insert(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;111&quot;</span>); <span class="hljs-comment">// h111ello</span><br><br><span class="hljs-comment">// string 删除</span><br>s1.erase(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>);<br><br><span class="hljs-comment">// string 转 c-style</span><br><span class="hljs-built_in">string</span> s1 = <span class="hljs-string">&quot;abc&quot;</span>;<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * p = s1.c_str();<br><br><span class="hljs-comment">// c-style 转 string</span><br><span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">s2</span><span class="hljs-params">(p)</span></span>;<br></code></pre></div></td></tr></table></figure>
 
-
-<h2 id="🌈使用方法"><a href="#🌈使用方法" class="headerlink" title="🌈使用方法"></a>🌈使用方法</h2><h3 id="1、新建云函数"><a href="#1、新建云函数" class="headerlink" title="1、新建云函数"></a>1、新建云函数</h3><p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin/Pictures/%E6%90%9C%E7%B4%A2%E4%BA%91%E5%87%BD%E6%95%B0.png" srcset="/img/loading.gif" lazyload></p>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin/Pictures/%E6%96%B0%E5%BB%BA%E4%BA%91%E5%87%BD%E6%95%B01.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="2、上传-SCF-包"><a href="#2、上传-SCF-包" class="headerlink" title="2、上传 SCF 包"></a>2、上传 SCF 包</h3><p>本地上传 zip 包（17wanxiaoCheckin-SCF v2.0.zip：<a target="_blank" rel="noopener" href="https://lingsiki.lanzous.com/b0ekhmcxe">蓝奏云</a>，密码：2333）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin/Pictures/%E6%96%B0%E5%BB%BA%E4%BA%91%E5%87%BD%E6%95%B02.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="3、触发器配置"><a href="#3、触发器配置" class="headerlink" title="3、触发器配置"></a>3、触发器配置</h3><p>自定义创建 — 触发周期：自定义触发 — Cron 表达式：0 0 6,14 * * * * — 完成 — 立即跳转</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin/Pictures/%E8%AE%BE%E7%BD%AE%E8%A7%A6%E5%8F%91%E5%99%A8.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="4、超时设置"><a href="#4、超时设置" class="headerlink" title="4、超时设置"></a>4、超时设置</h3><p>函数管理 — 函数配置 — 编辑 — 执行超时时间：900 — 保存</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin/Pictures/%E7%BC%96%E8%BE%91%E4%BA%91%E5%87%BD%E6%95%B0.png" srcset="/img/loading.gif" lazyload></p>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin/Pictures/%E7%BC%96%E8%BE%91%E4%BA%91%E5%87%BD%E6%95%B02.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="5、配置文件"><a href="#5、配置文件" class="headerlink" title="5、配置文件"></a>5、配置文件</h3><ul>
-<li><p>整个 json 文件使用一个 <code>[]</code> 列表用来存储打卡用户数据，每一个用户占据了一个 <code>&#123;&#125;</code>键值对，初次修改务必填写的数据为：<code>phone</code>、<code>password</code>、<code>device_id</code>（获取方法：<a target="_blank" rel="noopener" href="https://lingsiki.lanzous.com/iQamDmt165i">蓝奏云</a>，下载解压使用）、健康打卡的开关（根据截图判断自己属于哪一类<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin/Pictures/one.png">【1】</a>、<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin/Pictures/two.png">【2】</a>），校内打卡开关（有则开），推送设置 <code>push</code>。</p>
-</li>
-<li><p>关于 <code>post_json</code>，如若打卡推送数据中无错误，则不用管，若有 null，或其他获取不到的情况，则酌情修改即可，和推送是一一对应的。</p>
-</li>
-<li><p>如果多人打卡，则复制单个用户完整的 <code>&#123;&#125;</code>，紧接在上个用户其后即可。</p>
-</li>
-<li><p>【第一次使用推荐 QQ 邮箱推送，数据推送全面】</p>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin/Pictures/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="6、测试部署"><a href="#6、测试部署" class="headerlink" title="6、测试部署"></a>6、测试部署</h3><p>若弹框【检测到您的函数未部署……】选是 — 查看执行日志以及推送信息（执行失败请带上执行日志完整截图反馈）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/17wanxiaoCheckin/Pictures/%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="7、检测成功"><a href="#7、检测成功" class="headerlink" title="7、检测成功"></a>7、检测成功</h3><ul>
-<li>第一类健康打卡成功结果：<code>&#123;&#39;msg&#39;: &#39;成功&#39;, &#39;code&#39;: &#39;10000&#39;, &#39;data&#39;: 1&#125;</code>，显示打卡频繁也算</li>
-<li>第二类健康打卡成功结果：<code>&#123;&#39;code&#39;: 0, &#39;msg&#39;: &#39;成功&#39;&#125;</code></li>
-<li>校内打卡成功结果：<code>&#123;&#39;msg&#39;: &#39;成功&#39;, &#39;code&#39;: &#39;10000&#39;, &#39;data&#39;: 1&#125;</code></li>
-<li>仔细查看打卡的数据，如果有值为 null 的，可能是因为打卡数据无法自动填写，请在配置文件中添加该项的赋值</li>
-<li>由于前面使用软件获取了 device_id，所以请使用支付宝小程序查看打卡结果是否记录上去，以免手机登录使用的 device_id 失效</li>
-</ul>
-<h2 id="📜FQA"><a href="#📜FQA" class="headerlink" title="📜FQA"></a>📜FQA</h2><ul>
-<li>如果有问题，这边请 <a target="_blank" rel="noopener" href="https://github.com/ReaJason/17wanxiaoCheckin#fqa">GitHub</a>，或进群反馈 <a target="_blank" rel="noopener" href="https://github.com/ReaJason/17wanxiaoCheckin-Actions/issues/30">交流群</a></li>
-</ul>
-
+<h2 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h2>
             </div>
             <hr>
             <div>
@@ -318,7 +288,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/Python/">Python</a>
+                      <a class="hover-with-bg" href="/categories/C/">C++</a>
                     
                   </div>
                 
@@ -326,7 +296,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Script/">Script</a>
+                      <a class="hover-with-bg" href="/tags/Notes/">Notes</a>
                     
                   </div>
                 
@@ -343,18 +313,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/03/28/CppSTL/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">STL</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/02/04/WBTopicCheckTool/">
-                        <span class="hidden-mobile">微博超话签到工具</span>
+                      <a href="/2021/03/19/17wanxiaoCheckInSCF/">
+                        <span class="hidden-mobile">完美校园自动打卡</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
