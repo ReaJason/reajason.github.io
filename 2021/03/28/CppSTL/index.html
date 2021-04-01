@@ -211,7 +211,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.3k 字
+      1.4k 字
     </span>
   
 
@@ -221,7 +221,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      24
+      26
        分钟
     </span>
   
@@ -263,7 +263,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年3月31日 下午
+                  本文最后更新于：2021年4月1日 晚上
                 
               </p>
             
@@ -298,6 +298,16 @@
 <p>先进后出</p>
 </blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"> <span class="hljs-built_in">stack</span>&lt;<span class="hljs-keyword">int</span>&gt; s;<br>s.push(<span class="hljs-number">10</span>);<br>s.push(<span class="hljs-number">20</span>);<br>s.push(<span class="hljs-number">30</span>);<br><br><span class="hljs-built_in">cout</span> &lt;&lt; s.size() &lt;&lt; <span class="hljs-built_in">endl</span>;  <span class="hljs-comment">// 3</span><br><br><span class="hljs-built_in">cout</span> &lt;&lt; s.top() &lt;&lt; <span class="hljs-built_in">endl</span>;  <span class="hljs-comment">// 30</span><br>s.pop();<br><span class="hljs-built_in">cout</span> &lt;&lt; s.top() &lt;&lt; <span class="hljs-built_in">endl</span>;  <span class="hljs-comment">// 20</span><br>s.pop();<br><span class="hljs-built_in">cout</span> &lt;&lt; s.top() &lt;&lt; <span class="hljs-built_in">endl</span>;  <span class="hljs-comment">// 10</span><br>s.pop();<br><br><span class="hljs-built_in">cout</span> &lt;&lt; s.empty() &lt;&lt; <span class="hljs-built_in">endl</span>;  <span class="hljs-comment">// 1</span><br><span class="hljs-built_in">cout</span> &lt;&lt; s.size() &lt;&lt; <span class="hljs-built_in">endl</span>;  <span class="hljs-comment">// 0</span><br></code></pre></div></td></tr></table></figure>
+
+<h2 id="queue"><a href="#queue" class="headerlink" title="queue"></a>queue</h2><blockquote>
+<p>先进先出</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-comment">// queue 构造方法</span><br><span class="hljs-built_in">queue</span>&lt;<span class="hljs-keyword">int</span>&gt; q;<br>q.push(<span class="hljs-number">1</span>);  <span class="hljs-comment">// 往队尾放元素</span><br>q.push(<span class="hljs-number">2</span>);<br>q.push(<span class="hljs-number">3</span>);<br>q.push(<span class="hljs-number">4</span>);<br><br><span class="hljs-built_in">cout</span> &lt;&lt; q.size() &lt;&lt; <span class="hljs-built_in">endl</span>;  <span class="hljs-comment">// 4</span><br><br><span class="hljs-keyword">while</span>(!q.empty())&#123;<br>    <span class="hljs-built_in">cout</span> &lt;&lt; q.front() &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;<br>    q.pop();  <span class="hljs-comment">// 弹出队头元素</span><br>&#125;<br><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;<br></code></pre></div></td></tr></table></figure>
+
+<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><blockquote>
+<p>双向链表</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><br></code></pre></div></td></tr></table></figure>
 
 <h2 id="set／multiset"><a href="#set／multiset" class="headerlink" title="set／multiset"></a>set／multiset</h2><blockquote>
 <p>不允许重复的值，元素不允许修改</p>
@@ -337,6 +347,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/04/01/AprilFools/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">愚人节说再见</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
