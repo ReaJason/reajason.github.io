@@ -31,7 +31,7 @@ Linux 运维，听上去就很牛逼，之前也前后前后差不多学过四�
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
     
   
 
@@ -57,7 +57,7 @@ Linux 运维，听上去就很牛逼，之前也前后前后差不多学过四�
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"❤️","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"HohGa0vcu0iQIbm7ELytbaKs-gzGzoHsz","app_key":"9TiVNoKrg63RPL3ALyu72tt2","server_url":"https://hohga0vc.lc-cn-n1-shared.com"}}};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"❤️","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -167,13 +167,13 @@ Linux 运维，听上去就很牛逼，之前也前后前后差不多学过四�
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
                 class="iconfont icon-search"></i>&nbsp;</a>
           </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
+            <a class="nav-link" target="_self">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -210,7 +210,7 @@ Linux 运维，听上去就很牛逼，之前也前后前后差不多学过四�
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      7.7k 字
+      8.7k 字
     </span>
   
 
@@ -220,20 +220,12 @@ Linux 运维，听上去就很牛逼，之前也前后前后差不多学过四�
       <i class="iconfont icon-clock-fill"></i>
       
       
-      109
+      122
        分钟
     </span>
   
 
   
-  
-    
-      <!-- LeanCloud 统计文章PV -->
-      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
-        <i class="iconfont icon-eye" aria-hidden="true"></i>
-        <span id="leancloud-page-views"></span> 次
-      </span>
-    
   
 </div>
 
@@ -259,12 +251,6 @@ Linux 运维，听上去就很牛逼，之前也前后前后差不多学过四�
           <article class="post-content mx-auto">
             <!-- SEO header -->
             <h1 style="display: none">Linux学习笔记（学习中...）</h1>
-            
-              <p class="note note-info">
-                
-                  本文最后更新于：2021年2月25日 下午
-                
-              </p>
             
             <div class="markdown-body">
               <blockquote>
@@ -481,6 +467,30 @@ Linux 运维，听上去就很牛逼，之前也前后前后差不多学过四�
 </ul>
 </li>
 </ul>
+<h4 id="命令hash"><a href="#命令hash" class="headerlink" title="命令hash"></a>命令hash</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">[root@study /]<span class="hljs-comment"># hash</span><br>命中    命令<br>   4    /usr/bin/chmod<br>   1    /usr/bin/cat<br>   4    /usr/bin/man<br>  10    /usr/bin/ls<br><br><span class="hljs-comment"># hash -d COMMAND 删除</span><br><span class="hljs-comment"># hash -r 清空</span><br></code></pre></div></td></tr></table></figure>
+
+<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><ul>
+<li><p>将所有变量视作字符型，无需事先声明</p>
+</li>
+<li><p>本地变量：作用域仅为当前 shell 进程</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 变量赋值：name=value</span><br><span class="hljs-comment"># 变量引用：$&#123;variable&#125;，$variable</span><br><span class="hljs-comment"># 撤销变量 unset name</span><br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>环境变量：作用域为当前 shell 进程及其子进程</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 变量赋值</span><br><span class="hljs-comment"># export name=value</span><br><span class="hljs-comment"># name=value</span><br><span class="hljs-comment"># export name</span><br><span class="hljs-comment"># declare -x name=value</span><br><br><span class="hljs-comment"># 变量引用：$&#123;variable&#125;，$variable</span><br><span class="hljs-comment"># bash 内嵌了许多环境变量用于定义 bash 的工作环境</span><br><span class="hljs-comment"># export、declare -x、printenv、env，查看所有环境变量</span><br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>局部变量：作用域仅为某代码片段</p>
+</li>
+<li><p>位置参数变量：当执行脚本的 shell 进程传递的参数</p>
+</li>
+<li><p>特殊变量：shell 内置的有特殊功能的变量</p>
+</li>
+<li><p>只读变量</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 只读</span><br><span class="hljs-built_in">readonly</span> name<br><span class="hljs-built_in">declare</span> -r name<br></code></pre></div></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="多命令执行"><a href="#多命令执行" class="headerlink" title="多命令执行"></a>多命令执行</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">COMMAND1;COMMAND2;COMMAND3;......<br><br><span class="hljs-comment"># 当命令1失败则不再运行命令2</span><br>COMMAND1 &amp;&amp; COMMAND2<br><br><span class="hljs-comment"># 当命令1成功则不再运行命令2</span><br>COMMAND1 || COMMAND2<br></code></pre></div></td></tr></table></figure>
+
 <h3 id="目录管理命令"><a href="#目录管理命令" class="headerlink" title="目录管理命令"></a>目录管理命令</h3><h4 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 创建目录，mkdir [OPTION]... DIRECTORY...</span><br><span class="hljs-comment"># -p，自动按需创建父目录</span><br><span class="hljs-comment"># -v，verbose，显示详细过程</span><br><span class="hljs-comment"># -m MODE，创建目录时直接给定权限</span><br><br><span class="hljs-comment"># 创建/tmp/x/y/z，并显示创建详情</span><br>[root@localhost ~]<span class="hljs-comment"># mkdir -p -v /tmp/x/y/z</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;/tmp/x&quot;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;/tmp/x/y&quot;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;/tmp/x/y/z&quot;</span><br><br><span class="hljs-comment"># 利用bash命令行展开特性，一条语句创建/tmp/x/y1, /tmp/x/y2, /tmp/x/y1/a, /tmp/x/y1/b</span><br>[root@localhost ~]<span class="hljs-comment"># mkdir -p -v /tmp/x/&#123;y1/&#123;a,b&#125;,y2&#125;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;/tmp/x/y1&quot;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;/tmp/x/y1/a&quot;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;/tmp/x/y1/b&quot;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;/tmp/x/y2&quot;</span><br><br><span class="hljs-comment"># 利用bash命令行展开特性，一条语句创建a_c, a_d, b_c, b_d</span><br>[root@localhost ~]<span class="hljs-comment"># mkdir -pv &#123;a,b&#125;_&#123;c,d&#125;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;a_c&quot;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;a_d&quot;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;b_c&quot;</span><br>mkdir: 已创建目录 <span class="hljs-string">&quot;b_d&quot;</span><br></code></pre></div></td></tr></table></figure>
 
 <h4 id="rmdir"><a href="#rmdir" class="headerlink" title="rmdir"></a>rmdir</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 只删除空文件目录，不常用，rmdir [OPTION]... DIRECTORY...</span><br><span class="hljs-comment"># -p，删除某目录之后，如果其父目录为空，则一并删除</span><br><span class="hljs-comment"># -v，显示详细过程</span><br><br><span class="hljs-comment"># 一并删除所有空目录 /tmp/x/y/z</span><br>[root@localhost ~]<span class="hljs-comment"># rmdir -pv /tmp/x/y/z</span><br>rmdir: 正在删除目录 <span class="hljs-string">&quot;/tmp/x/y/z&quot;</span><br>rmdir: 正在删除目录 <span class="hljs-string">&quot;/tmp/x/y&quot;</span><br>rmdir: 正在删除目录 <span class="hljs-string">&quot;/tmp/x&quot;</span><br></code></pre></div></td></tr></table></figure>
@@ -594,7 +604,74 @@ Linux 运维，听上去就很牛逼，之前也前后前后差不多学过四�
 
 <h4 id="su"><a href="#su" class="headerlink" title="su"></a>su</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># switch user</span><br><span class="hljs-comment"># 登录式切换：会通过读取目标用户的配置文件来重新初始化</span><br>su - USERNAME<br>su -l USERNAME<br><span class="hljs-comment"># 非登录式切换：不会读取目标用户的配置文件进行初始化</span><br>su USERNAME<br><span class="hljs-comment"># 注意：管理员可无密码切换至其它任何用户；</span><br><span class="hljs-comment">#  -c &#x27;COMMAND&#x27;：仅以指定用户的身份运行此处指定的命令；</span><br>su - USERNAME -c <span class="hljs-string">&#x27;COMMAND&#x27;</span><br></code></pre></div></td></tr></table></figure>
 
-<h3 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h3>
+<h3 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h3><ul>
+<li><code>mode：rwxrwxrwx</code><ul>
+<li>左三位：定义 user（owner）的权限</li>
+<li>中三位：定义 group 的权限</li>
+<li>右三位：定义 other 的权限</li>
+</ul>
+</li>
+<li><code>r</code>：<code>readable</code>，读权限</li>
+<li><code>w</code>：<code>writable</code>，写权限</li>
+<li><code>x</code>：<code>excutable</code>，执行权限</li>
+<li><code>ownership：user,group,other</code></li>
+</ul>
+<h4 id="权限组合机制"><a href="#权限组合机制" class="headerlink" title="权限组合机制"></a>权限组合机制</h4><ul>
+<li><code>---</code>、<code>000</code>、0</li>
+<li><code>--x</code>、<code>001</code>、1</li>
+<li><code>-w-</code>、<code>010</code>、2</li>
+<li><code>-wx</code>、<code>011</code>、3</li>
+<li><code>r--</code>、<code>100</code>、4</li>
+<li><code>r-x</code>、<code>101</code>、5</li>
+<li><code>rw-</code>、<code>110</code>、6</li>
+<li><code>rwx</code>、<code>111</code>、7</li>
+</ul>
+<h4 id="chmod"><a href="#chmod" class="headerlink" title="chmod"></a>chmod</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 更改权限，u:属主、g:属组、o:其他、a:所有</span><br><span class="hljs-comment"># chmod [options] mode file...</span><br><span class="hljs-comment"># 用户只能修改属主为自己的文件</span><br><br><span class="hljs-comment"># 指定所有权限设置，u=,g=,o=,a=</span><br>[root@study /]<span class="hljs-comment"># ll txt</span><br>-rw-r--r--. 1 root root 541 4月   9 21:34 txt<br>[root@study /]<span class="hljs-comment"># chmod g=rw- txt</span><br>[root@study /]<span class="hljs-comment"># ll txt</span><br>-rw-rw-r--. 1 root root 541 4月   9 21:34 txt<br><br><span class="hljs-comment"># 指定单个权限设置，u-r,o+x,g-w,+r,+x</span><br>[root@study /]<span class="hljs-comment"># chmod g-w txt</span><br>[root@study /]<span class="hljs-comment"># ll txt</span><br>-rw-r--r--. 1 root root 541 4月   9 21:34 txt<br>[root@study /]<span class="hljs-comment"># chmod +x txt</span><br>[root@study /]<span class="hljs-comment"># ll txt</span><br>-rwxr-xr-x. 1 root root 541 4月   9 21:34 txt<br><br><span class="hljs-comment"># 进制表示权限修改</span><br>[root@study /]<span class="hljs-comment"># chmod 660 txt</span><br>[root@study /]<span class="hljs-comment"># ll txt</span><br>-rw-rw----. 1 root root 541 4月   9 21:34 txt<br><br><span class="hljs-comment"># -R，--recursive，递归修改</span><br></code></pre></div></td></tr></table></figure>
+
+<h4 id="chown"><a href="#chown" class="headerlink" title="chown"></a>chown</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 修改属主</span><br></code></pre></div></td></tr></table></figure>
+
+<h4 id="chgrp"><a href="#chgrp" class="headerlink" title="chgrp"></a>chgrp</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 修改数组</span><br></code></pre></div></td></tr></table></figure>
+
+<h4 id="umask"><a href="#umask" class="headerlink" title="umask"></a>umask</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 文件权限反向掩码，遮罩码</span><br><span class="hljs-comment"># 文件默认不能拥有执行权限，如果减得的结果中有执行权限则需要加1</span><br>[root@study /]<span class="hljs-comment"># umask</span><br>0022<br><span class="hljs-comment"># umask MASK 设置 umask</span><br></code></pre></div></td></tr></table></figure>
+
+<h4 id="install"><a href="#install" class="headerlink" title="install"></a>install</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 复制文件并设置权限</span><br>install [options] [-s] [--strip] <span class="hljs-built_in">source</span> dest<br>install [options] [-s] [--strip] <span class="hljs-built_in">source</span>... directory<br>install [options] [-d,--directory] directory...<br><br><span class="hljs-comment"># -d, --directory</span><br><span class="hljs-comment"># -m mode, --mode=mode</span><br><span class="hljs-comment"># -o owner, --owner=owner</span><br><span class="hljs-comment"># -g group, --group=group</span><br></code></pre></div></td></tr></table></figure>
+
+<h4 id="mktemp"><a href="#mktemp" class="headerlink" title="mktemp"></a>mktemp</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 创建临时文件或临时目录</span><br>[root@study /]<span class="hljs-comment"># mytemp=$(mktemp /tmp/XXXXXXX)</span><br>[root@study /]<span class="hljs-comment"># echo $mytemp</span><br>/tmp/ptfJw0h<br><br><span class="hljs-comment"># -d 创建临时目录</span><br></code></pre></div></td></tr></table></figure>
+
+<h3 id="Shell编程"><a href="#Shell编程" class="headerlink" title="Shell编程"></a>Shell编程</h3><blockquote>
+<p>命令的堆积而已</p>
+</blockquote>
+<h4 id="编写脚本"><a href="#编写脚本" class="headerlink" title="编写脚本"></a>编写脚本</h4><p>第一行指定解释器路径，用于指明解释执行当前脚本的解释器程序文件，常用的有：<code>#!/bin/bash</code>、<code>#!/usr/bin/python</code>、<code>#!/usr/bin/perl</code>，脚本文件为 <code>.sh</code></p>
+<p>解释器会自动忽略空白行和加 <code>#</code> 的注释行</p>
+<h4 id="运行脚本"><a href="#运行脚本" class="headerlink" title="运行脚本"></a>运行脚本</h4><p>第一种：<code>chmod +x file.sh</code>、<code>./file.sh</code></p>
+<p>第二种：<code>bash file.sh</code></p>
+<h4 id="bash的配置文件"><a href="#bash的配置文件" class="headerlink" title="bash的配置文件"></a>bash的配置文件</h4><h5 id="profile"><a href="#profile" class="headerlink" title="profile"></a>profile</h5><p>为交互式登录的 shell 进程提供配置</p>
+<p>仅管理员可修改</p>
+<p>全局：<code>/etc/profile</code>, <code>/etc/profile.d/*.sh</code></p>
+<p>用户：<code>~/.bash_profile</code></p>
+<p>功能:</p>
+<ol>
+<li>用于定义环境变量</li>
+<li>运行命令或脚本</li>
+</ol>
+<h5 id="bashrc"><a href="#bashrc" class="headerlink" title="bashrc"></a>bashrc</h5><p>为非交互式登录的 shell 进程提供配置</p>
+<p>全局：<code>/etc/bashrc</code></p>
+<p>用户：<code>~/.bashrc</code></p>
+<p>功能:</p>
+<ol>
+<li>定义本地变量</li>
+<li>定义命令别名</li>
+</ol>
+<h5 id="交互式登录"><a href="#交互式登录" class="headerlink" title="交互式登录"></a>交互式登录</h5><ul>
+<li>直接通过某终端输入账号密码打开的 shell 进程</li>
+<li>使用 su 命令: su - USERNAME,或者使用 su -l USERNAME执行的登录切换</li>
+</ul>
+<h5 id="非交互式登录"><a href="#非交互式登录" class="headerlink" title="非交互式登录"></a>非交互式登录</h5><ul>
+<li>su USERNAME 执行的登录切换</li>
+<li>图形界面下打开的终端</li>
+<li>运行脚本</li>
+</ul>
+<h3 id="文本处理三剑客"><a href="#文本处理三剑客" class="headerlink" title="文本处理三剑客"></a>文本处理三剑客</h3><h4 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h4><h4 id="sed"><a href="#sed" class="headerlink" title="sed"></a>sed</h4><h4 id="awk"><a href="#awk" class="headerlink" title="awk"></a>awk</h4>
             </div>
             <hr>
             <div>
@@ -658,7 +735,7 @@ Linux 运维，听上去就很牛逼，之前也前后前后差不多学过四�
                 
   <div id="waline"></div>
   <script type="text/javascript">
-    Fluid.utils.lazyComments('waline', function() {
+    Fluid.utils.loadComments('#waline', function() {
       Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@waline/client@0.14.8/dist/Waline.min.js', function () {
         new Waline({
           el: "#waline",
@@ -680,9 +757,7 @@ Linux 运维，听上去就很牛逼，之前也前后前后差不多学过四�
       });
     });
   </script>
-  <noscript>Please enable JavaScript to view the
-    <a target="_blank" href="https://waline.js.org" rel="nofollow noopener noopener">comments powered by Waline.</a>
-  </noscript>
+  <noscript>Please enable JavaScript to view the comments</noscript>
 
 
               </article>
@@ -767,9 +842,8 @@ Linux 运维，听上去就很牛逼，之前也前后前后差不多学过四�
   </script>
 
 
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
@@ -786,7 +860,7 @@ Linux 运维，听上去就很牛逼，之前也前后前后差不多学过四�
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
 
 
 
@@ -798,12 +872,10 @@ Linux 运维，听上去就很牛逼，之前也前后前后差不多学过四�
 
 
 
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
 
 
 
-
-  <script defer src="/js/leancloud.js" ></script>
 
 
 
@@ -842,19 +914,6 @@ Linux 运维，听上去就很牛逼，之前也前后前后差不多学过四�
 
 
 
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
 
 
