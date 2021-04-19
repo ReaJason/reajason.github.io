@@ -268,7 +268,7 @@
           </div>
 
 <h2 id="🤝静态分析"><a href="#🤝静态分析" class="headerlink" title="🤝静态分析"></a>🤝静态分析</h2><h3 id="🔍查壳"><a href="#🔍查壳" class="headerlink" title="🔍查壳"></a>🔍查壳</h3><div class="note note-info">
-            <p>查壳工具：<a target="_blank" rel="noopener" href="http://www.legendsec.org/1888.html">ApkScan-PKID</a> 查看 app 是否加固（需要 Java 环境），</p>
+            <p>查壳工具：<a target="_blank" rel="noopener" href="http://www.legendsec.org/1888.html">ApkScan-PKID</a> 查看 app 是否加固（需要 Java 环境）</p>
           </div>
 
 <p>&emsp;&emsp;如果 app 加固的话需要脱壳才能看到源码，没有加固则最好，在豌豆荚下载了完美校园历史版本发现，5.0.2 版本没有加固，而最新的 5.3.6 版本使用了 360 加固，其他版本有阿里和腾讯加固的都有，不知道他们为什么换这么多壳……，因此本文采取的思路是在 5.0.2 版本中找到 deviceId 的获取方法，然后使用 xp hook 绕壳去 hook 5.3.6 版本的相关代码，也很幸运 5.3.6 版本生成 deviceId 的代码虽然修改了位置，但是还是找到了 hook 出来的办法。</p>
@@ -282,13 +282,14 @@
 <li><p>在搜索文本工具中搜索 <code>/loginnew</code>，即可查看有一个匹配值，双击进去，然后右键查看该值 <code>i</code> 的用例，也就是哪里用了这个值，也刚好发现一个 <code>c.i</code>，双击进入即可发现登录报表的所有参数，基本都在这里出现了</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/17WanXiaoHookGetDeviceId_img/loginnew.png" srcset="/img/loading.gif" lazyload alt="search_loginnew"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/17WanXiaoHookGetDeviceId_img/loginnew_example.png" srcset="/img/loading.gif" lazyload alt="find_i"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/17WanXiaoHookGetDeviceId_img/loginreqdata.png" srcset="/img/loading.gif" lazyload alt="loginreqdata"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/17WanXiaoHookGetDeviceId_img/logindata.png" srcset="/img/loading.gif" lazyload alt="logindata"></p>
 </li>
-<li><p>我们可以看到这个<code>private String deviceId = AppUtils.f(SystemApplication.e());</code>这行代码说明了 deviceId 生成的来源，选中 <code>f</code> ，右键跳到声明，即可查看对应源码</p>
+<li><p>我们可以看到这个 <code>private String deviceId = AppUtils.f(SystemApplication.e());</code> 这行代码说明了 deviceId 生成的来源，选中 <code>f</code> ，右键跳到声明，即可查看对应源码</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/17WanXiaoHookGetDeviceId_img/deviceid_f.png" srcset="/img/loading.gif" lazyload alt="deviceId_f"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/17WanXiaoHookGetDeviceId_img/deviceid_func.png" srcset="/img/loading.gif" lazyload alt="deviceid_func"></p>
 </li>
-<li><p>可以看到该类有许多的 <code>get方法</code>，我们可以通过 hook 这些方法，来获取对应值（不过还得看登录方式是否使用了对应值）</p>
+<li><p>可以看到该类有许多的 get 方法，我们可以通过 hook 这些方法，来获取对应值（不过还得看登录方式是否使用了对应值）</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/17WanXiaoHookGetDeviceId_img/hook_point.png" srcset="/img/loading.gif" lazyload alt="hook_point"></p>
 </li>
 <li><p>使用 jadx 找到 5.3.6 版本 360 加固后的 app 入口</p>
@@ -300,7 +301,7 @@
           </div>
 
 <ol>
-<li><p>新建项目，打开左侧资源管理设置为 Project，将 xp-api 的两个文件放到 app/libs 下</p>
+<li><p>新建项目，打开左侧资源管理设置为 Project，将 api-82 的两个文件放到 app/libs 下</p>
 </li>
 <li><p>在 app/bulid.gradle 下面的 dependencies 中加入以下代码，然后点击右上角的 Sync</p>
 <figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml">compileOnly &#x27;de.robv.android.xposed:api:82&#x27;<br>compileOnly &#x27;de.robv.android.xposed:api:82:sources&#x27;<br></code></pre></div></td></tr></table></figure>
