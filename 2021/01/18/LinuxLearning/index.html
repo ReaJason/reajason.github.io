@@ -483,11 +483,9 @@
 <li><p>将所有变量视作字符型，无需事先声明</p>
 </li>
 <li><p>本地变量：作用域仅为当前 shell 进程</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 变量赋值：name=value</span><br><span class="hljs-comment"># 变量引用：$&#123;variable&#125;，$variable</span><br><span class="hljs-comment"># 撤销变量 unset name</span><br></code></pre></div></td></tr></table></figure>
-</li>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 变量赋值：name=value</span><br><span class="hljs-comment"># 变量引用：$&#123;variable&#125;，$variable</span><br><span class="hljs-comment"># 撤销变量 unset name</span><br></code></pre></div></td></tr></table></figure></li>
 <li><p>环境变量：作用域为当前 shell 进程及其子进程</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 变量赋值</span><br><span class="hljs-comment"># export name=value</span><br><span class="hljs-comment"># name=value</span><br><span class="hljs-comment"># export name</span><br><span class="hljs-comment"># declare -x name=value</span><br><br><span class="hljs-comment"># 变量引用：$&#123;variable&#125;，$variable</span><br><span class="hljs-comment"># bash 内嵌了许多环境变量用于定义 bash 的工作环境</span><br><span class="hljs-comment"># export、declare -x、printenv、env，查看所有环境变量</span><br></code></pre></div></td></tr></table></figure>
-</li>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 变量赋值</span><br><span class="hljs-comment"># export name=value</span><br><span class="hljs-comment"># name=value</span><br><span class="hljs-comment"># export name</span><br><span class="hljs-comment"># declare -x name=value</span><br><br><span class="hljs-comment"># 变量引用：$&#123;variable&#125;，$variable</span><br><span class="hljs-comment"># bash 内嵌了许多环境变量用于定义 bash 的工作环境</span><br><span class="hljs-comment"># export、declare -x、printenv、env，查看所有环境变量</span><br></code></pre></div></td></tr></table></figure></li>
 <li><p>局部变量：作用域仅为某代码片段</p>
 </li>
 <li><p>位置参数变量：当执行脚本的 shell 进程传递的参数</p>
@@ -495,9 +493,7 @@
 <li><p>特殊变量：shell 内置的有特殊功能的变量</p>
 </li>
 <li><p>只读变量</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 只读</span><br><span class="hljs-built_in">readonly</span> name<br><span class="hljs-built_in">declare</span> -r name<br></code></pre></div></td></tr></table></figure>
-
-</li>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 只读</span><br><span class="hljs-built_in">readonly</span> name<br><span class="hljs-built_in">declare</span> -r name<br></code></pre></div></td></tr></table></figure></li>
 </ul>
 <h4 id="多命令执行"><a href="#多命令执行" class="headerlink" title="多命令执行"></a>多命令执行</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">COMMAND1;COMMAND2;COMMAND3;......<br><br><span class="hljs-comment"># 当命令1失败则不再运行命令2</span><br>COMMAND1 &amp;&amp; COMMAND2<br><br><span class="hljs-comment"># 当命令1成功则不再运行命令2</span><br>COMMAND1 || COMMAND2<br></code></pre></div></td></tr></table></figure>
 
@@ -573,8 +569,7 @@
 </li>
 <li><p>单向加密：只能加密，不能解密；提取数据特征码</p>
 <ul>
-<li><p>算法：</p>
-<ul>
+<li>算法：<ul>
 <li>md5: message digest, 128bits</li>
 <li>sha：secure hash algorithm, 160bits</li>
 <li>sha224</li>
@@ -582,13 +577,13 @@
 <li>sha384</li>
 <li>sha512</li>
 </ul>
-<p>etc/passwd：用户的信息库</p>
-<p>格式为 ：name:password:UID:GID:GECOS:directory:shell<br>name: 用户名<br>password：可以是加密的密码，也可是占位符x；<br>UID：用户ID；<br>GID：用户所属的主组的ID号；<br>GECOS：注释信息<br>directory：用户的家目录；<br>shell：用户的默认shell，登录时默认shell程序；</p>
-<p>/etc/shadow：用户密码<br>用户名:加密的密码:最近一次修改密码的时间:最短使用期限:最长使用期限:警告期段:过期期限:保留字段</p>
-<p>/etc/group：组的信息库<br>格式为：group_name:password:GID:user_list<br>user_list：该组的用户成员；以此组为附加组的用户的用户列表；</p>
-<h4 id="groupadd"><a href="#groupadd" class="headerlink" title="groupadd"></a>groupadd</h4></li>
-</ul>
 </li>
+</ul>
+<p> etc/passwd：用户的信息库</p>
+<p> 格式为 ：name:password:UID:GID:GECOS:directory:shell<br> name: 用户名<br> password：可以是加密的密码，也可是占位符x；<br> UID：用户ID；<br> GID：用户所属的主组的ID号；<br> GECOS：注释信息<br> directory：用户的家目录；<br> shell：用户的默认shell，登录时默认shell程序；</p>
+<p> /etc/shadow：用户密码<br> 用户名:加密的密码:最近一次修改密码的时间:最短使用期限:最长使用期限:警告期段:过期期限:保留字段</p>
+<p> /etc/group：组的信息库<br> 格式为：group_name:password:GID:user_list<br> user_list：该组的用户成员；以此组为附加组的用户的用户列表；</p>
+<h4 id="groupadd"><a href="#groupadd" class="headerlink" title="groupadd"></a>groupadd</h4></li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 添加组，groupadd [选项] group_name</span><br><span class="hljs-comment"># -g GID：指定GID；默认是上一个组的GID+1</span><br><span class="hljs-comment"># -r: 创建系统组</span><br></code></pre></div></td></tr></table></figure>
 
