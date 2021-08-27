@@ -4,31 +4,6 @@
   
   
   <entry>
-    <title>PL/SQL 以及 Navicat 连接 Oracle11G</title>
-    <link href="/2021/08/26/PLSQL&amp;NavicatConnectOracle11g/"/>
-    <url>/2021/08/26/PLSQL&amp;NavicatConnectOracle11g/</url>
-    
-    <content type="html"><![CDATA[<div class="note note-info">            <p>熟练地使用已有的工具，能有效地提高生产效率</p>          </div> <a id="more"></a><h2 id="PL-SQL-Developer"><a href="#PL-SQL-Developer" class="headerlink" title="PL/SQL Developer"></a>PL/SQL Developer</h2><h3 id="⌛下载"><a href="#⌛下载" class="headerlink" title="⌛下载"></a>⌛下载</h3><div class="note note-success">            <p><a href="https://www.allroundautomations.com/products/pl-sql-developer/free-trial/">官网下载地址，点击前往</a></p>          </div> <p>无脑推荐官网下载，根据自己电脑来就行，32 位就 32 位，64 位就 64 位</p><h3 id="🔓授权"><a href="#🔓授权" class="headerlink" title="🔓授权"></a>🔓授权</h3><div class="note note-info">            <p>授权码来源于网络</p>          </div> <p><strong>Product Code:</strong> <code>ke4tv8t5jtxz493kl8s2nn3t6xgngcmgf3</code></p><p><strong>Serial Number:</strong> <code>264452</code></p><p><strong>Password:</strong> <code>xs374ca</code></p><h3 id="⚙配置"><a href="#⚙配置" class="headerlink" title="⚙配置"></a>⚙配置</h3><p>根据所需要连接的 Oracle 版本来选择自己所需要下载的版本（下载需要账号，注册就行），这是一种不安装客户端的形式，稍微轻便一点，不过有些功能会没有，酌情使用，也可使用高版本的位数相同的客户端下载。</p><ul><li><a href="https://www.oracle.com/database/technologies/instant-client/microsoft-windows-32-downloads.html">32 位 instant-client 下载地址</a></li><li><a href="https://www.oracle.com/database/technologies/instant-client/winx64-64-downloads.html">64 位 instant-client 下载地址</a></li></ul><p>由于我需要连接的服务器安装的是 32 位 Oracle 11g 的版本所以我下载的是 instantclient-basic-nt-11.2.0.4.0.zip</p><p>打开 PL/SQL Developer，登录的时候点取消，进入设置，如图配置 Oracle 主目录以及 OCI 库的位置为下载解压的目录路径，应用并重启</p><p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/PLSQL&NavicatConnectOracle11g_index_img/plsql.png" alt="plsql setting"></p><h3 id="🎯连接"><a href="#🎯连接" class="headerlink" title="🎯连接"></a>🎯连接</h3><p>使用用户名、密码和数据库（ip:port/servername）进行连接（如果连接不上根据报错寻找解决办法，一般情况就是下载的 instant-client 与服务器的版本不匹配，显示未授权的协议）</p><p>如果查询的时候乱码则需要配置 Windows 环境变量</p><figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-comment">-- 查询数据库版本</span><br><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> v$<span class="hljs-keyword">version</span>;<br><br><span class="hljs-comment">-- 查询数据库所使用的编码</span><br><span class="hljs-keyword">select</span> userenv(<span class="hljs-string">&#x27;language&#x27;</span>) <span class="hljs-keyword">from</span> dual;<br></code></pre></div></td></tr></table></figure><p>环境变量名：NLS_LANG</p><p>环境变量值：查询编码到的编码（我的是：AMERICAN_AMERICA.ZHS16GBK）</p><p>重启就不会乱码了🤗</p><h2 id="Navicat-Premium-15"><a href="#Navicat-Premium-15" class="headerlink" title="Navicat Premium 15"></a>Navicat Premium 15</h2><h3 id="⌛下载-1"><a href="#⌛下载-1" class="headerlink" title="⌛下载"></a>⌛下载</h3><div class="note note-success">            <p><a href="https://www.navicat.com.cn/download/navicat-premium">官网下载地址，点击前往</a></p>          </div> <p>无脑推荐官网下载，根据自己电脑来就行，32 位就 32 位，64 位就 64 位</p><h3 id="🔓授权-1"><a href="#🔓授权-1" class="headerlink" title="🔓授权"></a>🔓授权</h3><p>教程这边请👉：<a href="https://cloud.tencent.com/developer/article/1804255">Navicat Premium 15安装教程(完整激活版) </a></p><h3 id="⚙配置-1"><a href="#⚙配置-1" class="headerlink" title="⚙配置"></a>⚙配置</h3><div class="note note-success">            <p>我使用 PL/SQL 上面下载用的 OCI 并不可行，找到可行的 <a href="https://lingsiki.lanzoui.com/iWlWkt9fwdi">Oracle11g OCI 下载</a> </p>          </div> <p>工具-选项-环境-OCI 环境选择下载解压的 oci.dll 文件重启即可</p><p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/PLSQL&NavicatConnectOracle11g_index_img/navicat.png" alt="navicat setting"></p><h3 id="🎯连接-1"><a href="#🎯连接-1" class="headerlink" title="🎯连接"></a>🎯连接</h3><p>新建 Oracle 连接，主机填写 ip 地址，账号密码，服务名，测试链接</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Notes</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Tool</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Forever Algorithm</title>
     <link href="/2021/08/21/Csharp&amp;Cpp&amp;PythonAlgorithm/"/>
     <url>/2021/08/21/Csharp&amp;Cpp&amp;PythonAlgorithm/</url>
