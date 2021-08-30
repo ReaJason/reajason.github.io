@@ -215,7 +215,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      550 字
+      564 字
     </span>
   
 
@@ -283,12 +283,16 @@
 <p><strong>Product Code:</strong> <code>ke4tv8t5jtxz493kl8s2nn3t6xgngcmgf3</code></p>
 <p><strong>Serial Number:</strong> <code>264452</code></p>
 <p><strong>Password:</strong> <code>xs374ca</code></p>
-<h3 id="⚙配置"><a href="#⚙配置" class="headerlink" title="⚙配置"></a>⚙配置</h3><p>根据所需要连接的 Oracle 版本来选择自己所需要下载的版本（下载需要账号，注册就行），这是一种不安装客户端的形式，稍微轻便一点，不过有些功能会没有，酌情使用，也可使用高版本的位数相同的客户端下载。</p>
+<h3 id="⚙配置"><a href="#⚙配置" class="headerlink" title="⚙配置"></a>⚙配置</h3><div class="note note-warning">
+            <p>建议 PLSQL、instantclient 与 服务器 Oracle 版本一致</p>
+          </div> 
+
+<p>根据所需要连接的 Oracle 版本来选择自己所需要下载的版本（下载需要账号，注册就行），这是一种不安装客户端的形式，稍微轻便一点，不过有些功能会没有，酌情使用，也可使用高版本的位数相同的客户端下载。</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://www.oracle.com/database/technologies/instant-client/microsoft-windows-32-downloads.html">32 位 instant-client 下载地址</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.oracle.com/database/technologies/instant-client/winx64-64-downloads.html">64 位 instant-client 下载地址</a></li>
 </ul>
-<p>由于我需要连接的服务器安装的是 32 位 Oracle 11g 的版本所以我下载的是 instantclient-basic-nt-11.2.0.4.0.zip</p>
+<p>由于我需要连接的服务器安装的是 64 位 Oracle 11g 的版本所以我下载的是 instantclient-basic-windows.x64-11.2.0.4.0.zip</p>
 <p>打开 PL/SQL Developer，登录的时候点取消，进入设置，如图配置 Oracle 主目录以及 OCI 库的位置为下载解压的目录路径，应用并重启</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/PLSQL&NavicatConnectOracle11g_index_img/plsql.png" srcset="/img/loading.gif" lazyload alt="plsql setting"></p>
 <h3 id="🎯连接"><a href="#🎯连接" class="headerlink" title="🎯连接"></a>🎯连接</h3><p>使用用户名、密码和数据库（ip:port/servername）进行连接（如果连接不上根据报错寻找解决办法，一般情况就是下载的 instant-client 与服务器的版本不匹配，显示未授权的协议）</p>
@@ -340,6 +344,23 @@
                   
                 </p>
               
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/08/21/Csharp&amp;Cpp&amp;PythonAlgorithm/">
+                        <span class="hidden-mobile">Forever Algorithm</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
               
             </div>
 
