@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
@@ -9,24 +9,37 @@
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/default/website.png">
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/default/website.png">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#fc9d9a">
-  <meta name="description" content="">
   <meta name="author" content="ReaJason">
   <meta name="keywords" content="">
   
+    <meta property="og:type" content="website">
+<meta property="og:title" content="ReaJason">
+<meta property="og:url" content="https://reajason.github.io/page/2/index.html">
+<meta property="og:site_name" content="ReaJason">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="ReaJason">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
   <title>ReaJason</title>
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
 
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
@@ -35,7 +48,13 @@
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
   
 <link rel="stylesheet" href="/css/custom.css">
@@ -45,19 +64,35 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":150,"cursorChar":"❤️","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"HohGa0vcu0iQIbm7ELytbaKs-gzGzoHsz","app_key":"9TiVNoKrg63RPL3ALyu72tt2","server_url":"https://hohga0vc.lc-cn-n1-shared.com"}}};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"reajason.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":150,"cursorChar":"❤️","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"HohGa0vcu0iQIbm7ELytbaKs-gzGzoHsz","app_key":"9TiVNoKrg63RPL3ALyu72tt2","server_url":"https://hohga0vc.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.2.0"></head>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
-  <header style="height: 100vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>ReaJason's Space</strong>&nbsp;</a>
+    <a class="navbar-brand" href="/">
+      <strong>ReaJason&#39;s Space</strong>
+    </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -143,13 +178,15 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self">&nbsp;<i
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -158,34 +195,40 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/default/default.jpg') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Love Yourself">
-              
-            </span>
+  
 
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/default/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
           
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
+            <span id="subtitle" data-typed-text="Love Yourself"></span>
           
         </div>
+
+        
       </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
     
       <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
+        <div id="board"
+          style="margin-top: 0">
           
           <div class="container">
             <div class="row">
@@ -196,52 +239,425 @@
   <div class="row mx-auto index-card">
     
     
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2021/01/19/PythonLearning/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/PythonLearning_index_img.jpg" srcset="/img/loading.gif" lazyload alt="Python语法学习">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
+    <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/01/19/PythonLearning/">Python语法学习</a>
+        <a href="/2021/11/25/JavaWebJDBC/" target="_self">
+          JDBC
+        </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/01/19/PythonLearning/">
-          
-          
-            
-          
-          
-            Python 脚本小子的自我养成，还远远不够！
-          
-        </a>
-      </p>
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/11/25/JavaWebJDBC/" target="_self">
+        <div>
+          Introjdbc 是一套连接数据库的规范，由各数据库分别实现。 MySQL：mysql-connector-java (mvnrepository.com) 注册驱动： 12345678910111213141516Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;);/* com.mysql.cj.jdbc.Driver */public cl
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-01-19 14:10" pubdate>
-              2021-01-19
+            <time datetime="2021-11-25 11:29" pubdate>
+              2021-11-25
             </time>
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Python/">Python</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JavaWeb/" class="category-chain-item">JavaWeb</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Notes/">Notes</a>
+              <a href="/tags/Notes/">#Notes</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/11/22/JavaWebJSP/" target="_self">
+          JSP
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/11/22/JavaWebJSP/" target="_self">
+        <div>
+          JSP 都会被编译成 Servlet 类，文件位置位于：/work/Catalina/localhost 下。  &lt;%  %&gt;（代码块），会被编译放到 service 方法中，局部变量 &lt;%&#x3D; %&gt;（表达式语句块），会被编译到 out.println() 中，因此不能有 ; 号 &lt;%@ page %&gt;，会被编译到 servlet 类最头部 &lt;%!
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-11-22 11:29" pubdate>
+              2021-11-22
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JavaWeb/" class="category-chain-item">JavaWeb</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Notes/">#Notes</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/11/22/JavaWebTomcat/" target="_self">
+          Tomcat
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/11/22/JavaWebTomcat/" target="_self">
+        <div>
+          Tomcat 安装 官网：Apache Tomcat® - Welcome!  目录 /bin：可执行文件，包括启动（startup.bat）和停止（shutdown.bat）脚本 /conf：配置文件 /lib：运行依赖 jar 包 /logs：日志文件 /webapps：存放 java web 项目资源  /work：工作目录，存放 jsp 翻译为 servlet 的源码和 session 钝
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-11-22 11:29" pubdate>
+              2021-11-22
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JavaWeb/" class="category-chain-item">JavaWeb</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Notes/">#Notes</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/11/18/MySQL8Learning/" target="_self">
+          MySQL8
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/11/18/MySQL8Learning/" target="_self">
+        <div>
+          Install1、安装 docker-compose 12345678# 下载文件sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose# 设置
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-11-18 15:26" pubdate>
+              2021-11-18
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/MySQL/" class="category-chain-item">MySQL</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Notes/">#Notes</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/11/08/CoreJava/" target="_self">
+          CoreJava Volume Ⅰ
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/11/08/CoreJava/" target="_self">
+        <div>
+          1 Java 程序设计概述Java 的 11 个关键字：  简单性 面向对象 分布式 健壮性 安全性 体系结构中立 可移植性 解释性 高性能 多线程 动态性  2 Java 环境安装术语：  Java Develepment Kit（JDK）：编写 Java 程序的程序员使用的软件 Java Runtime Environment（JRE）：运行 Java 程序的用户使用的软件 Standard
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-11-08 09:48" pubdate>
+              2021-11-08
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Reading/" class="category-chain-item">Reading</a>
+  
+  
+
+      </span>
+    
+  
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Notes/">#Notes</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/10/28/JavaWebServlet/" target="_self">
+          Servlet
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/10/28/JavaWebServlet/" target="_self">
+        <div>
+          1 Servlet1.1 UML 图Servlet 是接口，我们常使用的 HttpServlet 是一个实现类，支持 Http 协议。创建我们自己的 Servlet 类继承 HttpServlet 时，必须重写 doPost 和 doGet 两个方法中的一个。  1.2 Servlet 生命周期 Web 容器加载我们创建的 Servlet 类 class 到内存中 当第一次请求时先调用构造器构造一
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-10-28 11:29" pubdate>
+              2021-10-28
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JavaWeb/" class="category-chain-item">JavaWeb</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Notes/">#Notes</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/10/01/SoftSkillsReadingNotes/" target="_self">
+          《软技能：代码之外的生存技能》读书笔记
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/10/01/SoftSkillsReadingNotes/" target="_self">
+        <div>
+          本书一共分为 7 篇（职业、自我营销、学习、生产力、理财、健身、精神），71 个章节。 对于我一个刚毕业的正准备投身于软件开发行业的一个初入职场的新手，我表示看完之后受益匪浅（直接升华了，重新认识了这个职业以及前面的路该如何走）。 职业篇该篇中第一章就惊艳到我了，以至于我一个从小到大基本没静坐下来读过书的，我都非常有兴趣能把这本书继续读下去。 1、拥有商业心态转变自己的心态，将自己当作一个企业思考
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-10-01 09:35" pubdate>
+              2021-10-01
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Books/" class="category-chain-item">Books</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Notes/">#Notes</a>
             
           </div>
         
@@ -253,51 +669,62 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2021/01/18/LinuxLearning/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/LinuxLearning_index_img.png" srcset="/img/loading.gif" lazyload alt="Linux学习笔记">
+        <a href="/2021/09/28/ManInLoveReview/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/ManInLoveReview_index_img.png" srcset="/img/loading.gif" lazyload alt="Man In Love Review">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/01/18/LinuxLearning/">Linux学习笔记</a>
+        <a href="/2021/09/28/ManInLoveReview/" target="_self">
+          Man In Love Review
+        </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/01/18/LinuxLearning/">
-          
-          
-            
-          
-          
-            Linux 运维学习，跟着视频教程走走流程，学习了解一下 Linux
-          
-        </a>
-      </p>
+      
+      <a class="index-excerpt " href="/2021/09/28/ManInLoveReview/" target="_self">
+        <div>
+          之前看电影、看剧、看番基本看完就忘，有时候觉得写下来自己的感受或许会真的更加有收获
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-01-18 14:10" pubdate>
-              2021-01-18
+            <time datetime="2021-09-28 14:10" pubdate>
+              2021-09-28
             </time>
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Linux/">Linux</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Blog/" class="category-chain-item">Blog</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Notes/">Notes</a>
+              <a href="/tags/Notions/">#Notions</a>
             
           </div>
         
@@ -309,51 +736,129 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/11/07/AlipayAutoSync/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/AlipayAutoSync_index_img.jpg" srcset="/img/loading.gif" lazyload alt="支付宝多账号同步">
+        <a href="/2021/08/26/PLSQL&amp;NavicatConnectOracle11g/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/PLSQL&amp;NavicatConnectOracle11g_index_img.jpg" srcset="/img/loading.gif" lazyload alt="PL/SQL 以及 Navicat 连接 Oracle11G">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2020/11/07/AlipayAutoSync/">支付宝多账号同步</a>
+        <a href="/2021/08/26/PLSQL&amp;NavicatConnectOracle11g/" target="_self">
+          PL/SQL 以及 Navicat 连接 Oracle11G
+        </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2020/11/07/AlipayAutoSync/">
-          
-          
-            
-          
-          
-            主要实现功能为支付宝多账号切换 + 进入运动进行步数同步
-          
-        </a>
-      </p>
+      
+      <a class="index-excerpt " href="/2021/08/26/PLSQL&amp;NavicatConnectOracle11g/" target="_self">
+        <div>
+          熟练地使用已有的工具，能有效地提高生产效率
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2020-11-07 09:35" pubdate>
-              2020-11-07
+            <time datetime="2021-08-26 09:35" pubdate>
+              2021-08-26
             </time>
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/AutoJs/">AutoJs</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Notes/" class="category-chain-item">Notes</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Script/">Script</a>
+              <a href="/tags/Tool/">#Tool</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2021/08/08/BeStrongerAndBetter/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/BeStrongerAndBetter_index_img.png" srcset="/img/loading.gif" lazyload alt="梦想是注定孤独的旅行">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/08/08/BeStrongerAndBetter/" target="_self">
+          梦想是注定孤独的旅行
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2021/08/08/BeStrongerAndBetter/" target="_self">
+        <div>
+          Notions
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-08-08 10:00" pubdate>
+              2021-08-08
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Blog/" class="category-chain-item">Blog</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Notions/">#Notions</a>
             
           </div>
         
@@ -365,7 +870,7 @@
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#board">3</a><a class="extend next" rel="next" href="/page/3/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 
@@ -379,7 +884,7 @@
     
 
     
-      <a id="scroll-top-button" href="#" role="button">
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
         <i class="iconfont icon-arrowup" aria-hidden="true"></i>
       </a>
     
@@ -398,35 +903,37 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <i class="iconfont icon-copyright"></i> 2019-2021 <a target="_blank" rel="noopener" href="https://reajason.top">ReaJason</a> </br>Powered by  <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> ❤️ <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> ❄我们在一起玩耍了❄ </br> <span id="timeDate"></span> <span id="times"></span> <script src="/js/duration.js"></script> </div> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-
+    <div class="footer-content">
+       <i class="iconfont icon-copyright"></i> 2019-2021 <a target="_blank" rel="noopener" href="https://reajason.top">ReaJason</a> </br>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> ❤️ <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> ❄我们在一起玩耍了❄ </br> <span id="timeDate"></span> <span id="times"></span> <script src="/js/duration.js"></script> </div> 
+    </div>
   
-
   
-</footer>
-
-
-  <!-- SCRIPTS -->
   
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
 
   <script>
     NProgress.configure({"showSpinner":false,"trickleSpeed":100})
@@ -437,12 +944,28 @@
   </script>
 
 
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
 
 
   
@@ -451,68 +974,22 @@
 
 
 
-  
-
-
-
-
-
-
-
-
-
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
-
-
-
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-      typing(title)
-      
-    })(window, document);
-  </script>
-
-
 
   <script  src="/js/local-search.js" ></script>
-  <script>
-    (function () {
-      var path = "/local-search.xml";
-      $('#local-search-input').on('click', function() {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      });
-      $('#modalSearch').on('shown.bs.modal', function() {
-        $('#local-search-input').focus();
-      });
-    })()
-  </script>
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>

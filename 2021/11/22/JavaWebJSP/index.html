@@ -1,0 +1,778 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/default/website.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/default/website.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#fc9d9a">
+  <meta name="author" content="ReaJason">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="JSP 都会被编译成 Servlet 类，文件位置位于：&#x2F;work&#x2F;Catalina&#x2F;localhost 下。  &lt;%  %&gt;（代码块），会被编译放到 service 方法中，局部变量 &lt;%&#x3D; %&gt;（表达式语句块），会被编译到 out.println() 中，因此不能有 ; 号 &lt;%@ page %&gt;，会被编译到 servlet 类最头部 &lt;%!">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSP">
+<meta property="og:url" content="https://reajason.github.io/2021/11/22/JavaWebJSP/index.html">
+<meta property="og:site_name" content="ReaJason">
+<meta property="og:description" content="JSP 都会被编译成 Servlet 类，文件位置位于：&#x2F;work&#x2F;Catalina&#x2F;localhost 下。  &lt;%  %&gt;（代码块），会被编译放到 service 方法中，局部变量 &lt;%&#x3D; %&gt;（表达式语句块），会被编译到 out.println() 中，因此不能有 ; 号 &lt;%@ page %&gt;，会被编译到 servlet 类最头部 &lt;%!">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-22T03:29:42.000Z">
+<meta property="article:modified_time" content="2022-11-08T06:48:01.476Z">
+<meta property="article:author" content="ReaJason">
+<meta property="article:tag" content="Notes">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>JSP - ReaJason</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_2805938_q5x4gqy1kjn.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"reajason.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":150,"cursorChar":"❤️","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"HohGa0vcu0iQIbm7ELytbaKs-gzGzoHsz","app_key":"9TiVNoKrg63RPL3ALyu72tt2","server_url":"https://hohga0vc.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ReaJason&#39;s Space</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/default/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="JSP"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-11-22 11:29" pubdate>
+          2021年11月22日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          17 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">JSP</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>JSP 都会被编译成 Servlet 类，文件位置位于：<code>/work/Catalina/localhost</code> 下。</p>
+<ul>
+<li>&lt;%  %&gt;（代码块），会被编译放到 service 方法中，局部变量</li>
+<li>&lt;%&#x3D; %&gt;（表达式语句块），会被编译到 out.println() 中，因此不能有 ; 号</li>
+<li>&lt;%@ page %&gt;，会被编译到 servlet 类最头部</li>
+<li>&lt;%! %&gt;（声明语句块），会被编译到 servlet 类下，作为类的属性和方法</li>
+<li>其他普通字符串比如 html 会被放入到 out.write() 中</li>
+</ul>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><ol>
+<li><code>&lt;!-- HTML 注释 --&gt;</code>，浏览器能看到</li>
+<li><code>&lt;%-- JSP 注释--%&gt;</code>，浏览器无法看到</li>
+</ol>
+<h2 id="JSP-生命周期"><a href="#JSP-生命周期" class="headerlink" title="JSP 生命周期"></a>JSP 生命周期</h2><p>当请求到来时，容器将 .jsp 转为 java 代码并编译为 .class 文件，再加载到容器中，并构造 Servlet 实例调用 jspInit() 方法完成初始化，此时就是一个 Servlet 实例了，每次请求到来只需要分配线程并调用 _jspService() 方法即可，转换和编译只会发生一次。</p>
+<h2 id="初始化参数"><a href="#初始化参数" class="headerlink" title="初始化参数"></a>初始化参数</h2><p>1、配置 web.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">servlet</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">servlet-name</span>&gt;</span>indexJSP<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-name</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">jsp-file</span>&gt;</span>/index.jsp<span class="hljs-tag">&lt;/<span class="hljs-name">jsp-file</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">init-param</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">param-name</span>&gt;</span>username<span class="hljs-tag">&lt;/<span class="hljs-name">param-name</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">param-value</span>&gt;</span>ReaJason<span class="hljs-tag">&lt;/<span class="hljs-name">param-value</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">init-param</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">servlet</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">servlet-mapping</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">servlet-name</span>&gt;</span>indexJSP<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-name</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">url-pattern</span>&gt;</span>/index.jsp<span class="hljs-tag">&lt;/<span class="hljs-name">url-pattern</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">servlet-mapping</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>2、在 index.jsp 中重写 jspInit() 方法</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs jsp">&lt;%@ page contentType=<span class="hljs-string">&quot;text/html; charset=utf-8&quot;</span>%&gt;<br>&lt;html&gt;<br>    &lt;body&gt;<br>        &lt;%!<br>            <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">jspInit</span><span class="hljs-params">()</span>&#123;<br>                <span class="hljs-type">ServletConfig</span> <span class="hljs-variable">sConfig</span> <span class="hljs-operator">=</span> getServletConfig();<br>                <span class="hljs-type">String</span> <span class="hljs-variable">username</span> <span class="hljs-operator">=</span> sConfig.getInitParameter(<span class="hljs-string">&quot;username&quot;</span>);<br>                <span class="hljs-type">ServletContext</span> <span class="hljs-variable">ctx</span> <span class="hljs-operator">=</span> getServletContext();<br>                ctx.setAttribute(<span class="hljs-string">&quot;username&quot;</span>, username);<br>            &#125;<br>        %&gt;<br><br>        &lt;p&gt;初始化参数为：&lt;%= application.getAttribute(<span class="hljs-string">&quot;username&quot;</span>)%&gt;&lt;/p&gt;<br>    &lt;/body&gt;<br>&lt;/html&gt;<br></code></pre></td></tr></table></figure>
+
+<h2 id="JSP-中的属性"><a href="#JSP-中的属性" class="headerlink" title="JSP 中的属性"></a>JSP 中的属性</h2><ol>
+<li>PageContext pageContext</li>
+<li>HttpSession session</li>
+<li>ServletContext application</li>
+<li>ServletConfig config</li>
+<li>JspWriter out</li>
+</ol>
+<p>PageContext 可以得到任意作用域的属性。</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs jsp">&lt;%-- 设置页面作用域属性 --%&gt;<br>&lt;% pageContext.setAttribute(<span class="hljs-string">&quot;username&quot;</span>, <span class="hljs-string">&quot;ReaJason&quot;</span>) %&gt;<br><br>&lt;%-- 设置会话作用域属性 --%&gt;<br>&lt;% pageContext.setAttribute(<span class="hljs-string">&quot;username&quot;</span>, <span class="hljs-string">&quot;ReaJason&quot;</span>,PageContext.SESSION_SCOPE) %&gt;<br><br>&lt;%-- 设置应用作用域属性 --%&gt;<br>&lt;% pageContext.setAttribute(<span class="hljs-string">&quot;username&quot;</span>, <span class="hljs-string">&quot;ReaJason&quot;</span>,PageContext.APPLICATION_SCOPE) %&gt;<br></code></pre></td></tr></table></figure>
+
+<p>关闭脚本元素：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">jsp-config</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">jsp-property-group</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">url-pattern</span>&gt;</span>*.jsp<span class="hljs-tag">&lt;/<span class="hljs-name">url-pattern</span>&gt;</span><br>    	<span class="hljs-tag">&lt;<span class="hljs-name">scripting-invalid</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">scripting-invalid</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">jsp-property-group</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">jsp-config</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><p><strong>page 指令</strong>：定义页面特定的属性，如字符编码、页面响应的内容类型、以及这个页面是否有隐式的会话对象。</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jsp">&lt;% page <span class="hljs-keyword">import</span>=<span class="hljs-string">&quot;java.util.*&quot;</span> %&gt;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>import，为 jsp 导入其他类</li>
+<li>contentType，定义 jsp 响应的 MIME 内容和字符编码，如 <code>text/html; charset=utf-8</code></li>
+<li>isELIgnored，是否忽略 EL 表达式</li>
+<li>isErrorPage，当前页面是否是错误页面</li>
+<li>errorPage，定义一个资源 URL，如果发生错误则前往那里</li>
+</ul>
+<p><strong>taglib 指定</strong>：定义 jsp 可以使用的标记库</p>
+<p><strong>include 指令</strong>：定义在转换时增加到当前页面的文本和代码。</p>
+<h2 id="EL-表达式"><a href="#EL-表达式" class="headerlink" title="EL 表达式"></a>EL 表达式</h2><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs jsp">&lt;!-- EL 表达式 --&gt;<br>$&#123;applicationScope.mail&#125;<br><br>&lt;%= application.getAttribute(<span class="hljs-string">&quot;email&quot;</span>)%&gt;<br></code></pre></td></tr></table></figure>
+
+<p>禁用 EL 表达式：<code>&lt;%@ page isELIgnored=&quot;true&quot; %&gt;</code></p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs jsp">&lt;!-- EL 表达式使用 [] 取值时，变量可以是Map、bean、List 或数组 --&gt;<br>$&#123;list[<span class="hljs-number">0</span>]&#125;<br></code></pre></td></tr></table></figure>
+
+<p>对于对象取值直接 . 获取即可，如 student.name、student.age</p>
+<p>EL 隐式对象：</p>
+<p>作用域相关：</p>
+<ul>
+<li>pageScope</li>
+<li>requestScope</li>
+<li>sessionScope</li>
+<li>applicationScope</li>
+</ul>
+<p><strong>EL 表达式只能从域对象中获取数据，顺序依次为</strong> </p>
+<p><strong>pageContext -&gt; request -&gt; session -&gt; application</strong></p>
+<p>请求参数：</p>
+<ul>
+<li>param</li>
+<li>paramValues</li>
+</ul>
+<p>请求头部：</p>
+<ul>
+<li>header</li>
+<li>headerValues</li>
+</ul>
+<p>其他：</p>
+<ul>
+<li>cookie</li>
+<li>initParam：上下文参数</li>
+<li>pageContext</li>
+</ul>
+<h2 id="动作"><a href="#动作" class="headerlink" title="动作"></a>动作</h2><p>1、使用 bean</p>
+<p>servlet：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">doGet</span><span class="hljs-params">(HttpServletRequest request, HttpServletResponse response)</span><br>    <span class="hljs-keyword">throws</span> IOException, ServletException<br>&#123;<br>    <span class="hljs-type">Person</span> <span class="hljs-variable">p</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">&quot;ReaJason&quot;</span>, <span class="hljs-number">18</span>, <span class="hljs-number">1</span>);<br>    request.setAttribute(<span class="hljs-string">&quot;p&quot;</span>, p);<br><br>    <span class="hljs-type">RequestDispatcher</span> <span class="hljs-variable">view</span> <span class="hljs-operator">=</span> request.getRequestDispatcher(<span class="hljs-string">&quot;result.jsp&quot;</span>);<br>    view.forward(request,response);<br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>result.jsp：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs jsp">&lt;%@ page contentType=<span class="hljs-string">&quot;text/html; charset=utf-8&quot;</span>%&gt;<br>&lt;html&gt;<br>    &lt;body&gt;<br>        &lt;jsp:useBean id=<span class="hljs-string">&quot;p&quot;</span> class=<span class="hljs-string">&quot;top.reajason.bean.Person&quot;</span> scope=<span class="hljs-string">&quot;request&quot;</span> /&gt;<br>        Person create by servlet: &lt;jsp:getProperty name=<span class="hljs-string">&quot;p&quot;</span> property=<span class="hljs-string">&quot;name&quot;</span> /&gt;<br>        &lt;%= request.getAttribute(<span class="hljs-string">&quot;p&quot;</span>)%&gt;<br>    &lt;/body&gt;<br>&lt;/html&gt;<br></code></pre></td></tr></table></figure>
+
+<p>设置属性：</p>
+<p>scope 默认为 page</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs jsp">&lt;jsp:useBean id=<span class="hljs-string">&quot;person&quot;</span> class=<span class="hljs-string">&quot;top.reajason.bean.Person&quot;</span> scope=<span class="hljs-string">&quot;page&quot;</span>&gt;<br>    &lt;jsp:setProperty name=<span class="hljs-string">&quot;person&quot;</span> property=<span class="hljs-string">&quot;name&quot;</span> value=<span class="hljs-string">&quot;Fred&quot;</span> /&gt;<br>&lt;/jsp:useBean&gt;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs jsp">&lt;!-- 使用 type 标记声明类型，使用 class 标记 <span class="hljs-keyword">new</span> 的类型 --&gt;<br>&lt;jsp:useBean id=<span class="hljs-string">&quot;employee&quot;</span> type=<span class="hljs-string">&quot;top.reajason.bean.Person&quot;</span> class=<span class="hljs-string">&quot;top.reajason.bean.Employee&quot;</span> scope=<span class="hljs-string">&quot;page&quot;</span>&gt;<br>    &lt;jsp:setProperty name=<span class="hljs-string">&quot;employee&quot;</span> property=<span class="hljs-string">&quot;name&quot;</span> value=<span class="hljs-string">&quot;Fred&quot;</span> /&gt;<br>&lt;/jsp:useBean&gt;<br></code></pre></td></tr></table></figure>
+
+<p>使用 jsp:useBean 接参数：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs jsp">&lt;!-- 表单提交时设置的 name 与 javabean 变量名相同 --&gt;<br>&lt;jsp:useBean id=<span class="hljs-string">&quot;person&quot;</span> class=<span class="hljs-string">&quot;top.reajason.bean.Person&quot;</span> scope=<span class="hljs-string">&quot;page&quot;</span>&gt;<br>    &lt;jsp:setProperty name=<span class="hljs-string">&quot;person&quot;</span> property=<span class="hljs-string">&quot;*&quot;</span>/&gt;<br>&lt;/jsp:useBean&gt;<br></code></pre></td></tr></table></figure>
+
+<p>2、可重用模板</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs jsp">&lt;!-- 编译时转换，直接将 Header.jsp 复制到当前页面中 --&gt;<br>&lt;%@ include file=<span class="hljs-string">&quot;Header.jsp&quot;</span> %&gt;<br><br>&lt;!-- 运行时添加，文件体积更小，性能有开销 --&gt;<br>&lt;jsp:include page=<span class="hljs-string">&quot;Header.jsp&quot;</span> /&gt;<br><br>&lt;!-- 添加参数 --&gt;<br>&lt;jsp:include page=<span class="hljs-string">&quot;Header.jsp&quot;</span>&gt;<br>	&lt;jsp:param name=<span class="hljs-string">&quot;subTitle&quot;</span> value=<span class="hljs-string">&quot;hello World&quot;</span>/&gt;<br>&lt;/jsp:include&gt;<br><br>&lt;!--  Header.jsp --&gt;<br>&lt;p&gt;<br>    $&#123;param.subTitle&#125;<br>&lt;/p&gt;<br></code></pre></td></tr></table></figure>
+
+<h2 id="JSTL"><a href="#JSTL" class="headerlink" title="JSTL"></a>JSTL</h2><p>安装：需要 jstl 和 standard 两个 lib 文件</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs jsp">&lt;!-- 引入 --&gt;<br>&lt;%@ taglib prefix=<span class="hljs-string">&quot;c&quot;</span> uri=<span class="hljs-string">&quot;http://java.sun.com/jsp/jstl/core&quot;</span> %&gt;<br></code></pre></td></tr></table></figure>
+
+<p>c:out</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs jsp">&lt;c:out value=<span class="hljs-string">&quot;&lt;b&gt;&lt;/b&gt;&quot;</span> <span class="hljs-keyword">default</span>=<span class="hljs-string">&quot;默认值&quot;</span> /&gt;<br>&lt;c:out value=<span class="hljs-string">&quot;$&#123;EL表达式值替换&#125;&quot;</span> /&gt;<br></code></pre></td></tr></table></figure>
+
+<p>c:foreach</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs jsp">&lt;c:foreach <span class="hljs-keyword">var</span>=<span class="hljs-string">&quot;movie&quot;</span> items=<span class="hljs-string">&quot;$&#123;moveiList&#125;&quot;</span> varStatus=<span class="hljs-string">&quot;movieLoopCount&quot;</span>&gt;<br>     &lt;tr&gt;<br>         &lt;!-- 当前遍历索引 <span class="hljs-number">1</span> 开始 --&gt;<br>        &lt;td&gt;$&#123;movieLoopCount.count&#125;&lt;/td&gt;<br>    &lt;/tr&gt;<br>    &lt;tr&gt;<br>        &lt;td&gt;$&#123;movie&#125;&lt;/td&gt;<br>    &lt;/tr&gt;<br>&lt;/c:foreach&gt;<br></code></pre></td></tr></table></figure>
+
+<p>c:if</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs jsp">&lt;c:<span class="hljs-keyword">if</span> test=<span class="hljs-string">&quot;true&quot;</span>&gt;<br>    &lt;jsp:include page=<span class="hljs-string">&quot;input.jsp&quot;</span> /&gt;<br>&lt;/c:<span class="hljs-keyword">if</span>&gt;<br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JavaWeb/" class="category-chain-item">JavaWeb</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Notes/">#Notes</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>JSP</div>
+      <div>https://reajason.github.io/2021/11/22/JavaWebJSP/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>ReaJason</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年11月22日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/11/25/JavaWebJDBC/" title="JDBC">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">JDBC</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/11/22/JavaWebTomcat/" title="Tomcat">
+                        <span class="hidden-mobile">Tomcat</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <i class="iconfont icon-copyright"></i> 2019-2021 <a target="_blank" rel="noopener" href="https://reajason.top">ReaJason</a> </br>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> ❤️ <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> ❄我们在一起玩耍了❄ </br> <span id="timeDate"></span> <span id="times"></span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

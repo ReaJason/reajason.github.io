@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
@@ -9,42 +9,51 @@
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/default/website.png">
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/default/website.png">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#fc9d9a">
-  <meta name="description" content="
-            🎉玩机党的快乐！
-          ">
   <meta name="author" content="ReaJason">
   <meta name="keywords" content="">
   
+    <meta name="description" content="🎉玩机党的快乐！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的刷机之旅 — Redmi K20 Pro">
+<meta property="og:url" content="https://reajason.github.io/2021/04/12/AndroidFlashRom/index.html">
+<meta property="og:site_name" content="ReaJason">
+<meta property="og:description" content="🎉玩机党的快乐！">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/AndroidFlashRom_index_img.png">
+<meta property="article:published_time" content="2021-04-12T15:00:00.000Z">
+<meta property="article:modified_time" content="2022-02-23T06:30:01.629Z">
+<meta property="article:author" content="ReaJason">
+<meta property="article:tag" content="Notes">
+<meta property="article:tag" content="Skill">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/AndroidFlashRom_index_img.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
   <title>我的刷机之旅 — Redmi K20 Pro - ReaJason</title>
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
 
-  
-    
-    
-      
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
-    
-  
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
 
-  
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-  
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
@@ -53,7 +62,13 @@
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
   
 <link rel="stylesheet" href="/css/custom.css">
@@ -63,19 +78,35 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":150,"cursorChar":"❤️","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"HohGa0vcu0iQIbm7ELytbaKs-gzGzoHsz","app_key":"9TiVNoKrg63RPL3ALyu72tt2","server_url":"https://hohga0vc.lc-cn-n1-shared.com"}}};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"reajason.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":150,"cursorChar":"❤️","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"HohGa0vcu0iQIbm7ELytbaKs-gzGzoHsz","app_key":"9TiVNoKrg63RPL3ALyu72tt2","server_url":"https://hohga0vc.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.2.0"></head>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>ReaJason's Space</strong>&nbsp;</a>
+    <a class="navbar-brand" href="/">
+      <strong>ReaJason&#39;s Space</strong>
+    </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -161,13 +192,15 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self">&nbsp;<i
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -176,68 +209,77 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/default/default.jpg') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="我的刷机之旅 — Redmi K20 Pro">
-              
-            </span>
-
-            
-              <div class="mt-3">
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-04-12 23:00" pubdate>
-        2021年4月12日 晚上
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      2.6k 字
-    </span>
   
 
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      28
-       分钟
-    </span>
-  
-
-  
-  
-    
-      <!-- 不蒜子统计文章PV -->
-      <span id="busuanzi_container_page_pv" style="display: none">
-        <i class="iconfont icon-eye" aria-hidden="true"></i>
-        <span id="busuanzi_value_page_pv"></span> 次
-      </span>
-    
-  
-</div>
-
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/default/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="我的刷机之旅 — Redmi K20 Pro"></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-04-12 23:00" pubdate>
+          2021年4月12日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          13 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
       </div>
+
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
@@ -246,41 +288,43 @@
 
 <div class="container-fluid nopadding-x">
   <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
     <div class="col-lg-8 nopadding-x-md">
       <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
+        <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
             <h1 style="display: none">我的刷机之旅 — Redmi K20 Pro</h1>
             
-            <div class="markdown-body">
-              <div class="note note-info">
+            
+              <div class="markdown-body">
+                
+                <div class="note note-info">
             <p>🎉玩机党的快乐！</p>
           </div>
 
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="🙋‍♂️前言"><a href="#🙋‍♂️前言" class="headerlink" title="🙋‍♂️前言"></a>🙋‍♂️前言</h2><p>大二开始接触手机上的各种破解软件，在类似葫芦侠，各种瞎几把论坛瞎逛找一些好玩的软件或者美化操作，当时拿着荣耀畅玩 5A 、OPPO R9，软件安装限制很大。一个偶然的机会，下载了 <a target="_blank" rel="noopener" href="https://coolapk.com/">酷安</a>，接触到了 ROOT 和 Xposed 模块，并产生了非常浓厚的兴趣（因为可玩性实在是太高了），后来（大三）买了一个 Redmi Note 7 Pro 开始了我的刷机之路（选择红米的手机是因为小米手机官方有解锁工具，类原生适配非常多，红米手机又便宜，学生党只能这个样子了），加群以及在酷安学习了很久之后，写了一个 <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/aFvXRVqvBMkPgy3rnaQrFA">刷机教程</a>，而如今（大四）手持 Redmi K20 Pro 基本养老了，不过 <a target="_blank" rel="noopener" href="https://github.com/topjohnwu/Magisk">Magisk</a> 和 <a target="_blank" rel="noopener" href="https://github.com/LSPosed/LSPosed">Lsposed</a>（后来兴起的用来代替 <a target="_blank" rel="noopener" href="https://github.com/ElderDrivers/EdXposed">EdXposed</a>）也还是必装，毕竟 <a target="_blank" rel="noopener" href="https://github.com/yc9559/uperf/releases">yc 调度模块 </a>（省电优化）和 <a target="_blank" rel="noopener" href="https://forum.xda-developers.com/t/xposed-edge-pro.3525566/">Xposed Edge Pro</a>（自动化以及手势增强）等等是真的香喷喷。</p>
 <p>MIUI12.5 发布了这么久，有些地方优化还是没做好，可能还需要一段时间吧，现在小米疯狂出新手机，对于我这个手机估计离停更也不远了，大家应该都听过类原生流畅丝滑之类的，但是其功能就没有 MIUI 这么多了，因此要用得习惯对于我来说还是很难得，不过对于玩机党来说有时候，在类原生和 MIUI 中间反复横跳是常有的事情，今天有时间就再更新一下之前的刷机教程（适用于所有小米手机，套路都一样），再来演示一波类原生刷机教程以及刷面具。</p>
-<h2 id="💡XDA-论坛"><a href="#💡XDA-论坛" class="headerlink" title="💡XDA 论坛"></a>💡XDA 论坛</h2><div class="note note-info">
-            <p>XDA 论坛官网：<a target="_blank" rel="noopener" href="https://forum.xda-developers.com/">https://forum.xda-developers.com/</a><br>Redmi K20 Pro ：<a target="_blank" rel="noopener" href="https://forum.xda-developers.com/c/redmi-k20-pro-xiaomi-mi-9t-pro.8953/">https://forum.xda-developers.com/c/redmi-k20-pro-xiaomi-mi-9t-pro.8953/</a><br>其他机型自行在论坛官网的右上角搜索即可，加载有点慢，毕竟是国外的网站</p>
-          </div>
-
-<div class="note note-warning">
-            <p>Tips：<br>刷机资源绝大多数都以手机代号来命名，所以需要先知道自己的手机代号<br>小米手机可以在 <a target="_blank" rel="noopener" href="https://miuiver.com/xiaomi-device-codename/">【小米手机代号名称查询】</a> 查找，例如 Redmi K20 Pro 的手机代号为 raphael</p>
-          </div>
-
+<h2 id="💡XDA-论坛"><a href="#💡XDA-论坛" class="headerlink" title="💡XDA 论坛"></a>💡XDA 论坛</h2><blockquote>
+<p>XDA 论坛官网：<a target="_blank" rel="noopener" href="https://forum.xda-developers.com/">https://forum.xda-developers.com/</a><br>Redmi K20 Pro ：<a target="_blank" rel="noopener" href="https://forum.xda-developers.com/c/redmi-k20-pro-xiaomi-mi-9t-pro.8953/">https://forum.xda-developers.com/c/redmi-k20-pro-xiaomi-mi-9t-pro.8953/</a><br>其他机型自行在论坛官网的右上角搜索即可，加载有点慢，毕竟是国外的网站</p>
+</blockquote>
+<blockquote>
+<p>Tips：刷机资源绝大多数都以手机代号来命名，所以需要先知道自己的手机代号。小米手机可以在 <a target="_blank" rel="noopener" href="https://miuiver.com/xiaomi-device-codename/">【小米手机代号名称查询】</a> 查找，例如 Redmi K20 Pro 的手机代号为 raphael</p>
+</blockquote>
 <p>我觉得这个 XDA 是国外玩机党的 HOME，基本类原生全都发布在这里，每个手机板块下都有一个叫 ***ROMs, Kernels, Re，在这个下面就可以找到类原生系统的发布地址，和简单的刷入操作介绍，对于我们来说刷之前可以先去酷安对应手机板块下逛逛，看刷哪个比较好，看别人的刷入体验有哪些特别要注意的地方。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/AndroidFlashRom_img/Redmi_K20_Pro_XDA.png" srcset="/img/loading.gif" lazyload alt="Redmi_K20_Pro_XDA.png"></p>
-<h2 id="🔓解-BL-锁"><a href="#🔓解-BL-锁" class="headerlink" title="🔓解 BL 锁"></a>🔓解 BL 锁</h2><div class="note note-info">
-            <p>解锁小米手机官网：<a target="_blank" rel="noopener" href="http://www.miui.com/unlock/index.html">http://www.miui.com/unlock/index.html</a><br>官方解锁工具：<a target="_blank" rel="noopener" href="http://miuirom.xiaomi.com/rom/u1106245679/5.5.224.55/miflash_unlock-5.5.224.55.zip">miflash_unlock</a></p>
-          </div>
-
-<div class="note note-warning">
-            <p>Tips:<br>小米解锁手机需要设备和账号绑定一周后才给予解锁服务的，可能可以秒解，解锁是会清除手机所有数据的，所以请务必备份手机的重要数据，等待期间可以学习学习刷机教程</p>
-          </div>
-
+<h2 id="🔓解-BL-锁"><a href="#🔓解-BL-锁" class="headerlink" title="🔓解 BL 锁"></a>🔓解 BL 锁</h2><blockquote>
+<p>解锁小米手机官网：<a target="_blank" rel="noopener" href="http://www.miui.com/unlock/index.html">http://www.miui.com/unlock/index.html</a><br>官方解锁工具：<a target="_blank" rel="noopener" href="http://miuirom.xiaomi.com/rom/u1106245679/5.5.224.55/miflash_unlock-5.5.224.55.zip">miflash_unlock</a></p>
+</blockquote>
+<blockquote>
+<p>Tips:小米解锁手机需要设备和账号绑定一周后才给予解锁服务的，可能可以秒解，解锁是会清除手机所有数据的，所以请务必备份手机的重要数据，等待期间可以学习学习刷机教程</p>
+</blockquote>
 <ol>
 <li>打开开发者选项<ul>
 <li>进入设置－我的设备－全部参数－MIUI版本－疯狂点几下开启开发者模式</li>
@@ -295,10 +339,9 @@
 <li>点击解锁（会清除所有设备数据，注意备份重要数据）</li>
 </ol>
 <p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/AndroidFlashRom_img/unlock_success.png" srcset="/img/loading.gif" lazyload alt="unlock_success.png"></p>
-<h2 id="⚙刷入-TWRP"><a href="#⚙刷入-TWRP" class="headerlink" title="⚙刷入 TWRP"></a>⚙刷入 TWRP</h2><div class="note note-info">
-            <p>TWRP 官网：<a target="_blank" rel="noopener" href="https://twrp.me/Devices/">https://twrp.me/Devices/</a><br>Redmi K20 Pro：<a target="_blank" rel="noopener" href="https://twrp.me/xiaomi/xiaomimi9tpro.html">https://twrp.me/xiaomi/xiaomimi9tpro.html</a><br>OrangeFox：<a target="_blank" rel="noopener" href="https://archive.orangefox.download/OrangeFox-Stable/">https://archive.orangefox.download/OrangeFox-Stable/</a></p>
-          </div>
-
+<h2 id="⚙刷入-TWRP"><a href="#⚙刷入-TWRP" class="headerlink" title="⚙刷入 TWRP"></a>⚙刷入 TWRP</h2><blockquote>
+<p>TWRP 官网：<a target="_blank" rel="noopener" href="https://twrp.me/Devices/">https://twrp.me/Devices/</a><br>Redmi K20 Pro：<a target="_blank" rel="noopener" href="https://twrp.me/xiaomi/xiaomimi9tpro.html">https://twrp.me/xiaomi/xiaomimi9tpro.html</a><br>OrangeFox：<a target="_blank" rel="noopener" href="https://archive.orangefox.download/OrangeFox-Stable/">https://archive.orangefox.download/OrangeFox-Stable/</a></p>
+</blockquote>
 <ol>
 <li><p>获取 TWRP</p>
 <ul>
@@ -333,10 +376,9 @@
 <p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/AndroidFlashRom_img/open_cmd.png" srcset="/img/loading.gif" lazyload alt="open_cmd.png"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/AndroidFlashRom_img/fastboot_rec.png" srcset="/img/loading.gif" lazyload alt="fastboot_rec.png"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/AndroidFlashRom_img/TWRP_first.jpg" srcset="/img/loading.gif" lazyload alt="TWRP_first.jpg"></p>
-<h2 id="🎨卡刷-ROM"><a href="#🎨卡刷-ROM" class="headerlink" title="🎨卡刷 ROM"></a>🎨卡刷 ROM</h2><div class="note note-info">
-            <p>卡刷其实就是在 TWRP（第三方 REC） 里面将 zip 包刷入手机，这里以 <a target="_blank" rel="noopener" href="https://sourceforge.net/projects/evolution-x/files/raphael/EvolutionX_5.6_raphael-11-20210413-0411-OFFICIAL.zip/download">EvolutionX_5.6_raphael-11-20210413</a> 为例安装类原生，所需要的固件包版本为 <a target="_blank" rel="noopener" href="https://downloads.akhilnarang.dev/MIUI/raphael/RAPHAEL-V12.0.6.0.QFKCNXM-10.0-vendor-firmware.zip">RAPHAEL-V12.0.6.0</a>，Redmi K20 Pro TWRP 目前无法自动解密，为防止 TWRP 乱码，可刷入 <a target="_blank" rel="noopener" href="https://lingsiki.lanzoui.com/iLHEeo1l08j">强制解密补丁</a> （不知道其他手机是否可用）</p>
-          </div>
-
+<h2 id="🎨卡刷-ROM"><a href="#🎨卡刷-ROM" class="headerlink" title="🎨卡刷 ROM"></a>🎨卡刷 ROM</h2><blockquote>
+<p>卡刷其实就是在 TWRP（第三方 REC） 里面将 zip 包刷入手机，这里以 <a target="_blank" rel="noopener" href="https://sourceforge.net/projects/evolution-x/files/raphael/EvolutionX_5.6_raphael-11-20210413-0411-OFFICIAL.zip/download">EvolutionX_5.6_raphael-11-20210413</a> 为例安装类原生，所需要的固件包版本为 <a target="_blank" rel="noopener" href="https://downloads.akhilnarang.dev/MIUI/raphael/RAPHAEL-V12.0.6.0.QFKCNXM-10.0-vendor-firmware.zip">RAPHAEL-V12.0.6.0</a>，Redmi K20 Pro TWRP 目前无法自动解密，为防止 TWRP 乱码，可刷入 <a target="_blank" rel="noopener" href="https://lingsiki.lanzoui.com/iLHEeo1l08j">强制解密补丁</a> （不知道其他手机是否可用）</p>
+</blockquote>
 <ol>
 <li>电脑端下载指定版本固件包、类原生包、强制解密补丁</li>
 <li>手机进入 TWRP，数据线连接电脑，电脑打开手机存储将包全部移到手机内部存储的 TWRP 文件夹</li>
@@ -350,14 +392,12 @@
 </ol>
 <p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/AndroidFlashRom_img/flash_rom.jpg" srcset="/img/loading.gif" lazyload alt="flash_rom.jpg"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/AndroidFlashRom_img/format_data.jpg" srcset="/img/loading.gif" lazyload alt="format_data.jpg"></p>
-<h2 id="🎭安装-Magisk"><a href="#🎭安装-Magisk" class="headerlink" title="🎭安装 Magisk"></a>🎭安装 Magisk</h2><div class="note note-info">
-            <p>Magisk GitHub：<a target="_blank" rel="noopener" href="https://github.com/topjohnwu/Magisk">https://github.com/topjohnwu/Magisk</a></p>
-          </div>
-
-<div class="note note-warning">
-            <p>Tips:<br>Magisk 以前分发的都是卡刷包，刷完桌面就会有 Magisk 管理器，但是 Magisk 在 <a target="_blank" rel="noopener" href="https://github.com/topjohnwu/Magisk/releases/tag/v22.0">22.0</a> 版本之后就没有分发卡刷 zip 包了，只有一个 apk 文件，但是将 apk 文件后缀名改为 zip 即可变成卡刷包。Magisk 在升级系统和刷入内核的时候都会掉，此时只要刷完系统包或者内核之后再刷入 Magisk 的卡刷包即可</p>
-          </div>
-
+<h2 id="🎭安装-Magisk"><a href="#🎭安装-Magisk" class="headerlink" title="🎭安装 Magisk"></a>🎭安装 Magisk</h2><blockquote>
+<p>Magisk GitHub：<a target="_blank" rel="noopener" href="https://github.com/topjohnwu/Magisk">https://github.com/topjohnwu/Magisk</a></p>
+</blockquote>
+<blockquote>
+<p>Tips:Magisk 以前分发的都是卡刷包，刷完桌面就会有 Magisk 管理器，但是 Magisk 在 <a target="_blank" rel="noopener" href="https://github.com/topjohnwu/Magisk/releases/tag/v22.0">22.0</a> 版本之后就没有分发卡刷 zip 包了，只有一个 apk 文件，但是将 apk 文件后缀名改为 zip 即可变成卡刷包。Magisk 在升级系统和刷入内核的时候都会掉，此时只要刷完系统包或者内核之后再刷入 Magisk 的卡刷包即可</p>
+</blockquote>
 <ol>
 <li>下载 <a target="_blank" rel="noopener" href="https://github.com/topjohnwu/Magisk/releases">Magisk.apk</a> 并安装，然后在文件管理将其改为 .zip 格式</li>
 <li>同时按住开机键和音量上键，进入 TWRP，安装 - 选择 Magisk.zip - 刷入 - 重启</li>
@@ -365,10 +405,9 @@
 <li>卸载的话就下载 <a target="_blank" rel="noopener" href="https://github.com/topjohnwu/Magisk/releases/download/v21.4/Magisk-uninstaller-20210117.zip">Magisk-uninstall.zip</a> 在 TWRP 刷入即可卸载</li>
 </ol>
 <p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/AndroidFlashRom_img/magisk.jpg" srcset="/img/loading.gif" lazyload alt="magisk.jpg"></p>
-<h2 id="✨安装-Lsposed"><a href="#✨安装-Lsposed" class="headerlink" title="✨安装 Lsposed"></a>✨安装 Lsposed</h2><div class="note note-info">
-            <p>Lsposed：<a target="_blank" rel="noopener" href="https://github.com/LSPosed/LSPosed">https://github.com/LSPosed/LSPosed</a><br>EdXposed：<a target="_blank" rel="noopener" href="https://github.com/ElderDrivers/EdXposed">https://github.com/ElderDrivers/EdXposed</a></p>
-          </div>
-
+<h2 id="✨安装-Lsposed"><a href="#✨安装-Lsposed" class="headerlink" title="✨安装 Lsposed"></a>✨安装 Lsposed</h2><blockquote>
+<p>Lsposed：<a target="_blank" rel="noopener" href="https://github.com/LSPosed/LSPosed">https://github.com/LSPosed/LSPosed</a><br>EdXposed：<a target="_blank" rel="noopener" href="https://github.com/ElderDrivers/EdXposed">https://github.com/ElderDrivers/EdXposed</a></p>
+</blockquote>
 <ol>
 <li>在 Magisk app 中先安装 Riru 后安装 Riru-LSPosed 重启即可</li>
 <li>重启后，打开 LSPosed app 即可查看 LSPosed 是否安装成功</li>
@@ -377,17 +416,15 @@
 </ol>
 <p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/AndroidFlashRom_img/lsp.jpg" srcset="/img/loading.gif" lazyload alt="lsp.jpg"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/AndroidFlashRom_img/xp_module.jpg" srcset="/img/loading.gif" lazyload alt="xp_module.jpg"></p>
-<h2 id="☂线刷救砖"><a href="#☂线刷救砖" class="headerlink" title="☂线刷救砖"></a>☂线刷救砖</h2><div class="note note-success">
-            <p>对于刚开始玩刷机的朋友，可能会操作不当会遇到手机突然无法开机，或者等等情况<br>只要同时按住开机键和音量下键能够进入 fastboot 模式，那么你就可以通过线刷的方式开机</p>
-          </div>
-<div class="note note-info">
-            <p>小米官方线刷教程：<a target="_blank" rel="noopener" href="http://www.miui.com/shuaji-393.html">http://www.miui.com/shuaji-393.html</a><br>小米官方通用刷机工具：<a target="_blank" rel="noopener" href="http://bigota.d.miui.com/tools/MiFlash2018-5-28-0.zip">http://bigota.d.miui.com/tools/MiFlash2018-5-28-0.zip</a></p>
-          </div>
-
-<div class="note note-warning">
-            <p>Tips:<br>各机型线刷包也是在该链接下载，线刷包是以 tar 格式结尾的包，卡刷包是以 zip 格式结尾的，我当时拿卡刷包去线刷，线刷工具说找不到脚本，折腾半天找不到解决办法，所以这里特别提醒！</p>
-          </div>
-
+<h2 id="☂线刷救砖"><a href="#☂线刷救砖" class="headerlink" title="☂线刷救砖"></a>☂线刷救砖</h2><blockquote>
+<p>对于刚开始玩刷机的朋友，可能会操作不当会遇到手机突然无法开机，或者等等情况<br>只要同时按住开机键和音量下键能够进入 fastboot 模式，那么你就可以通过线刷的方式开机</p>
+</blockquote>
+<blockquote>
+<p>小米官方线刷教程：<a target="_blank" rel="noopener" href="http://www.miui.com/shuaji-393.html">http://www.miui.com/shuaji-393.html</a><br>小米官方通用刷机工具：<a target="_blank" rel="noopener" href="http://bigota.d.miui.com/tools/MiFlash2018-5-28-0.zip">http://bigota.d.miui.com/tools/MiFlash2018-5-28-0.zip</a></p>
+</blockquote>
+<blockquote>
+<p>Tips:各机型线刷包也是在该链接下载，线刷包是以 tar 格式结尾的包，卡刷包是以 zip 格式结尾的，我当时拿卡刷包去线刷，线刷工具说找不到脚本，折腾半天找不到解决办法，所以这里特别提醒！</p>
+</blockquote>
 <ol>
 <li>下载本机型的线刷包解压，我用 7zip 要解压两次，解压之后文件夹有许多 .bat .sh 文件，下载通用刷机工具解压</li>
 <li>打开在刷机工具文件夹中 XiaoMiFlash.exe，安装驱动</li>
@@ -398,45 +435,102 @@
 <li>用时可能需要一点点时间，如果报错，请自行百度或求助于各大论坛学习解决</li>
 </ol>
 <p><img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/AndroidFlashRom_img/usb_flash.png" srcset="/img/loading.gif" lazyload alt="usb_flash.png"></p>
-<div class="note note-info">
-            <p>以上完，如有错误，恳请指正，仅记录一下自己刷机的过程，大家想玩就玩，刷机需谨慎，变砖两行泪</p>
-          </div>
-            </div>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/Android/">Android</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/Notes/">Notes</a>
-                    
-                      <a class="hover-with-bg" href="/tags/Skill/">Skill</a>
-                    
-                  </div>
+<blockquote>
+<p>以上完，如有错误，恳请指正，仅记录一下自己刷机的过程，大家想玩就玩，刷机需谨慎，变砖两行泪</p>
+</blockquote>
+
                 
               </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Android/" class="category-chain-item">Android</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Notes/">#Notes</a>
+      
+        <a href="/tags/Skill/">#Skill</a>
+      
+    </div>
+  
+</div>
+
+
               
-                <p class="note note-warning">
-                  
-                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
-                  
-                </p>
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>我的刷机之旅 — Redmi K20 Pro</div>
+      <div>https://reajason.github.io/2021/04/12/AndroidFlashRom/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>ReaJason</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年4月12日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
               
               
-                <div class="post-prevnext">
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/04/18/17wanxiaoHookGetDeviceId/">
+                      <a href="/2021/04/18/17wanxiaoHookGetDeviceId/" title="Xposed Hook 完美校园获取本机 DeviceId">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">Xposed Hook 完美校园获取本机 DeviceId</span>
                         <span class="visible-mobile">上一篇</span>
@@ -446,8 +540,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/03/28/CppSTL/">
-                        <span class="hidden-mobile">C++ の STL</span>
+                      <a href="/2021/03/19/17wanxiaoCheckInSCF/" title="完美校园自动打卡">
+                        <span class="hidden-mobile">完美校园自动打卡</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -462,46 +556,56 @@
         </div>
       </div>
     </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
   <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
-<script>
-  $(document).ready(function () {
-      var boardCtn = $('#board-ctn');
-      var boardTop = boardCtn.offset().top;
-      tocbot.init({
-        tocSelector: '#tocbot',
-        contentSelector: '#post-body',
-        linkClass: 'tocbot-link',
-        activeLinkClass: 'tocbot-active-link',
-        listClass: 'tocbot-list',
-        isCollapsedClass: 'tocbot-is-collapsed',
-        collapsibleClass: 'tocbot-is-collapsible',
-        scrollSmooth: true,
-        headingsOffset: -boardTop
-      });
-      if ($('.toc-list-item').length > 0) {
-        $('#toc').css('visibility', 'visible');
-      }
-  });
-</script>
 
-      </div>
-    
+
+  </aside>
+
+
+    </div>
   </div>
 </div>
 
-<!-- Custom -->
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
 
 
     
 
     
-      <a id="scroll-top-button" href="#" role="button">
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
         <i class="iconfont icon-arrowup" aria-hidden="true"></i>
       </a>
     
@@ -520,35 +624,37 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <i class="iconfont icon-copyright"></i> 2019-2021 <a target="_blank" rel="noopener" href="https://reajason.top">ReaJason</a> </br>Powered by  <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> ❤️ <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> ❄我们在一起玩耍了❄ </br> <span id="timeDate"></span> <span id="times"></span> <script src="/js/duration.js"></script> </div> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-
+    <div class="footer-content">
+       <i class="iconfont icon-copyright"></i> 2019-2021 <a target="_blank" rel="noopener" href="https://reajason.top">ReaJason</a> </br>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> ❤️ <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> ❄我们在一起玩耍了❄ </br> <span id="timeDate"></span> <span id="times"></span> <script src="/js/duration.js"></script> </div> 
+    </div>
   
-
   
-</footer>
-
-
-  <!-- SCRIPTS -->
   
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
 
   <script>
     NProgress.configure({"showSpinner":false,"trickleSpeed":100})
@@ -559,12 +665,28 @@
   </script>
 
 
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
 
 
   
@@ -573,74 +695,117 @@
 
 
 
+
   
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
 
 
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 
-  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+  <script>Fluid.plugins.codeWidget();</script>
 
 
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
 
-  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
 
 
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
 
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
 
+  <script>Fluid.plugins.imageCaption();</script>
 
+  <script  src="/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-      typing(title)
-      
-    })(window, document);
-  </script>
 
-
-
-  <script  src="/js/local-search.js" ></script>
-  <script>
-    (function () {
-      var path = "/local-search.xml";
-      $('#local-search-input').on('click', function() {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      });
-      $('#modalSearch').on('shown.bs.modal', function() {
-        $('#local-search-input').focus();
-      });
-    })()
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>

@@ -1,0 +1,818 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/default/website.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/default/website.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#fc9d9a">
+  <meta name="author" content="ReaJason">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1、用静态工厂方法代替构造器静态工厂方法的优势：  有方法名称，比起重载多个构造函数，使用者能知道不同参数构建的对象有什么不同 不必每次调用都创建一个新对象（享元模式） 可以返回原返回类型的任何子类型的对象（面向接口编程，可返回接口类型而不必是实现类型） 返回的对象可随着每次调用而发生变化，取决于参数值（面向接口编程，隐藏实现细节，用户只知道返回的是接口类的子类具体实现类） 方法返回的对象所属的类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Effective Java">
+<meta property="og:url" content="https://reajason.github.io/2022/01/24/Effective%20Java/index.html">
+<meta property="og:site_name" content="ReaJason">
+<meta property="og:description" content="1、用静态工厂方法代替构造器静态工厂方法的优势：  有方法名称，比起重载多个构造函数，使用者能知道不同参数构建的对象有什么不同 不必每次调用都创建一个新对象（享元模式） 可以返回原返回类型的任何子类型的对象（面向接口编程，可返回接口类型而不必是实现类型） 返回的对象可随着每次调用而发生变化，取决于参数值（面向接口编程，隐藏实现细节，用户只知道返回的是接口类的子类具体实现类） 方法返回的对象所属的类">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-24T09:08:32.414Z">
+<meta property="article:modified_time" content="2022-11-08T05:54:52.704Z">
+<meta property="article:author" content="ReaJason">
+<meta property="article:tag" content="Notes">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Effective Java - ReaJason</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_2805938_q5x4gqy1kjn.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"reajason.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":150,"cursorChar":"❤️","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"HohGa0vcu0iQIbm7ELytbaKs-gzGzoHsz","app_key":"9TiVNoKrg63RPL3ALyu72tt2","server_url":"https://hohga0vc.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ReaJason&#39;s Space</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/default/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Effective Java"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-01-24 17:08" pubdate>
+          2022年1月24日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          18 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Effective Java</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="1、用静态工厂方法代替构造器"><a href="#1、用静态工厂方法代替构造器" class="headerlink" title="1、用静态工厂方法代替构造器"></a>1、用静态工厂方法代替构造器</h2><p>静态工厂方法的优势：</p>
+<ul>
+<li>有方法名称，比起重载多个构造函数，使用者能知道不同参数构建的对象有什么不同</li>
+<li>不必每次调用都创建一个新对象（享元模式）</li>
+<li>可以返回原返回类型的任何子类型的对象（面向接口编程，可返回接口类型而不必是实现类型）</li>
+<li>返回的对象可随着每次调用而发生变化，取决于参数值（面向接口编程，隐藏实现细节，用户只知道返回的是接口类的子类具体实现类）</li>
+<li>方法返回的对象所属的类，在编写包含该静态工厂方法的类时可以不存在</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>类如果不含有共有的或受保护的构造器，就不能被子类化</li>
+<li>程序员很难发现静态方法</li>
+</ul>
+<h2 id="2、遇到多个构造器参数时要考虑使用构建"><a href="#2、遇到多个构造器参数时要考虑使用构建" class="headerlink" title="2、遇到多个构造器参数时要考虑使用构建"></a>2、遇到多个构造器参数时要考虑使用构建</h2><p>使用建造者模式</p>
+<h2 id="3、用私有构造器或者枚举类型强化-Singeton-属性"><a href="#3、用私有构造器或者枚举类型强化-Singeton-属性" class="headerlink" title="3、用私有构造器或者枚举类型强化 Singeton 属性"></a>3、用私有构造器或者枚举类型强化 Singeton 属性</h2><h2 id="4、通过私有构造器强化不可实例化的能力"><a href="#4、通过私有构造器强化不可实例化的能力" class="headerlink" title="4、通过私有构造器强化不可实例化的能力"></a>4、通过私有构造器强化不可实例化的能力</h2><p>对于只有静态域和静态方法的工具类，往往不需要实例化，但是默认有无参构造，通过显式指定私有的构造函数来达到这个目的</p>
+<h2 id="5、优先考虑依赖注入来引用资源"><a href="#5、优先考虑依赖注入来引用资源" class="headerlink" title="5、优先考虑依赖注入来引用资源"></a>5、优先考虑依赖注入来引用资源</h2><p>不要用 Singleton 和静态工具类来实现依赖一个或多个底层资源的类，且该资源的行为会影响到该类的行为。应将这些资源通过工厂传给构造器，静态工厂或构建器来创建类，即依赖注入。</p>
+<h2 id="6、避免创建不必要的对象"><a href="#6、避免创建不必要的对象" class="headerlink" title="6、避免创建不必要的对象"></a>6、避免创建不必要的对象</h2><p>优先使用静态工厂方法，而不是构造器</p>
+<p>要优先使用基本类型而不是装箱基本类型，要当心无意识的自动装箱</p>
+<p>对象池技术只有在像数据连接池这样创建数据库连接代价非常昂贵的前提下，才非常有意义</p>
+<h2 id="7、消除过期的对象引用"><a href="#7、消除过期的对象引用" class="headerlink" title="7、消除过期的对象引用"></a>7、消除过期的对象引用</h2><p>只要类是自己管理内存，程序员就应该警惕内存泄漏问题</p>
+<h2 id="8、避免使用终结方法和清除方法"><a href="#8、避免使用终结方法和清除方法" class="headerlink" title="8、避免使用终结方法和清除方法"></a>8、避免使用终结方法和清除方法</h2><p>finalizer 方法</p>
+<h2 id="9、优先使用-try-with-resources"><a href="#9、优先使用-try-with-resources" class="headerlink" title="9、优先使用 try-with-resources"></a>9、优先使用 try-with-resources</h2><p>如果编写一个类，它代表必须被关闭的资源，那么这个类应该实现 AutoCloseable 接口</p>
+<h2 id="10、覆盖-equals-时请遵守通用规定"><a href="#10、覆盖-equals-时请遵守通用规定" class="headerlink" title="10、覆盖 equals 时请遵守通用规定"></a>10、覆盖 equals 时请遵守通用规定</h2><ol>
+<li>类的每个实例本质上是唯一的</li>
+<li>类没有必要提供逻辑相等的测试功能</li>
+<li>超类已经覆盖了 equals，超类的行为对于这个类也是合适的</li>
+<li>类是私有的，或者是包级私有的，可以确定它的 equals 方法永远不会被调用。</li>
+</ol>
+<p>实现 equals 方法的步骤：</p>
+<ol>
+<li>使用 &#x3D;&#x3D; 操作符检查，参数是否为这个对象的引用</li>
+<li>使用 instanceof 操作符检查 参数是否为正确的类型</li>
+<li>把参数转换成正确的类型</li>
+<li>对于这个类中的每个关键域，检查参数中的域是否和对象中的对应域匹配</li>
+</ol>
+<h2 id="11、覆盖-equals-时总要覆盖-hashCode"><a href="#11、覆盖-equals-时总要覆盖-hashCode" class="headerlink" title="11、覆盖 equals 时总要覆盖 hashCode"></a>11、覆盖 equals 时总要覆盖 hashCode</h2><p>因为不覆盖无法与基于散列的集合一起操作</p>
+<h2 id="12、始终要覆盖-toString"><a href="#12、始终要覆盖-toString" class="headerlink" title="12、始终要覆盖 toString"></a>12、始终要覆盖 toString</h2><p>使类更易于调试</p>
+<p>实际应用中，toString 方法返回对象中包含的所有值得关注的信息</p>
+<h2 id="13、谨慎地覆盖-clone"><a href="#13、谨慎地覆盖-clone" class="headerlink" title="13、谨慎地覆盖 clone"></a>13、谨慎地覆盖 clone</h2><p>实现 Cloneable 接口的类是为了提供一个功能适当的公有的 clone 方法</p>
+<h2 id="14、考虑实现-Comparable-接口"><a href="#14、考虑实现-Comparable-接口" class="headerlink" title="14、考虑实现 Comparable 接口"></a>14、考虑实现 Comparable 接口</h2><p>实现之后可以跟很多泛型算法以及接口的集合实现协作</p>
+<h2 id="15、使类和成员的可访问性最小化"><a href="#15、使类和成员的可访问性最小化" class="headerlink" title="15、使类和成员的可访问性最小化"></a>15、使类和成员的可访问性最小化</h2><p>设计良好的组件会隐藏所有的实现细节，把 Api 与实现清晰地隔离起来。</p>
+<h2 id="16、要在公有类而非公有域中使用访问方法"><a href="#16、要在公有类而非公有域中使用访问方法" class="headerlink" title="16、要在公有类而非公有域中使用访问方法"></a>16、要在公有类而非公有域中使用访问方法</h2><p>公有类永远都不应该暴露可变的域</p>
+<h2 id="17、使可变性最小化"><a href="#17、使可变性最小化" class="headerlink" title="17、使可变性最小化"></a>17、使可变性最小化</h2><ol>
+<li>不要提供任何会修改对象状态的方法</li>
+<li>保证类不会被扩展</li>
+<li>声明所有的域都是 final、 声明所有的域都是私有的</li>
+<li>确保对于任何可变组件的互斥访问</li>
+</ol>
+<h2 id="18、复合优先于继承"><a href="#18、复合优先于继承" class="headerlink" title="18、复合优先于继承"></a>18、复合优先于继承</h2><p>只有当子类真正是超类的子类型时，才适合用继承。</p>
+<h2 id="19、要么设计继承并提供文档说明，要么禁用继承"><a href="#19、要么设计继承并提供文档说明，要么禁用继承" class="headerlink" title="19、要么设计继承并提供文档说明，要么禁用继承"></a>19、要么设计继承并提供文档说明，要么禁用继承</h2><p>构造器不能调用可被覆盖的方法</p>
+<h2 id="20、接口优于抽象类"><a href="#20、接口优于抽象类" class="headerlink" title="20、接口优于抽象类"></a>20、接口优于抽象类</h2><p>在装饰器模式种，接口使得安全地增强类的功能成为可能</p>
+<h2 id="21、为后代设计接口"><a href="#21、为后代设计接口" class="headerlink" title="21、为后代设计接口"></a>21、为后代设计接口</h2><p>接口的缺省方法</p>
+<h2 id="22、接口只用于定义类型"><a href="#22、接口只用于定义类型" class="headerlink" title="22、接口只用于定义类型"></a>22、接口只用于定义类型</h2><p>常量接口模式是对接口的不良使用</p>
+<p>接口应该只被用来定义类型，它们不应该被用来导出常量</p>
+<h2 id="23、类层次优于标签类"><a href="#23、类层次优于标签类" class="headerlink" title="23、类层次优于标签类"></a>23、类层次优于标签类</h2><p>标签类即定义枚举变量，实现多个状态</p>
+<h2 id="24、静态成员类优于非静态成员类"><a href="#24、静态成员类优于非静态成员类" class="headerlink" title="24、静态成员类优于非静态成员类"></a>24、静态成员类优于非静态成员类</h2><p>嵌套类存在的目的只为它的外围类提供服务</p>
+<p>如果成员类不要求访问外围实例，就要始终把修饰符 static 放在它的声明中</p>
+<h2 id="25、限制源文件为单个顶级类"><a href="#25、限制源文件为单个顶级类" class="headerlink" title="25、限制源文件为单个顶级类"></a>25、限制源文件为单个顶级类</h2><p>永远不要把多个顶级类或者接口放在一个源文件中</p>
+<h2 id="26、请不要使用原生态类型"><a href="#26、请不要使用原生态类型" class="headerlink" title="26、请不要使用原生态类型"></a>26、请不要使用原生态类型</h2><p>List&lt;E&gt; 的原生态类型为 List</p>
+<p>使用原生态类型，就失去了泛型在安全性和描述性方面的所有优势</p>
+<h2 id="27、消除非受检的警告"><a href="#27、消除非受检的警告" class="headerlink" title="27、消除非受检的警告"></a>27、消除非受检的警告</h2><p>始终尽可能小的范围内使用 SuppressWarnings 注解</p>
+<h2 id="28、列表优于数组"><a href="#28、列表优于数组" class="headerlink" title="28、列表优于数组"></a>28、列表优于数组</h2><p>要消除未受检的转换警告，必须选择用列表代替数组</p>
+<h2 id="29、优先考虑泛型"><a href="#29、优先考虑泛型" class="headerlink" title="29、优先考虑泛型"></a>29、优先考虑泛型</h2><p>使用泛型比使用需要客户端代码中进行转换的类型来得更加安全和容易</p>
+<p>不是使用泛型声明具体化数组如 new E[3]，而应该使用 (E[])new Object[3]</p>
+<h2 id="30、优先考虑泛型方法"><a href="#30、优先考虑泛型方法" class="headerlink" title="30、优先考虑泛型方法"></a>30、优先考虑泛型方法</h2><p>客户端转换输入参数并返回值的方法更加安全</p>
+<h2 id="31、利用有限制通配符来提升-API-的灵活性"><a href="#31、利用有限制通配符来提升-API-的灵活性" class="headerlink" title="31、利用有限制通配符来提升 API 的灵活性"></a>31、利用有限制通配符来提升 API 的灵活性</h2><p>Iterable&lt;? extend E&gt;：E 的某个子类型的 Iterable 接口</p>
+<p>Collection&lt;? super E&gt;：E 的某个超类的集合</p>
+<p>不要用通配符类型作为返回类型</p>
+<h2 id="32、谨慎并用泛型和可变参数"><a href="#32、谨慎并用泛型和可变参数" class="headerlink" title="32、谨慎并用泛型和可变参数"></a>32、谨慎并用泛型和可变参数</h2><p>List&lt;String&gt;… stringLists，将值保存在泛型可变参数是不安全的</p>
+<p>允许一个方法访问一个泛型可变参数数组是不安全的</p>
+<h2 id="33、优先考虑类型安全的异构容器"><a href="#33、优先考虑类型安全的异构容器" class="headerlink" title="33、优先考虑类型安全的异构容器"></a>33、优先考虑类型安全的异构容器</h2><p>使用异构容器能限制每个容器只能有固定数目的类型参数</p>
+<h2 id="34、用-enum-代替-int-常量"><a href="#34、用-enum-代替-int-常量" class="headerlink" title="34、用 enum 代替 int 常量"></a>34、用 enum 代替 int 常量</h2><p>每当需要一组固定常量，并且在编译时就知道其成员的时候，就应该使用枚举。枚举类型中的常量并不一定要始终保持不变。</p>
+<h2 id="35、用实例域代替序数"><a href="#35、用实例域代替序数" class="headerlink" title="35、用实例域代替序数"></a>35、用实例域代替序数</h2><p>永远不要根据枚举的序数导出与它关联的值，而是要将它保存在一个实例域中。</p>
+<h2 id="36、用-EnumSet-代替位域"><a href="#36、用-EnumSet-代替位域" class="headerlink" title="36、用 EnumSet 代替位域"></a>36、用 EnumSet 代替位域</h2><p>正是因为枚举类型要用在集合中，所以没有理由用位域来表示它</p>
+<h2 id="37、用-EnumMap-代替序数索引"><a href="#37、用-EnumMap-代替序数索引" class="headerlink" title="37、用 EnumMap 代替序数索引"></a>37、用 EnumMap 代替序数索引</h2><p>最好不要用序数来索引数组，而要使用 EnumMap</p>
+<h2 id="38、用接口模拟可扩展的枚举"><a href="#38、用接口模拟可扩展的枚举" class="headerlink" title="38、用接口模拟可扩展的枚举"></a>38、用接口模拟可扩展的枚举</h2><p>虽然无法编写可扩展的枚举类型，却可以通过编写接口以及实现该接口的基础枚举类型来对它进行模拟</p>
+<h2 id="39、注解优先于命名模式"><a href="#39、注解优先于命名模式" class="headerlink" title="39、注解优先于命名模式"></a>39、注解优先于命名模式</h2><p>有了注解就完全没有理由再使用命名模式，所有程序员都应该使用 Java 平台所提供的预定义的注解类型</p>
+<h2 id="40、坚持使用-Override-注解"><a href="#40、坚持使用-Override-注解" class="headerlink" title="40、坚持使用 Override 注解"></a>40、坚持使用 Override 注解</h2><p>在想要覆盖超类声明的每个方法声明中使用 Override 注解，编译器能替你防止大量的错误</p>
+<h2 id="41、用标记接口定义类型"><a href="#41、用标记接口定义类型" class="headerlink" title="41、用标记接口定义类型"></a>41、用标记接口定义类型</h2><p>标记接口定义的类型是由被标记类的实例实现的，标记注解则没有定义这样的类型。标记接口能更加精确地进行锁定</p>
+<h2 id="42、Lambda-优先于匿名类"><a href="#42、Lambda-优先于匿名类" class="headerlink" title="42、Lambda 优先于匿名类"></a>42、Lambda 优先于匿名类</h2><p>删除所有 Lambda 参数的类型，除非它们的存在能够使程序变得更加清晰</p>
+<h2 id="43、方法引用优先于-Lambda"><a href="#43、方法引用优先于-Lambda" class="headerlink" title="43、方法引用优先于 Lambda"></a>43、方法引用优先于 Lambda</h2><p>只要方法引用更加简洁、清晰，就用方法引用，如果方法引用并不简洁就坚持使用 Lambda</p>
+<h2 id="44、坚持使用标准的函数接口"><a href="#44、坚持使用标准的函数接口" class="headerlink" title="44、坚持使用标准的函数接口"></a>44、坚持使用标准的函数接口</h2><p>只要标准的函数接口能满足需求，通常应该优先考虑，而不是专门再构建一个新的函数接口，必须使用 @FunctionalInterface 注解对自己编写的函数接口进行标注</p>
+<h2 id="45、谨慎使用-Stream"><a href="#45、谨慎使用-Stream" class="headerlink" title="45、谨慎使用 Stream"></a>45、谨慎使用 Stream</h2><p>滥用 Stream 会使程序代码更难以读懂和维护。最好避免利用 Stream 来处理 char 值。</p>
+<h2 id="46、优先选择-Stream-中无副作用的函数"><a href="#46、优先选择-Stream-中无副作用的函数" class="headerlink" title="46、优先选择 Stream 中无副作用的函数"></a>46、优先选择 Stream 中无副作用的函数</h2><p>forEach 操作应该只用于报告 Stream 计算的结果，而不是执行计算</p>
+<h2 id="47、Stream-要优先用-Collection-作为返回类型"><a href="#47、Stream-要优先用-Collection-作为返回类型" class="headerlink" title="47、Stream 要优先用 Collection 作为返回类型"></a>47、Stream 要优先用 Collection 作为返回类型</h2><p>对于公共的、返回序列的方法，Collection 或者适当的子类型通常是最佳的返回类型。</p>
+<h2 id="48、谨慎使用-Stream-并行"><a href="#48、谨慎使用-Stream-并行" class="headerlink" title="48、谨慎使用 Stream 并行"></a>48、谨慎使用 Stream 并行</h2><p>并行 Stream 不仅可能降低性能，还可能导致结果出错，以及难以预计的行为。</p>
+<h2 id="49、检查参数的有效性"><a href="#49、检查参数的有效性" class="headerlink" title="49、检查参数的有效性"></a>49、检查参数的有效性</h2><p>每当编写方法或者构造器的时候，应该考虑它的参数有哪些限制。应该把这些限制写到文档中，并且这个方法体的开头处，通过显式的检查来实施这些限制。</p>
+<h2 id="50、必要时进行保护性拷贝"><a href="#50、必要时进行保护性拷贝" class="headerlink" title="50、必要时进行保护性拷贝"></a>50、必要时进行保护性拷贝</h2><p>Date 已经过时了，不应该在新代码中使用</p>
+<h2 id="51、谨慎设计方法签名"><a href="#51、谨慎设计方法签名" class="headerlink" title="51、谨慎设计方法签名"></a>51、谨慎设计方法签名</h2><ul>
+<li>谨慎地选择方法的名称。易于理解，大众认可</li>
+<li>不要过于追求提供便利的方法</li>
+<li>避免过长的参数列表</li>
+<li>对参数类型，要优先接口而不是类</li>
+<li>对 boolean 参数，要优先使用两个元素的枚举类型</li>
+</ul>
+<h2 id="52、慎用重载"><a href="#52、慎用重载" class="headerlink" title="52、慎用重载"></a>52、慎用重载</h2><p>调用哪个重载方法是在编译时做出决定的，永远不要导出两个具有相同参数数目的重载方法。始终可以在给方法起不同的名称，而不使用重载机制</p>
+<h2 id="53、慎用可变参数"><a href="#53、慎用可变参数" class="headerlink" title="53、慎用可变参数"></a>53、慎用可变参数</h2><p>不要使用可变参数</p>
+<h2 id="54、返回零长度的数组或者集合，而不是null"><a href="#54、返回零长度的数组或者集合，而不是null" class="headerlink" title="54、返回零长度的数组或者集合，而不是null"></a>54、返回零长度的数组或者集合，而不是null</h2><p>永远不要返回 null，而不返回一个零长度的数组或者集合，不需要追求这点性能。</p>
+<h2 id="55、谨慎返回-optional"><a href="#55、谨慎返回-optional" class="headerlink" title="55、谨慎返回 optional"></a>55、谨慎返回 optional</h2><h2 id="56、为所有导出-API-元素编写文档注释"><a href="#56、为所有导出-API-元素编写文档注释" class="headerlink" title="56、为所有导出 API 元素编写文档注释"></a>56、为所有导出 API 元素编写文档注释</h2><p>为了正确地编写 API 文档，必须在每个被导出的类、接口、构造器、方法和域声明之前增加一个文档注释。方法的文档应该简洁地描述它和客户端之间的约定</p>
+<h2 id="57、将局部变量的作用域最小化"><a href="#57、将局部变量的作用域最小化" class="headerlink" title="57、将局部变量的作用域最小化"></a>57、将局部变量的作用域最小化</h2><p>要是局部变量的作用域最小化，最有力的方法就是在第一次要使用它的地方进行声明。几乎每一个局部变量的声明都应该包含一个初始化表达式。for 循环优先于 while 循环。</p>
+<h2 id="58、for-each-优先于-for"><a href="#58、for-each-优先于-for" class="headerlink" title="58、for each 优先于 for"></a>58、for each 优先于 for</h2><p>以下三种情况使用 for 循环：</p>
+<ul>
+<li>解构过滤，遍历迭代器，删除元素，使用 removeIf 更好</li>
+<li>转换，遍历数组或列表，取代部分或全部元素值时</li>
+<li>平行迭代，并行遍历多个集合</li>
+</ul>
+<h2 id="59、了解和使用类库"><a href="#59、了解和使用类库" class="headerlink" title="59、了解和使用类库"></a>59、了解和使用类库</h2><p>通过使用标准类库，可以充分利用这些编写标准类库的专家知识，以及在你之前的其他人的使用经验。不再推荐使用 Reandom 而是用 ThreadLocalReandom。每个程序员都应该熟悉，java.lang、java.util、java.io 及其子包中的内容</p>
+<h2 id="60、如果需要精确的答案，请避免使用-float-和-double"><a href="#60、如果需要精确的答案，请避免使用-float-和-double" class="headerlink" title="60、如果需要精确的答案，请避免使用 float 和 double"></a>60、如果需要精确的答案，请避免使用 float 和 double</h2><p>float 和 double 类型尤其不适合货币计算，应该使用 BigDecimal、int 或者 long 进行货币计算</p>
+<h2 id="61、基本类型优先于装箱基本类型"><a href="#61、基本类型优先于装箱基本类型" class="headerlink" title="61、基本类型优先于装箱基本类型"></a>61、基本类型优先于装箱基本类型</h2><p>自动装箱减少了使用装箱基本类型的繁琐性，但是并没有减少它的风险</p>
+<h2 id="62、如果其他类型更适合，则避免使用字符串"><a href="#62、如果其他类型更适合，则避免使用字符串" class="headerlink" title="62、如果其他类型更适合，则避免使用字符串"></a>62、如果其他类型更适合，则避免使用字符串</h2><p>字符串不适合代替其他的值类型</p>
+<h2 id="63、了解字符串连接的性能"><a href="#63、了解字符串连接的性能" class="headerlink" title="63、了解字符串连接的性能"></a>63、了解字符串连接的性能</h2><p>为了更高的性能，请用 StringBuilder 代替 String。</p>
+<h2 id="64、通过接口引用对象"><a href="#64、通过接口引用对象" class="headerlink" title="64、通过接口引用对象"></a>64、通过接口引用对象</h2><p>如果合适的接口类型存在，那么对于参数、返回值、变量和域来说，就都应该使用接口类型进行声明。使用 List、Set、Map 而不是 ArrayList、HashSet、HashMap。</p>
+<h2 id="65、接口优先于反射机制"><a href="#65、接口优先于反射机制" class="headerlink" title="65、接口优先于反射机制"></a>65、接口优先于反射机制</h2><h2 id="66、谨慎地使用本地方法"><a href="#66、谨慎地使用本地方法" class="headerlink" title="66、谨慎地使用本地方法"></a>66、谨慎地使用本地方法</h2><p>使用本地方法提高性能不值得提倡</p>
+<h2 id="67、谨慎地进行优化"><a href="#67、谨慎地进行优化" class="headerlink" title="67、谨慎地进行优化"></a>67、谨慎地进行优化</h2><p>要努力编写好的程序而不是快的程序。</p>
+<h2 id="68、遵守普遍接受的命名惯例"><a href="#68、遵守普遍接受的命名惯例" class="headerlink" title="68、遵守普遍接受的命名惯例"></a>68、遵守普遍接受的命名惯例</h2><p>不可实例化的工具类经常使用复数名词。使用大家公认的做法。</p>
+<h2 id="69、只针对异常的情况才使用异常"><a href="#69、只针对异常的情况才使用异常" class="headerlink" title="69、只针对异常的情况才使用异常"></a>69、只针对异常的情况才使用异常</h2><p>异常应该只用于异常的情况下，它们永远不应该用于正常的控制流。设计良好的 API 不应该强迫它的客户端为了正常的控制流而是用异常。</p>
+<h2 id="70、对可恢复的情况使用受检异常，对编程错误使用运行时异常"><a href="#70、对可恢复的情况使用受检异常，对编程错误使用运行时异常" class="headerlink" title="70、对可恢复的情况使用受检异常，对编程错误使用运行时异常"></a>70、对可恢复的情况使用受检异常，对编程错误使用运行时异常</h2><p>如果期望调用者能够适当地恢复，对于这种情况就应该使用受检异常。用运行时异常来表示编程错误。大多数的运行时异常都表示前提违例。前提违例是 API 的客户端没有遵守 API 规范建立的约定。所有未受检的抛出结构都应该是 RuntimeException 的子类。</p>
+<h2 id="71、避免不必要地使用受检异常"><a href="#71、避免不必要地使用受检异常" class="headerlink" title="71、避免不必要地使用受检异常"></a>71、避免不必要地使用受检异常</h2><h2 id="72、优先使用标准的异常"><a href="#72、优先使用标准的异常" class="headerlink" title="72、优先使用标准的异常"></a>72、优先使用标准的异常</h2><p>不要直接重用 Exception、RuntimeException、Throwable 或者Error</p>
+<h2 id="73、抛出与抽象对应的异常"><a href="#73、抛出与抽象对应的异常" class="headerlink" title="73、抛出与抽象对应的异常"></a>73、抛出与抽象对应的异常</h2><p>更高层的实现应该捕获底层的异常，同时抛出可以按照高层抽象进行解释的异常。</p>
+<h2 id="74、每个方法抛出的所有异常都要建立文档"><a href="#74、每个方法抛出的所有异常都要建立文档" class="headerlink" title="74、每个方法抛出的所有异常都要建立文档"></a>74、每个方法抛出的所有异常都要建立文档</h2><p>始终要单独地声明受检异常，利用 @throws 准确地记录下抛出的每个异常的条件</p>
+<h2 id="75、在细节信息中包含失败-捕获信息"><a href="#75、在细节信息中包含失败-捕获信息" class="headerlink" title="75、在细节信息中包含失败-捕获信息"></a>75、在细节信息中包含失败-捕获信息</h2><p>为了捕获失败，异常的细节信息应该包含对该异常有贡献的所有参数和域的值。</p>
+<h2 id="76、努力使失败保持原子性"><a href="#76、努力使失败保持原子性" class="headerlink" title="76、努力使失败保持原子性"></a>76、努力使失败保持原子性</h2><p>一般而言，失败的方法调用应该使对象保持在被调用之前的状态。</p>
+<h2 id="77、不要忽略异常"><a href="#77、不要忽略异常" class="headerlink" title="77、不要忽略异常"></a>77、不要忽略异常</h2><p>空的 catch 块会使异常达不到应有的目的。如果选择忽略异常，catch 块应该包含一条注释，说明为什么可以这么做，并且变量应该被命名为 ignored</p>
+<h2 id="78、同步访问共享的可变数据"><a href="#78、同步访问共享的可变数据" class="headerlink" title="78、同步访问共享的可变数据"></a>78、同步访问共享的可变数据</h2><p>为了线程间进行可靠的通信，也为了互斥访问，同步是必要的。千万不要使用 Thread.stop 方法，一个线程组织另一个线程建议的做法是轮询 boolean 值。</p>
+<p>除非读和写操作都被同步，否则无法保证同步能起作用。将可变数据限制再单个线程中。</p>
+<h2 id="79、避免过度同步"><a href="#79、避免过度同步" class="headerlink" title="79、避免过度同步"></a>79、避免过度同步</h2><p>为了避免活性失败和安全性失败，在一个被同步的方法或者代码块中，永远不要放弃对客户端的控制。应该在同步区域内做尽可能少的工作。</p>
+<h2 id="80、executor、task-和-stream-优先于线程"><a href="#80、executor、task-和-stream-优先于线程" class="headerlink" title="80、executor、task 和 stream 优先于线程"></a>80、executor、task 和 stream 优先于线程</h2><h2 id="81、并发工具优先于-wait-和-notify"><a href="#81、并发工具优先于-wait-和-notify" class="headerlink" title="81、并发工具优先于 wait 和 notify"></a>81、并发工具优先于 wait 和 notify</h2><p>应该优先使用 ConcurrentHashMap 而不是 Collections.synchronizedMap</p>
+<p>对于间歇式的定时，始优先使用 System.nanoTime 而不是 System.currentTimeMillis</p>
+<h2 id="82、线程安全性的文档化"><a href="#82、线程安全性的文档化" class="headerlink" title="82、线程安全性的文档化"></a>82、线程安全性的文档化</h2><p>一个类为了可被多个线程安全地使用，必须在文档中清楚地说明它所支持的线程安全性级别</p>
+<ul>
+<li>不可变的</li>
+<li>无条件的线程安全</li>
+<li>有条件的线程安全</li>
+<li>非线程安全</li>
+<li>线程对立</li>
+</ul>
+<p>lock 域应该始终声明为 final</p>
+<h2 id="83、慎用延迟初始化"><a href="#83、慎用延迟初始化" class="headerlink" title="83、慎用延迟初始化"></a>83、慎用延迟初始化</h2><p>延迟初始化是指延迟到需要域的值才将它初始化的行为。</p>
+<p>如果利用延迟优化来破坏初始化的循环，就需要使用同步访问方法</p>
+<p>如果出于性能的考虑对静态域使用延迟初始化就是用静态内部类方法</p>
+<p>如果处于性能的考虑而需要对实例域使用延迟初始化，就用双重检查方法</p>
+<h2 id="84、不要依赖于线程调度器"><a href="#84、不要依赖于线程调度器" class="headerlink" title="84、不要依赖于线程调度器"></a>84、不要依赖于线程调度器</h2><p>任何依赖于线程调度器来达到正确性或者性能要求的程序，很有可能都是不可移植的</p>
+<p>如果线程没有做有意义的工作，就不应该运行</p>
+<h2 id="85、其他方法优先于-Java-序列化"><a href="#85、其他方法优先于-Java-序列化" class="headerlink" title="85、其他方法优先于 Java 序列化"></a>85、其他方法优先于 Java 序列化</h2><p>避免序列化攻击的最佳方式是永远不要反序列化任何东西。在新编写的任何系统中没有理由再使用 Java 序列化。</p>
+<h2 id="86、谨慎地实现-Serializable-接口"><a href="#86、谨慎地实现-Serializable-接口" class="headerlink" title="86、谨慎地实现 Serializable 接口"></a>86、谨慎地实现 Serializable 接口</h2><p>实现 Serializable 接口而付出的最大代价是，一旦一个类发布，就大大降低了改变这个类的实现的灵活性。</p>
+<h2 id="87、考虑使用自定义的序列化形式"><a href="#87、考虑使用自定义的序列化形式" class="headerlink" title="87、考虑使用自定义的序列化形式"></a>87、考虑使用自定义的序列化形式</h2><p>如果事先认真考虑默认的序列化形式是否合适，则不要贸然接受。</p>
+<p>即使你确定了默认序列化形式是否合适的，通常还必须提供一个 readObject 方法以约束关系和安全性</p>
+<h2 id="88、保护性地编写-readObejct-方法"><a href="#88、保护性地编写-readObejct-方法" class="headerlink" title="88、保护性地编写 readObejct 方法"></a>88、保护性地编写 readObejct 方法</h2><h2 id="89、对于实例控制，枚举类型优先于-readResolve"><a href="#89、对于实例控制，枚举类型优先于-readResolve" class="headerlink" title="89、对于实例控制，枚举类型优先于 readResolve"></a>89、对于实例控制，枚举类型优先于 readResolve</h2><h2 id="90、考虑序列化代理代替序列化实例"><a href="#90、考虑序列化代理代替序列化实例" class="headerlink" title="90、考虑序列化代理代替序列化实例"></a>90、考虑序列化代理代替序列化实例</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Reading/" class="category-chain-item">Reading</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Notes/">#Notes</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Effective Java</div>
+      <div>https://reajason.github.io/2022/01/24/Effective Java/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>ReaJason</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年1月24日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/02/10/2022AnnualGoals/" title="2022年度目标">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">2022年度目标</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/11/30/VueLearning/" title="Vue Learning">
+                        <span class="hidden-mobile">Vue Learning</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <i class="iconfont icon-copyright"></i> 2019-2021 <a target="_blank" rel="noopener" href="https://reajason.top">ReaJason</a> </br>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> ❤️ <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> ❄我们在一起玩耍了❄ </br> <span id="timeDate"></span> <span id="times"></span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

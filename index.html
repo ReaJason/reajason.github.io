@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
@@ -9,24 +9,37 @@
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/default/website.png">
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/default/website.png">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#fc9d9a">
-  <meta name="description" content="">
   <meta name="author" content="ReaJason">
   <meta name="keywords" content="">
   
+    <meta property="og:type" content="website">
+<meta property="og:title" content="ReaJason">
+<meta property="og:url" content="https://reajason.github.io/index.html">
+<meta property="og:site_name" content="ReaJason">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="ReaJason">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
   <title>ReaJason</title>
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
 
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
@@ -35,7 +48,13 @@
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
   
 <link rel="stylesheet" href="/css/custom.css">
@@ -45,19 +64,35 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":150,"cursorChar":"❤️","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"HohGa0vcu0iQIbm7ELytbaKs-gzGzoHsz","app_key":"9TiVNoKrg63RPL3ALyu72tt2","server_url":"https://hohga0vc.lc-cn-n1-shared.com"}}};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"reajason.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":150,"cursorChar":"❤️","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"HohGa0vcu0iQIbm7ELytbaKs-gzGzoHsz","app_key":"9TiVNoKrg63RPL3ALyu72tt2","server_url":"https://hohga0vc.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.2.0"></head>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
-  <header style="height: 100vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>ReaJason's Space</strong>&nbsp;</a>
+    <a class="navbar-brand" href="/">
+      <strong>ReaJason&#39;s Space</strong>
+    </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -143,13 +178,15 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self">&nbsp;<i
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -158,34 +195,40 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/default/default.jpg') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Love Yourself">
-              
-            </span>
+  
 
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/default/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
           
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
+            <span id="subtitle" data-typed-text="Love Yourself"></span>
           
         </div>
+
+        
       </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
     
       <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
+        <div id="board"
+          style="margin-top: 0">
           
           <div class="container">
             <div class="row">
@@ -196,56 +239,54 @@
   <div class="row mx-auto index-card">
     
     
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2021/03/19/17wanxiaoCheckInSCF/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/17wanxiaoCheckInSCF_index_img.jpg" srcset="/img/loading.gif" lazyload alt="完美校园自动打卡">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
+    <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
           <i class="index-pin iconfont icon-top" title="Pin on top"></i>
         
-        <a href="/2021/03/19/17wanxiaoCheckInSCF/">完美校园自动打卡</a>
+        <a href="/2022/02/10/2022AnnualGoals/" target="_self">
+          2022年度目标
+        </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/03/19/17wanxiaoCheckInSCF/">
-          
-          
-            
-          
-          
-            今天你打卡了吗？
-          
-        </a>
-      </p>
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/02/10/2022AnnualGoals/" target="_self">
+        <div>
+          书读百遍，其义自见 —— 《三国志》  📚读书清单 （边看，边更新）     书名 状态 完成日期    《Effective Java》 已读 2022&#x2F;05&#x2F;10   《Java核心技术》（重读） 已读 2022&#x2F;05&#x2F;10   《JavaScript高级程序设计》 已读 2022&#x2F;06&#x2F;29   《OnJava8》（Java编程
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-19 23:00" pubdate>
-              2021-03-19
+            <time datetime="2022-02-10 15:20" pubdate>
+              2022-02-10
             </time>
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Python/">Python</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/AnnualGoal/" class="category-chain-item">AnnualGoal</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Script/">Script</a>
-            
-          </div>
         
       </div>
     </article>
@@ -265,18 +306,17 @@
         
           <i class="index-pin iconfont icon-top" title="Pin on top"></i>
         
-        <a href="/2021/08/21/ForeverAlgorithm/">Forever Algorithm</a>
+        <a href="/2021/08/21/ForeverAlgorithm/" target="_self">
+          Forever Algorithm
+        </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/08/21/ForeverAlgorithm/">
-          
-          
-            
-          
+      
+      <a class="index-excerpt " href="/2021/08/21/ForeverAlgorithm/" target="_self">
+        <div>
           不给看不给看🍭，正在耕耘中......🎉
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -288,24 +328,38 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Python/">Python</a>
-            
-              <a href="/categories/C/">C++</a>
-            
-              <a href="/categories/C/">C#</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Python/" class="category-chain-item">Python</a>
+  
+  
+
+      </span>
+    
+  
+    
+  
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Algotrithm/">Algotrithm</a>
+              <a href="/tags/Algotrithm/">#Algotrithm</a>
             
-              <a href="/tags/Private/">Private</a>
+              <a href="/tags/Private/">#Private</a>
             
           </div>
         
@@ -316,52 +370,57 @@
   <div class="row mx-auto index-card">
     
     
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2021/09/28/ManInLoveReview/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/ManInLoveReview_index_img.png" srcset="/img/loading.gif" lazyload alt="Man In Love Review">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
+    <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/09/28/ManInLoveReview/">Man In Love Review</a>
+        <a href="/2022/09/21/HardExperience/" target="_self">
+          突如其来政策
+        </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/09/28/ManInLoveReview/">
-          
-          
-            
-          
-          
-            之前看电影、看剧、看番基本看完就忘，有时候觉得写下来自己的感受或许会真的更加有收获
-          
-        </a>
-      </p>
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/09/21/HardExperience/" target="_self">
+        <div>
+          9 月份以来，每次出门到村口那会时，就有一个广播一直播报着『三层及三层及以上不允许出租』。刚好我就住在三楼，由于上次也抓过这件事情，最后不了了之，所以我也没把这件事放在心上。不过到了快中旬的时候，隔壁以及对面都搬走了，三楼基本只剩我和两外一家了，我也还是没慌，和房东聊了聊，说是我找到新的住所也可以搬。 9-18周日得知，9-20将进行强制搬离，我想这件事情搞大了，于是我开始找房子，和总监请了两天假
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-09-28 14:10" pubdate>
-              2021-09-28
+            <time datetime="2022-09-21 19:55" pubdate>
+              2022-09-21
             </time>
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Blog/">Blog</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Blog/" class="category-chain-item">Blog</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Notions/">Notions</a>
+              <a href="/tags/Notions/">#Notions</a>
             
           </div>
         
@@ -372,52 +431,57 @@
   <div class="row mx-auto index-card">
     
     
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2021/08/26/PLSQL&NavicatConnectOracle11g/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/PLSQL&NavicatConnectOracle11g_index_img.jpg" srcset="/img/loading.gif" lazyload alt="PL/SQL 以及 Navicat 连接 Oracle11G">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
+    <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/08/26/PLSQL&NavicatConnectOracle11g/">PL/SQL 以及 Navicat 连接 Oracle11G</a>
+        <a href="/2022/07/11/FailureProjectExperience/" target="_self">
+          记一次失败的项目经验
+        </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/08/26/PLSQL&NavicatConnectOracle11g/">
-          
-          
-            
-          
-          
-            熟练地使用已有的工具，能有效地提高生产效率
-          
-        </a>
-      </p>
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/07/11/FailureProjectExperience/" target="_self">
+        <div>
+          项目内容对内部员工使用的 OA（Office Automation 办公自动化） 系统进行为期一个月（2022-06 ~ 2022-07）的样式调整，统一样式，两周用于测试。 项目人数三人，一个跟着当前项目工作了一年的后端开发（bt），一个刚转正两个月的萌新（我），一个刚招来的前端开发（sd）。 项目样式调整前工作，几个复杂界面的 UI 设计图以及一个开发进度安排。 系统概述当前系统使用 Spri
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-08-26 09:35" pubdate>
-              2021-08-26
+            <time datetime="2022-07-11 19:41" pubdate>
+              2022-07-11
             </time>
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Notes/">Notes</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Summary/" class="category-chain-item">Summary</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Tool/">Tool</a>
+              <a href="/tags/Notes/">#Notes</a>
             
           </div>
         
@@ -428,50 +492,57 @@
   <div class="row mx-auto index-card">
     
     
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2021/08/08/BeStrongerAndBetter/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/BeStrongerAndBetter_index_img.png" srcset="/img/loading.gif" lazyload alt="梦想是注定孤独的旅行">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
+    <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/08/08/BeStrongerAndBetter/">梦想是注定孤独的旅行</a>
+        <a href="/2022/05/05/CodeCompletion/" target="_self">
+          Code Completion 代码大全读书笔记
+        </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/08/08/BeStrongerAndBetter/">
-          
-          
-            
-          
-          Notions
-        </a>
-      </p>
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/05/05/CodeCompletion/" target="_self">
+        <div>
+          软件构建开发软件是一个复杂的过程：  定义问题（problem definition） 需求分析（requirements development） 规划构建（construction planning） 软件架构（software architecture） 详细设计（detailed design） 编码与测试（coding and debugging） 单元测试（unit testing）
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-08-08 10:00" pubdate>
-              2021-08-08
+            <time datetime="2022-05-05 22:07" pubdate>
+              2022-05-05
             </time>
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Blog/">Blog</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Reading/" class="category-chain-item">Reading</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Notions/">Notions</a>
+              <a href="/tags/Notes/">#Notes</a>
             
           </div>
         
@@ -482,52 +553,57 @@
   <div class="row mx-auto index-card">
     
     
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2021/05/01/WindowsUsage/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/WindowsUsage_index_img.png" srcset="/img/loading.gif" lazyload alt="Windows10 使用心得与总结">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
+    <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/05/01/WindowsUsage/">Windows10 使用心得与总结</a>
+        <a href="/2022/04/01/WhatCouldIDoWhenLearningHalfYearJavaAndHtml/" target="_self">
+          Mybatis
+        </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/05/01/WindowsUsage/">
-          
-          
-            
-          
-          
-            🙄Windows10 一个玩英雄联盟的系统而已
-          
-        </a>
-      </p>
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/04/01/WhatCouldIDoWhenLearningHalfYearJavaAndHtml/" target="_self">
+        <div>
+          学了半年 Java 和前端基础，我能写出什么来学习路线 2021 年 10 月 ~ 2022 年 04 月  一开始在总监的指导下看了 一个多月 的《Java核心技术卷Ⅰ》，一步一个脚印地敲着上面的案例代码做笔记，Swing 那个就敲不下去而且也没有学习的必要。之后就是步入 JavaEE 的学习，从 Servlet&#x2F;JSP（看的《HeadFirst》系列的书，很受益） -&gt; JDB
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-05-01 00:00" pubdate>
-              2021-05-01
+            <time datetime="2022-04-01 15:17" pubdate>
+              2022-04-01
             </time>
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Windows/">Windows</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Blog/" class="category-chain-item">Blog</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Skill/">Skill</a>
+              <a href="/tags/Notes/">#Notes</a>
             
           </div>
         
@@ -538,54 +614,57 @@
   <div class="row mx-auto index-card">
     
     
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2021/04/18/17wanxiaoHookGetDeviceId/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/17WanXiaoHookGetDeviceId_index_img.jpg" srcset="/img/loading.gif" lazyload alt="Xposed Hook 完美校园获取本机 DeviceId">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
+    <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/04/18/17wanxiaoHookGetDeviceId/">Xposed Hook 完美校园获取本机 DeviceId</a>
+        <a href="/2022/03/19/ClickSubmitBtnWhatHappened/" target="_self">
+          关于点击了打卡提交按钮，这世界发生了什么这回事
+        </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/04/18/17wanxiaoHookGetDeviceId/">
-          
-          
-            
-          
-          
-            简单记录一下完美校园 app 逆向 + Hook 获取 deviceId 生成的方法
-          
-        </a>
-      </p>
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/03/19/ClickSubmitBtnWhatHappened/" target="_self">
+        <div>
+          前言首先我想先铺垫一点点基本概念。网上的信息都是经过了『网络』这个转播媒介，计算机网络讲的就是这部分（物理层-&gt;数据链路层-&gt;网络层(IP)-&gt;运输层(TCP\UDP)-&gt;应用层(DNS\HTTP\FTP\SMTP)）。对于我们用户来说我们直接使用的就是应用层之上的服务。 常见的就是 HTTP（Hypertext Transfer Protocol，超文本传输协议），我们使
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-04-18 23:43" pubdate>
-              2021-04-18
+            <time datetime="2022-03-19 12:08" pubdate>
+              2022-03-19
             </time>
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Android/">Android</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Blog/" class="category-chain-item">Blog</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Notes/">Notes</a>
-            
-              <a href="/tags/Xposed/">Xposed</a>
+              <a href="/tags/Notes/">#Notes</a>
             
           </div>
         
@@ -596,54 +675,57 @@
   <div class="row mx-auto index-card">
     
     
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2021/04/12/AndroidFlashRom/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/AndroidFlashRom_index_img.png" srcset="/img/loading.gif" lazyload alt="我的刷机之旅 — Redmi K20 Pro">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
+    <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/04/12/AndroidFlashRom/">我的刷机之旅 — Redmi K20 Pro</a>
+        <a href="/2022/03/17/DesignPattern/" target="_self">
+          设计模式的艺术一书的阅读笔记
+        </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/04/12/AndroidFlashRom/">
-          
-          
-            
-          
-          
-            🎉玩机党的快乐！
-          
-        </a>
-      </p>
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/03/17/DesignPattern/" target="_self">
+        <div>
+          设计模式是一套被反复使用的、多数人知晓的、经过分类编目的、代码设计经验的总结，使用设计模式是为了可重用代码、让代码更容易被他人理解并且保证代码的可靠性。 UML类图（Class Diagram） 是出现在系统中的不同类来描述系统的静态结构，主要用来描述不同的类以及它们之间的关系。 UML 属性的表示方式： 1可见性（+：public、-：private、#：protected） 名称:类型[=默认
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-04-12 23:00" pubdate>
-              2021-04-12
+            <time datetime="2022-03-17 12:05" pubdate>
+              2022-03-17
             </time>
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Android/">Android</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Reading/" class="category-chain-item">Reading</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Notes/">Notes</a>
-            
-              <a href="/tags/Skill/">Skill</a>
+              <a href="/tags/Notes/">#Notes</a>
             
           </div>
         
@@ -654,52 +736,57 @@
   <div class="row mx-auto index-card">
     
     
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2021/03/28/CppSTL/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/STL_index_img.jpg" srcset="/img/loading.gif" lazyload alt="C++ の STL">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
+    <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/03/28/CppSTL/">C++ の STL</a>
+        <a href="/2022/01/24/Effective%20Java/" target="_self">
+          Effective Java
+        </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/03/28/CppSTL/">
-          
-          
-            
-          
-          
-            为了更好地使用 C++ 刷算法题，学习一下 STL
-          
-        </a>
-      </p>
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/01/24/Effective%20Java/" target="_self">
+        <div>
+          1、用静态工厂方法代替构造器静态工厂方法的优势：  有方法名称，比起重载多个构造函数，使用者能知道不同参数构建的对象有什么不同 不必每次调用都创建一个新对象（享元模式） 可以返回原返回类型的任何子类型的对象（面向接口编程，可返回接口类型而不必是实现类型） 返回的对象可随着每次调用而发生变化，取决于参数值（面向接口编程，隐藏实现细节，用户只知道返回的是接口类的子类具体实现类） 方法返回的对象所属的类
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-28 15:23" pubdate>
-              2021-03-28
+            <time datetime="2022-01-24 17:08" pubdate>
+              2022-01-24
             </time>
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/C/">C++</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Reading/" class="category-chain-item">Reading</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Notes/">Notes</a>
+              <a href="/tags/Notes/">#Notes</a>
             
           </div>
         
@@ -710,52 +797,57 @@
   <div class="row mx-auto index-card">
     
     
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2021/02/04/WBTopicCheckTool/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/WBTopicCheckTool_index_img.jpg" srcset="/img/loading.gif" lazyload alt="微博超话签到工具">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
+    <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/02/04/WBTopicCheckTool/">微博超话签到工具</a>
+        <a href="/2021/11/30/VueLearning/" target="_self">
+          Vue Learning
+        </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/02/04/WBTopicCheckTool/">
-          
-          
-            
-          
-          
-            本工具接口全来自微博网页版，仅作封装和打包实现
-          
-        </a>
-      </p>
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2021/11/30/VueLearning/" target="_self">
+        <div>
+          Vue3 官网：https://v3.cn.vuejs.org/  InstallCDN 引入：&lt;script src=&quot;https://unpkg.com/vue@next&quot;&gt;&lt;/script&gt; 静态引入：&lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt; Counter 计数器js 原生实
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-02-04 17:41" pubdate>
-              2021-02-04
+            <time datetime="2021-11-30 17:17" pubdate>
+              2021-11-30
             </time>
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/Python/">Python</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Vue/" class="category-chain-item">Vue</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/PyQt5/">PyQt5</a>
+              <a href="/tags/Notes/">#Notes</a>
             
           </div>
         
@@ -767,7 +859,7 @@
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 
@@ -781,7 +873,7 @@
     
 
     
-      <a id="scroll-top-button" href="#" role="button">
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
         <i class="iconfont icon-arrowup" aria-hidden="true"></i>
       </a>
     
@@ -800,35 +892,37 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <i class="iconfont icon-copyright"></i> 2019-2021 <a target="_blank" rel="noopener" href="https://reajason.top">ReaJason</a> </br>Powered by  <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> ❤️ <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> ❄我们在一起玩耍了❄ </br> <span id="timeDate"></span> <span id="times"></span> <script src="/js/duration.js"></script> </div> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-
+    <div class="footer-content">
+       <i class="iconfont icon-copyright"></i> 2019-2021 <a target="_blank" rel="noopener" href="https://reajason.top">ReaJason</a> </br>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> ❤️ <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> ❄我们在一起玩耍了❄ </br> <span id="timeDate"></span> <span id="times"></span> <script src="/js/duration.js"></script> </div> 
+    </div>
   
-
   
-</footer>
-
-
-  <!-- SCRIPTS -->
   
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
 
   <script>
     NProgress.configure({"showSpinner":false,"trickleSpeed":100})
@@ -839,12 +933,28 @@
   </script>
 
 
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
 
 
   
@@ -853,68 +963,22 @@
 
 
 
-  
-
-
-
-
-
-
-
-
-
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
-
-
-
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-      typing(title)
-      
-    })(window, document);
-  </script>
-
-
 
   <script  src="/js/local-search.js" ></script>
-  <script>
-    (function () {
-      var path = "/local-search.xml";
-      $('#local-search-input').on('click', function() {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      });
-      $('#modalSearch').on('shown.bs.modal', function() {
-        $('#local-search-input').focus();
-      });
-    })()
-  </script>
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>
