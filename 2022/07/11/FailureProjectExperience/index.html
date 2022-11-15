@@ -12,22 +12,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="ReaJason">
   <meta name="keywords" content="">
   
-    <meta name="description" content="项目内容对内部员工使用的 OA（Office Automation 办公自动化） 系统进行为期一个月（2022-06 ~ 2022-07）的样式调整，统一样式，两周用于测试。 项目人数三人，一个跟着当前项目工作了一年的后端开发（bt），一个刚转正两个月的萌新（我），一个刚招来的前端开发（sd）。 项目样式调整前工作，几个复杂界面的 UI 设计图以及一个开发进度安排。 系统概述当前系统使用 Spri">
+    <meta name="description" content="准备好，再出发😶‍🌫️">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记一次失败的项目经验">
-<meta property="og:url" content="https://reajason.github.io/2022/07/11/FailureProjectExperience/index.html">
+<meta property="og:url" content="https://reajason.vercel.app/2022/07/11/FailureProjectExperience/index.html">
 <meta property="og:site_name" content="ReaJason">
-<meta property="og:description" content="项目内容对内部员工使用的 OA（Office Automation 办公自动化） 系统进行为期一个月（2022-06 ~ 2022-07）的样式调整，统一样式，两周用于测试。 项目人数三人，一个跟着当前项目工作了一年的后端开发（bt），一个刚转正两个月的萌新（我），一个刚招来的前端开发（sd）。 项目样式调整前工作，几个复杂界面的 UI 设计图以及一个开发进度安排。 系统概述当前系统使用 Spri">
+<meta property="og:description" content="准备好，再出发😶‍🌫️">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-11T11:41:36.044Z">
-<meta property="article:modified_time" content="2022-11-08T05:54:09.525Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/FailureProjectExperience_index_img.png">
+<meta property="article:published_time" content="2022-07-11T11:41:36.000Z">
+<meta property="article:modified_time" content="2022-11-15T12:27:07.493Z">
 <meta property="article:author" content="ReaJason">
 <meta property="article:tag" content="Notes">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ReaJason/blog_imgs/FailureProjectExperience_index_img.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -69,14 +73,14 @@
 
   
 <link rel="stylesheet" href="/css/custom.css">
-<link rel="stylesheet" href="//at.alicdn.com/t/font_2805938_q5x4gqy1kjn.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_2805938_0sa3whtb0yne.css">
 
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"reajason.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":150,"cursorChar":"❤️","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"HohGa0vcu0iQIbm7ELytbaKs-gzGzoHsz","app_key":"9TiVNoKrg63RPL3ALyu72tt2","server_url":"https://hohga0vc.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"reajason.vercel.app","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":150,"cursorChar":"❤️","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"HohGa0vcu0iQIbm7ELytbaKs-gzGzoHsz","app_key":"9TiVNoKrg63RPL3ALyu72tt2","server_url":"https://hohga0vc.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -89,7 +93,8 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="ReaJason" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -195,7 +200,7 @@
               <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 
-                自定义
+                更多
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
@@ -203,7 +208,7 @@
                   
                   
                   <a class="dropdown-item" href="/timeline/">
-                    
+                    <i class="iconfont icon-timeline"></i>
                     时间轴
                   </a>
                 
@@ -211,11 +216,23 @@
                   
                   
                   <a class="dropdown-item" href="/share/">
-                    
+                    <i class="iconfont icon-tools"></i>
                     分享
                   </a>
                 
               </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/atom.xml">
+                <i class="iconfont icon-rss"></i>
+                
+              </a>
             </li>
           
         
@@ -332,7 +349,10 @@
             
               <div class="markdown-body">
                 
-                <h2 id="项目内容"><a href="#项目内容" class="headerlink" title="项目内容"></a>项目内容</h2><p>对内部员工使用的 OA（Office Automation 办公自动化） 系统进行为期一个月（2022-06 ~ 2022-07）的样式调整，统一样式，两周用于测试。</p>
+                <p>准备好，再出发😶‍🌫️</p>
+<span id="more"></span>
+
+<h2 id="项目内容"><a href="#项目内容" class="headerlink" title="项目内容"></a>项目内容</h2><p>对内部员工使用的 OA（Office Automation 办公自动化） 系统进行为期一个月（2022-06 ~ 2022-07）的样式调整，统一样式，两周用于测试。</p>
 <p>项目人数三人，一个跟着当前项目工作了一年的后端开发（bt），一个刚转正两个月的萌新（我），一个刚招来的前端开发（sd）。</p>
 <p>项目样式调整前工作，几个复杂界面的 UI 设计图以及一个开发进度安排。</p>
 <h2 id="系统概述"><a href="#系统概述" class="headerlink" title="系统概述"></a>系统概述</h2><p>当前系统使用 SpringBoot + Thymeleaf+ Bootstrap4 + jQuery 打造而成。HTML 页面中充斥着对 DOM 节点的操作，各种难以维护的代码逻辑，随处可见的复制粘贴原封不动的代码，没有封装，没有模块化，没有抽离成单独的 JS 文件或单独的 HTML 文件或 CSS 文件。CSS 大多内嵌在 DOM 上，大量重复的 CSS 样式堆叠在页面最上方显得单个文件行数格外的多。没有统一的代码风格，没有统一的模块使用，例如表格控件使用了 jQuery DataTable 和 Bootstrap DateTable，弹框更多，整个代码框架显得非常凌乱。</p>
@@ -398,7 +418,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>记一次失败的项目经验</div>
-      <div>https://reajason.github.io/2022/07/11/FailureProjectExperience/</div>
+      <div>https://reajason.vercel.app/2022/07/11/FailureProjectExperience/</div>
     </div>
     <div class="license-meta">
       
@@ -472,7 +492,7 @@
       Fluid.utils.createCssLink('https://lib.baomitu.com/waline/2.13.0/waline.min.css')
       Fluid.utils.createScript('https://lib.baomitu.com/waline/2.13.0/waline.min.js', function() {
         var options = Object.assign(
-          {"serverURL":"https://waline-comment-xi.vercel.app","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
+          {"serverURL":"https://waline-comment-xi.vercel.app","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://unpkg.com/@waline/emojis@1.1.0/alus","https://unpkg.com/@waline/emojis@1.1.0/bilibili","https://unpkg.com/@waline/emojis@1.1.0/bmoji","https://unpkg.com/@waline/emojis@1.1.0/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
           {
             el: '#waline',
             path: window.location.pathname
@@ -582,7 +602,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       <i class="iconfont icon-copyright"></i> 2019-2022 <a href="https://reajason.github.io">ReaJason</a> </br>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> ❤️ <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> ❄我们在一起玩耍了❄ </br> <span id="timeDate"></span> <span id="times"></span> <script src="/js/duration.js"></script> </div> 
+       <i class="iconfont icon-copyright"></i> 2019-2022 <a target="_blank" rel="noopener" href="https://reajason.github.io">ReaJason</a> </br>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> ❤️ <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> ❄我们在一起玩耍了❄ </br> <span id="timeDate"></span> <span id="times"></span> <script src="/js/duration.js"></script> </div> 
     </div>
   
   
