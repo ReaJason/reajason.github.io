@@ -1,4 +1,9 @@
 @font-face {
-  font-family: "SmileySans";
+  font-family: SmileySans;
   src: url("/font/SmileySans-Oblique.ttf.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: ZhuZiA;
+  src: url("/font/ZhuZiA.woff2") format("woff2");
 }
