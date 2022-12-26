@@ -1,5 +1,10 @@
 const messages = [
   {
+    date: '2022/12/26 14:22:00',
+    content:
+      '我应该去追寻某些让我一直投入的东西，不是追求成功，而是追求自己的自身成长 —— <a href="https://survivesjtu.gitbook.io/survivesjtumanual/fu-lu/ben-ke-sheng-zhuan-ye-jie-shao-todo/cs-zi-jiu-zhi-bei">CS自救指北</a>  ',
+  },
+  {
     date: '2022/12/25 20:13:28',
     content:
       '推迟数据库的细节设计是不常见但推荐的做法，通过等待，避免了将过多的基础结构放入数据库，我们更愿意仅仅实现刚好满足应用程序需要的数据库功能',
